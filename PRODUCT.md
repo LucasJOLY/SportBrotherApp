@@ -7,7 +7,7 @@
 ios
 
 ## Stack
-SwiftUI native, iOS 26 minimum (Liquid Glass), SwiftData for local storage, project generated with XcodeGen. Claude API (Haiku) via a minimal URLSession client. Installed on one personal iPhone through Xcode with a paid developer account; never published to the App Store.
+SwiftUI native, iOS 26 minimum (Liquid Glass), SwiftData for local storage, project generated with XcodeGen. Claude API (Haiku) via a minimal URLSession client. Sport section synced through Supabase (Postgres + Realtime Broadcast + Storage, anonymous auth, supabase-swift). Installed through Xcode with a paid developer account on the owner's iPhone and a friend's; never published to the App Store.
 
 ## Users
 One person (the owner), cooking for themself and sometimes a second person. Used in the kitchen (hands busy, phone on the counter), at the supermarket (one hand, moving through aisles), and on the couch on Sunday when planning the week. Goal: eat clean, balanced, protein-rich meals for muscle gain without thinking about it every day.
@@ -27,14 +27,20 @@ A personal cooking companion shaped around one person's real routine: leftovers 
 - AI generation: pick ingredients + prompt → 2–4 multiple-choice questions → 3 short ideas → full recipe for the chosen one.
 - Settings: equipment (oven, microwave, hobs, pan sizes…), excluded foods/allergies (hard constraint), weight and protein/kcal targets, taste profile, export/import JSON backup.
 
+## Sport section
+- Gym log for 1 to 4 shared profiles; each phone has a default "my profile" but can log for anyone. One session can hold several profiles.
+- Seven categories: Dos, Biceps, Triceps, Épaules, Pecs, Jambes, Abdos. ~180 bundled exercises (free-exercise-db, translated to French) plus custom ones, machine photos, shared favorites and session templates.
+- Logging: sets pre-filled from last time, ±2.5 kg / ±1 rep steppers, "last time" always visible but never blocking, rest timer with Live Activity, optional effort and note, PR celebration, progression hint.
+- Stats: yearly attendance grid, week streak, per-category exercises, rep-max records and estimated 1RM curve next to body weight, monthly AI review (one Haiku call, on demand).
+
 ## Capabilities and Constraints
-- Everything stored locally; no backend, no account.
+- Nourriture stored locally only; no account. Sport shared through Supabase with a local-first cache and offline outbox.
 - AI consumption must be minimal: Haiku only, short fixed prompts, strict JSON, tight max_tokens, local logic wherever possible.
 - Language: French UI.
 - Light and dark mode both supported.
 
 ## Brand Commitments
-- Name: RepasJOLY.
+- Name: SportBrother (formerly RepasJOLY). Two sections: Nourriture and Sport, switched by a dedicated last tab.
 - Standing preference (chosen 2026-10-28 over an editorial/bistro world): the iOS category standard played straight, at the craft level of Apple's own apps (Reminders, Health, Fitness) and the best native recipe apps (Mela, Crouton). Liquid Glass via native components.
 - Typography must not read as AI-generated: no editorial serif display. SF Pro family only (Expanded width allowed for display moments, monospaced digits for times).
 - Very simple, fluid, fast, with small tasteful animations.

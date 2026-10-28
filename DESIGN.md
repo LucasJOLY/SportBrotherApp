@@ -1,5 +1,5 @@
 ---
-name: RepasJOLY
+name: SportBrother
 description: A personal week-of-meals companion built as the iOS category standard, played straight.
 colors:
   tint-orange: "#FF8D28"
@@ -114,13 +114,13 @@ components:
     size: "52px"
 ---
 
-# Design System: RepasJOLY
+# Design System: SportBrother
 
 ## Overview
 
 **Creative North Star: "The Kitchen Drawer App"**
 
-RepasJOLY looks like an app Apple might have shipped next to Reminders and Fitness: inset grouped lists on the system grouped background, semantic labels, native Liquid Glass only where the system puts it (tab bar, toolbars, glass buttons). The content is the specificity: this week's meals, today's next dish, aisles of a shopping list. Nothing is drawn that the platform already draws.
+SportBrother looks like an app Apple might have shipped next to Reminders and Fitness: inset grouped lists on the system grouped background, semantic labels, native Liquid Glass only where the system puts it (tab bar, toolbars, glass buttons). The content is the specificity: this week's meals, today's next dish, aisles of a shopping list. Nothing is drawn that the platform already draws.
 
 One tint, system orange, carries every action and every completed state. Recipe categories speak quietly through small SF Symbols in muted system colours. The only typographic flourish is SF Pro Expanded bold, reserved for recipe titles and the running clock; every duration is set in monospaced digits so numbers never jitter. Motion is small and physical: `.snappy` springs, symbol replace transitions, numeric-text counters, and haptics on every state change.
 

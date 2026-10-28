@@ -1,4 +1,4 @@
-name: RepasJOLY
+name: SportBrother
 options:
   bundleIdPrefix: com.lucasjoly
   deploymentTarget:
@@ -15,71 +15,96 @@ settings:
     MARKETING_VERSION: "1.0"
     CURRENT_PROJECT_VERSION: "1"
 
+packages:
+  Supabase:
+    url: https://github.com/supabase/supabase-swift
+    from: "2.30.0"
+
 configFiles:
   Debug: Config/App.xcconfig
   Release: Config/App.xcconfig
 
 targets:
-  RepasJOLY:
+  SportBrother:
     type: application
     platform: iOS
     sources:
-      - RepasJOLY
+      - path: SportBrother
+        excludes:
+          - "Resources/ExerciseCatalog/**"
+      - path: SportBrother/Resources/ExerciseCatalog
+        type: folder
+        buildPhase: resources
       - Shared
-    resources: []
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.RepasJOLY
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.SportBrother
         SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_FILE: RepasJOLY/Info.plist
-        INFOPLIST_KEY_CFBundleDisplayName: RepasJOLY
+        INFOPLIST_FILE: SportBrother/Info.plist
+        INFOPLIST_KEY_CFBundleDisplayName: SportBrother
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
         INFOPLIST_KEY_UISupportedInterfaceOrientations: UIInterfaceOrientationPortrait
-        INFOPLIST_KEY_NSCameraUsageDescription: "Pour prendre en photo tes plats."
+        INFOPLIST_KEY_NSCameraUsageDescription: "Pour prendre en photo tes plats et les machines de la salle."
         INFOPLIST_KEY_NSSupportsLiveActivities: YES
     dependencies:
-      - target: RepasJOLYWidgets
+      - target: SportBrotherWidgets
+      - package: Supabase
 
-  RepasJOLYWidgets:
+  SportBrotherWidgets:
     type: app-extension
     platform: iOS
     sources:
-      - RepasJOLYWidgets
+      - SportBrotherWidgets
       - Shared
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.RepasJOLY.Widgets
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.SportBrother.Widgets
         GENERATE_INFOPLIST_FILE: YES
-        INFOPLIST_KEY_CFBundleDisplayName: RepasJOLY
+        INFOPLIST_KEY_CFBundleDisplayName: SportBrother
     info:
-      path: RepasJOLYWidgets/Info.plist
+      path: SportBrotherWidgets/Info.plist
       properties:
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
 
-  RepasJOLYTests:
+  SportBrotherTests:
     type: bundle.unit-test
     platform: iOS
     sources:
-      - RepasJOLYTests
+      - SportBrotherTests
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.RepasJOLYTests
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.SportBrotherTests
         SWIFT_DEFAULT_ACTOR_ISOLATION: MainActor
         GENERATE_INFOPLIST_FILE: YES
-        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/RepasJOLY.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RepasJOLY"
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/SportBrother.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SportBrother"
         BUNDLE_LOADER: "$(TEST_HOST)"
     dependencies:
-      - target: RepasJOLY
+      - target: SportBrother
+
+  SportBrotherUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - SportBrotherUITests
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.lucasjoly.SportBrotherUITests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_TARGET_NAME: SportBrother
+    dependencies:
+      - target: SportBrother
 
 schemes:
-  RepasJOLY:
+  SportBrother:
     build:
       targets:
-        RepasJOLY: all
-        RepasJOLYTests: [test]
+        SportBrother: all
+        SportBrotherTests: [test]
+        SportBrotherUITests: [test]
     test:
       targets:
-        - RepasJOLYTests
+        - SportBrotherTests
+        - SportBrotherUITests
