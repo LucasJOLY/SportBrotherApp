@@ -1,0 +1,7 @@
+Config/Secrets.xcconfig
+*.xcodeproj/
+xcuserdata/
+DerivedData/
+.build/
+.DS_Store
+.impeccable/live/

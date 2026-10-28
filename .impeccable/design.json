@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T12:00:00Z",
+  "title": "Design System: RepasJOLY",
+  "extensions": {
+    "colorMeta": {
+      "tint-orange": { "role": "primary", "displayName": "Kitchen Orange", "canonical": "oklch(75.3% 0.172 55.7)", "source": "SwiftUI Color.orange (iOS 26), set via .tint(.orange) in RootTabView; sampled #FE8C27 on week-light.png", "tonalRamp": ["#2A0000", "#5A0000", "#7F1000", "#A53A00", "#CC5F00", "#F48315", "#FFA84A", "#FFD99F"] },
+      "tint-orange-dark": { "role": "primary", "displayName": "Kitchen Orange (dark)", "canonical": "oklch(76.2% 0.167 57.1)", "source": "Color.orange dark appearance; sampled #FF902C on week-dark.png", "tonalRamp": ["#2A0000", "#580000", "#7D1600", "#A33D00", "#C96100", "#F1851B", "#FFAA4D", "#FFDA9D"] },
+      "icon-orange": { "role": "primary", "displayName": "Icon Orange", "canonical": "oklch(76.5% 0.175 62.6)", "source": "AppIcon icon-1024.png field, sampled #FF9500", "tonalRamp": ["#280000", "#580000", "#7D1800", "#A23F00", "#C86300", "#F08700", "#FFAC35", "#FFDD98"] },
+      "grouped-background": { "role": "neutral", "displayName": "Grouped Background", "canonical": "oklch(96.3% 0.007 286.3)", "source": "systemGroupedBackground", "tonalRamp": ["#0B0B0E", "#252528", "#414145", "#616165", "#828286", "#A4A4A9", "#C8C8CD", "#EEEEF3"] },
+      "grouped-background-dark": { "role": "neutral", "displayName": "Grouped Background (dark)", "source": "systemGroupedBackground dark" },
+      "row-surface": { "role": "neutral", "displayName": "Row Surface", "source": "secondarySystemGroupedBackground" },
+      "row-surface-dark": { "role": "neutral", "displayName": "Row Surface (dark)", "canonical": "oklch(22.7% 0.004 286.1)", "source": "secondarySystemGroupedBackground dark; sampled #1C1C1E", "tonalRamp": ["#0B0B0D", "#252527", "#424244", "#616163", "#828284", "#A5A5A7", "#C9C9CB", "#EEEEF1"] },
+      "label": { "role": "neutral", "displayName": "Label", "source": "label / .primary" },
+      "label-dark": { "role": "neutral", "displayName": "Label (dark)", "source": "label dark" },
+      "secondary-label": { "role": "neutral", "displayName": "Secondary Label", "source": "secondaryLabel / .secondary" },
+      "secondary-label-dark": { "role": "neutral", "displayName": "Secondary Label (dark)", "source": "secondaryLabel dark" },
+      "tertiary-label": { "role": "neutral", "displayName": "Tertiary Label", "source": "tertiaryLabel / .tertiary" },
+      "tertiary-label-dark": { "role": "neutral", "displayName": "Tertiary Label (dark)", "source": "tertiaryLabel dark" },
+      "quaternary-fill": { "role": "neutral", "displayName": "Quaternary Fill", "source": ".quaternary hierarchical style as background (ChipToggle); approximate" },
+      "quaternary-fill-dark": { "role": "neutral", "displayName": "Quaternary Fill (dark)", "source": ".quaternary dark; approximate" },
+      "category-poultry": { "role": "secondary", "displayName": "Poultry Brown", "canonical": "oklch(63.3% 0.073 57.2)", "source": "Color.brown at 0.85 opacity (Enums.swift)", "tonalRamp": ["#1F0000", "#3E1900", "#5F3716", "#815636", "#A47757", "#C89A78", "#EEBE9B", "#FFE3BF"] },
+      "category-beef": { "role": "secondary", "displayName": "Beef Red", "canonical": "oklch(65.3% 0.233 25.7)", "source": "Color.red at 0.85 opacity; red also carries errors and exclusions", "tonalRamp": ["#2D0000", "#700000", "#9A0000", "#C40000", "#EE202D", "#FF5452", "#FF7D75", "#FFCFC5"] },
+      "category-pork": { "role": "secondary", "displayName": "Pork Pink", "canonical": "oklch(65.0% 0.238 17.9)", "source": "Color.pink at 0.85 opacity; pink also marks favourites", "tonalRamp": ["#2D0000", "#710000", "#9B0002", "#C50028", "#EF1049", "#FF4D6A", "#FF778D", "#FFCED0"] },
+      "category-fish": { "role": "secondary", "displayName": "Fish Blue", "canonical": "oklch(63.2% 0.202 254.1)", "source": "Color.blue at 0.85 opacity", "tonalRamp": ["#00003B", "#000282", "#0036A8", "#005BCF", "#0080F6", "#36A5FF", "#5FCBFF", "#B6F3FF"] },
+      "category-eggs": { "role": "secondary", "displayName": "Egg Teal", "canonical": "oklch(74.5% 0.127 203.3)", "source": "Color.teal at 0.85 opacity", "tonalRamp": ["#001421", "#003340", "#005360", "#007481", "#0097A4", "#00BBC8", "#45E1EE", "#7EFFFF"] },
+      "category-veg": { "role": "secondary", "displayName": "Veg Green", "canonical": "oklch(73.0% 0.194 147.4)", "source": "Color.green at 0.85 opacity", "tonalRamp": ["#001500", "#003800", "#005900", "#007B00", "#009F31", "#30C456", "#5FEA7B", "#B7FFC0"] },
+      "category-other": { "role": "secondary", "displayName": "Other Gray", "canonical": "oklch(64.8% 0.007 286.2)", "source": "Color.gray at 0.85 opacity; gray also tints the Sauter swipe", "tonalRamp": ["#0B0B0E", "#252529", "#414146", "#616165", "#828287", "#A4A4A9", "#C8C8CE", "#EEEEF3"] },
+      "swipe-eaten-out": { "role": "tertiary", "displayName": "Eaten-Out Indigo", "canonical": "oklch(55.9% 0.230 279.3)", "source": "Color.indigo on the Dehors swipe action (MealRow.swift)", "tonalRamp": ["#0B003B", "#27008F", "#3901B6", "#513DDE", "#6D65FF", "#8D8BFF", "#AEB2FF", "#DDE6FF"] }
+    },
+    "typographyMeta": {
+      "display-large": { "displayName": "Display Large", "purpose": "Cooking stopwatch (Font.display(.largeTitle), tabular, numeric-text transition)." },
+      "display": { "displayName": "Display", "purpose": "Recipe title on detail, week recap title, full-size step countdown (Font.display(.title2))." },
+      "display-small": { "displayName": "Display Small", "purpose": "Recipe title in cooking mode and Live Activity (Font.display(.title3))." },
+      "step": { "displayName": "Step", "purpose": "Current cooking step text, readable at arm's length (.title medium)." },
+      "headline": { "displayName": "Headline", "purpose": "Button labels and compact timers." },
+      "body": { "displayName": "Body", "purpose": "Default list and form text." },
+      "body-emphasis": { "displayName": "Body Emphasis", "purpose": "Meal and recipe row titles, two lines max." },
+      "subheadline": { "displayName": "Subheadline", "purpose": "Row captions joined by ' · ', day headers (semibold), chips (medium), metadata; tabular digits." },
+      "caption": { "displayName": "Caption", "purpose": "'En pause' state and Live Activity status label." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "snappy", "value": "SwiftUI .snappy spring", "purpose": "Default for every state change: slot status, swaps, rerolls, list filtering, disclosure, pause." },
+      { "name": "snappy-chip", "value": "SwiftUI .snappy(duration: 0.2)", "purpose": "Chip selection." },
+      { "name": "symbol-replace", "value": ".contentTransition(.symbolEffect(.replace))", "purpose": "Completion circles, pause/play glyph." },
+      { "name": "numeric-text", "value": ".contentTransition(.numericText()) / countsDown: true", "purpose": "Stopwatch and step timers." },
+      { "name": "bounce", "value": ".symbolEffect(.bounce)", "purpose": "Rating star, favourite heart, finished timer (repeat 3)." },
+      { "name": "haptics", "value": ".sensoryFeedback(.selection | .success | .warning | .impact)", "purpose": "Paired with every state change: selection on toggles and steps, success on done, warning on timer end, impact on pause." }
+    ],
+    "breakpoints": [],
+    "platform": "ios",
+    "liquidGlass": "Native only: TabView (minimize on scroll down), toolbars, .buttonStyle(.glass), .buttonStyle(.glassProminent). No custom glassEffect."
+  },
+  "components": [
+    {
+      "name": "Prominent Glass Button",
+      "kind": "button",
+      "refersTo": "button-prominent",
+      "description": "The one primary action per context: Cuisiner ce soir, Étape suivante, Terminer, Préparer la semaine.",
+      "html": "<button class=\"ds-btn-prominent\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M12 2c1 3 4 5 4 9a4 4 0 0 1-8 0c0-2 1-3 1-5 2 1 3 3 3 3s1-4 0-7z\"/></svg>Cuisiner ce soir</button>",
+      "css": ".ds-btn-prominent { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; padding: 0 20px; border: none; border-radius: 9999px; background: #FF8D28; color: #fff; font: 600 17px/1.2 -apple-system, system-ui, sans-serif; box-shadow: inset 0 1px 0 rgba(255,255,255,0.35); cursor: pointer; transition: transform 0.15s, filter 0.15s; } .ds-btn-prominent:hover { filter: brightness(1.05); } .ds-btn-prominent:active { transform: scale(0.97); } .ds-btn-prominent:focus-visible { outline: 3px solid rgba(255,141,40,0.5); outline-offset: 2px; }"
+    },
+    {
+      "name": "Glass Circle Button",
+      "kind": "button",
+      "refersTo": "button-glass-circle",
+      "description": "Icon-only native glass button: pause/play (56pt), previous step (52pt), stop timer.",
+      "html": "<button class=\"ds-btn-glass\" aria-label=\"Pause\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"currentColor\" aria-hidden=\"true\"><rect x=\"6\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/><rect x=\"14\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/></svg></button>",
+      "css": ".ds-btn-glass { width: 56px; height: 56px; display: grid; place-items: center; border-radius: 50%; border: 1px solid rgba(255,255,255,0.5); background: rgba(255,255,255,0.6); backdrop-filter: blur(12px); color: #FF8D28; cursor: pointer; transition: transform 0.15s; } .ds-btn-glass:active { transform: scale(0.94); } .ds-btn-glass:focus-visible { outline: 3px solid rgba(255,141,40,0.5); outline-offset: 2px; }"
+    },
+    {
+      "name": "Chip Toggle",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Selectable capsule for filters and quick choices, wrapped by FlowLayout at 8pt.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip ds-chip-on\" aria-pressed=\"true\">Volaille</button><button class=\"ds-chip\" aria-pressed=\"false\">Poisson</button><button class=\"ds-chip\" aria-pressed=\"false\">Végé</button></div>",
+      "css": ".ds-chips { display: flex; flex-wrap: wrap; gap: 8px; } .ds-chip { min-height: 36px; padding: 0 14px; border: none; border-radius: 9999px; background: rgba(116,116,128,0.12); color: #000; font: 500 15px/1 -apple-system, system-ui, sans-serif; cursor: pointer; transition: background 0.2s, color 0.2s; } .ds-chip:hover { background: rgba(116,116,128,0.2); } .ds-chip-on, .ds-chip-on:hover { background: #FF8D28; color: #fff; } .ds-chip:focus-visible { outline: 3px solid rgba(255,141,40,0.5); outline-offset: 2px; }"
+    },
+    {
+      "name": "Meal Row",
+      "kind": "card",
+      "refersTo": "list-row",
+      "description": "Inset grouped row with a Reminders-style completion circle, two-line title and tabular caption.",
+      "html": "<div class=\"ds-section\"><div class=\"ds-row\"><button class=\"ds-circle\" aria-label=\"Prévu\"></button><div class=\"ds-row-text\"><div class=\"ds-row-title\">Dinde, quinoa et courgettes</div><div class=\"ds-row-caption\">Soir · à deux · 25 min</div></div></div><div class=\"ds-row\"><button class=\"ds-circle ds-circle-done\" aria-label=\"Fait\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#fff\" stroke-width=\"3.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12l5 5 9-10\"/></svg></button><div class=\"ds-row-text\"><div class=\"ds-row-title ds-done\">Omelette aux épinards et feta</div><div class=\"ds-row-caption\">Midi · seul, pour 2 · 10 min</div></div></div></div>",
+      "css": ".ds-section { background: #F2F2F7; padding: 16px; } .ds-row { display: flex; align-items: center; gap: 12px; background: #fff; padding: 11px 16px; font-family: -apple-system, system-ui, sans-serif; } .ds-row:first-child { border-radius: 26px 26px 0 0; } .ds-row:last-child { border-radius: 0 0 26px 26px; } .ds-row + .ds-row { border-top: 0.5px solid rgba(60,60,67,0.29); } .ds-circle { width: 26px; height: 26px; flex: none; border-radius: 50%; border: 2px solid rgba(60,60,67,0.3); background: none; display: grid; place-items: center; cursor: pointer; transition: background 0.2s, border-color 0.2s; } .ds-circle:hover { border-color: #FF8D28; } .ds-circle-done { background: #FF8D28; border-color: #FF8D28; } .ds-row-title { font: 500 17px/1.3 inherit; color: #000; } .ds-done { color: rgba(60,60,67,0.6); text-decoration: line-through; } .ds-row-caption { font: 400 15px/1.3 inherit; color: rgba(60,60,67,0.6); font-variant-numeric: tabular-nums; } .ds-circle:focus-visible { outline: 3px solid rgba(255,141,40,0.5); outline-offset: 2px; }"
+    },
+    {
+      "name": "Recipe Thumbnail",
+      "kind": "custom",
+      "refersTo": "recipe-thumbnail",
+      "description": "Photo at 52pt with 24% continuous corners, or the category SF Symbol in its muted colour.",
+      "html": "<div class=\"ds-thumb\" aria-hidden=\"true\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M12 3c-3 4-5 7-5 11a5 5 0 0 0 10 0c0-4-2-7-5-11z\"/><path d=\"M12 10v10\"/></svg></div>",
+      "css": ".ds-thumb { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 12.5px; color: #34C759; opacity: 0.85; }"
+    },
+    {
+      "name": "Parallel Hint",
+      "kind": "custom",
+      "refersTo": "parallel-hint",
+      "description": "Inline cooking hint for a step that can run in parallel; the only tinted surface.",
+      "html": "<div class=\"ds-hint\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M6 3v8a4 4 0 0 0 4 4h8M18 15l-3-3M18 15l-3 3M6 11V21\"/></svg>Pendant la cuisson, lave les brocolis.</div>",
+      "css": ".ds-hint { display: flex; gap: 8px; align-items: center; padding: 12px; border-radius: 14px; background: rgba(255,141,40,0.12); color: #FF8D28; font: 500 16px/1.3 -apple-system, system-ui, sans-serif; }"
+    },
+    {
+      "name": "Stopwatch",
+      "kind": "custom",
+      "refersTo": "display-large",
+      "description": "Cooking clock in SF Pro Expanded bold, tabular digits, dimmed to 40% when paused.",
+      "html": "<div class=\"ds-clock\">12:04</div>",
+      "css": ".ds-clock { font: 700 34px/1.1 -apple-system, system-ui, sans-serif; font-stretch: expanded; font-variant-numeric: tabular-nums; color: #000; transition: opacity 0.2s; } .ds-clock:hover { opacity: 0.4; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Kitchen Drawer App",
+    "overview": "RepasJOLY looks like an app Apple might have shipped next to Reminders and Fitness: inset grouped lists on the system grouped background, semantic labels, native Liquid Glass only where the system puts it (tab bar, toolbars, glass buttons). The content is the specificity: this week's meals, today's next dish, aisles of a shopping list. Nothing is drawn that the platform already draws.\n\nOne tint, system orange, carries every action and every completed state. Recipe categories speak quietly through small SF Symbols in muted system colours. The only typographic flourish is SF Pro Expanded bold, reserved for recipe titles and the running clock; every duration is set in monospaced digits so numbers never jitter. Motion is small and physical: `.snappy` springs, symbol replace transitions, numeric-text counters, and haptics on every state change.\n\nThe world rejects custom chrome, editorial serif display type and card-stack theatrics (PRODUCT.md brand commitment). Light and dark modes are both first-class and resolve entirely through system semantic colours.",
+    "keyCharacteristics": [
+      "Inset grouped `List` everywhere; sections are the cards.",
+      "One tint (system orange) for actions and done states only.",
+      "SF Pro only; Expanded bold for display moments; tabular digits for all times and counts.",
+      "Liquid Glass only through native components.",
+      "Reminders-style completion circles, haptics, `.snappy` motion."
+    ],
+    "rules": [
+      { "name": "The Tint Is a Verb Rule", "body": "Orange means \"do this\" or \"done\". If an element is neither an action nor a completed state, it is not orange.", "section": "colors" },
+      { "name": "The Muted Category Rule", "body": "A category is a small SF Symbol in its system colour at 85% opacity. Never a colour band, fill, stripe or tinted row.", "section": "colors" },
+      { "name": "The Expanded Moment Rule", "body": "SF Pro Expanded bold appears only on a recipe title being viewed or cooked, a recap title, and running clocks. Never on navigation titles, section headers or buttons.", "section": "typography" },
+      { "name": "The Steady Clock Rule", "body": "Every duration, count and quantity uses `.monospacedDigit()`; live counters add `.contentTransition(.numericText())` (counting down for step timers).", "section": "typography" },
+      { "name": "The Glass Belongs to the System Rule", "body": "Liquid Glass enters only through `.buttonStyle(.glass)`, `.buttonStyle(.glassProminent)`, the tab bar and toolbars. No custom `glassEffect` panels.", "section": "elevation" }
+    ],
+    "dos": [
+      "**Do** set orange once with `.tint(.orange)` and reach it through `.tint` on actions and done states.",
+      "**Do** build every screen from inset grouped `List` sections on system semantic colours, in both light and dark.",
+      "**Do** use `Font.display(_:)` for recipe titles in detail, cooking and recap, and for running clocks.",
+      "**Do** apply `.monospacedDigit()` to every duration, count and quantity, with numeric-text transitions on live counters.",
+      "**Do** mark categories with their SF Symbol in system colour at 85% opacity.",
+      "**Do** animate state with `.snappy`, symbol replace and bounce effects, and pair each state change with a haptic.",
+      "**Do** keep touch targets at least 44pt tall."
+    ],
+    "donts": [
+      "**Don't** use serif or non-SF display type (PRODUCT.md brand commitment).",
+      "**Don't** draw custom chrome, card stacks or custom glass panels; Liquid Glass comes only from native components.",
+      "**Don't** colour a category as a band, fill or row tint, and don't make a category mark orange.",
+      "**Don't** use orange for decoration, headers or static information.",
+      "**Don't** author shadows; depth is the grouped background and system glass."
+    ]
+  }
+}

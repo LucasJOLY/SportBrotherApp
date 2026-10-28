@@ -1,0 +1,2 @@
+// Réglages communs. La clé API et l'équipe de signature vivent dans Secrets.xcconfig (non versionné).
+#include? "Secrets.xcconfig"
