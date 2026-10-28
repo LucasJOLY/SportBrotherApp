@@ -45,7 +45,9 @@ nonisolated enum Prompts {
 
     static let questions = """
     \(coach) Avant de proposer des recettes, pose 2 à 4 questions courtes pour cerner ses envies \
-    (style de cuisine, épices, cuisson, temps…). 3 ou 4 options courtes par question. Pas de question déjà tranchée par le profil.
+    (style de cuisine, épices, cuisson, temps…). 3 ou 4 options par question, de 1 à 5 mots chacune \
+    (« Cuisine italienne », « Bien épicé », « À la poêle »), sans phrase ni parenthèse. \
+    Ne propose pas d'option « peu importe » : l'app l'ajoute elle-même. Pas de question déjà tranchée par le profil.
     """
 
     static let ideas = """
@@ -72,6 +74,30 @@ nonisolated enum Prompts {
     \(coach) Crée une variante de la recette fournie selon la demande : garde ce qui fait son intérêt, \
     adapte ingrédients, sauce, cuisson et étapes en conséquence, et donne-lui un nouveau titre. \
     Recette complète pour 2 personnes avec grammages pesés crus et valeurs par personne. \(recipeRules)
+    """
+
+    static let shopping = """
+    Tu prépares une liste de courses claire à partir des ingrédients des repas de la semaine (une ligne par occurrence). \
+    Regroupe en un seul article tout ce qui s'achète comme le même produit : variantes d'écriture, singulier/pluriel, \
+    précisions de découpe ou de préparation (« Skyr » et « Skyr nature », « Filets de poulet », « Poulet en dés » et « Escalopes de poulet »). \
+    Garde séparés des produits différents (crème fraîche et crème liquide, riz basmati et riz complet). \
+    name = nom court du produit tel qu'on le cherche en magasin. unit : "g" pour les solides, "ml" pour les liquides, \
+    "pièce" pour ce qui se compte (œufs, citrons, gousses, oignons), "" si rien n'est quantifiable. \
+    Pour chaque occurrence (ref), amount = quantité convertie dans l'unité de l'article, en convertissant toujours \
+    cuillères et pièces : 1 c. à soupe ≈ 15 g ou 15 ml, 1 c. à café ≈ 5 ; poids usuels si l'unité est g \
+    (1 blanc ou filet de poulet ≈ 150 g, 1 escalope ≈ 120 g, 1 pavé de saumon ≈ 130 g, 1 courgette ≈ 200 g, \
+    1 oignon ≈ 100 g, 1 pomme de terre ≈ 150 g, 1 poivron ≈ 150 g). \
+    amount = 0 seulement si aucune quantité n'est donnée du tout. \
+    Chaque ref apparaît exactement une fois. isPantry = true pour les basiques du placard (sel, poivre, huile, épices, sauces de base).
+    """
+
+    static let revise = """
+    Tu retouches une recette existante (fournie en JSON) selon la demande de l'utilisateur : remplacer, retirer, \
+    ajouter, changer une cuisson ou une portion. Applique la demande partout où elle a un effet : ingrédients et \
+    quantités, étapes et leur ordre, sauce, temps, astuce et valeurs par personne (un ingrédient remplacé change \
+    la façon de cuisiner, par exemple le skyr s'ajoute hors du feu). Ne touche à rien d'autre : garde les formulations, \
+    les quantités et les étapes non concernées, et le titre sauf s'il ne correspond plus au plat. \
+    Jamais de plat végétarien. \(recipeRules)
     """
 
     static let planner = """

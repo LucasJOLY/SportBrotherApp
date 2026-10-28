@@ -14,6 +14,7 @@ struct GenerateRecipeView: View {
     @State private var ideas: [RecipeIdea] = []
     @State private var shownIdeas: [String] = []
     @State private var loading: Step?
+    @State private var loadingIdea: String?
     @State private var error: String?
     @State private var route: DraftRoute?
 
@@ -115,18 +116,26 @@ struct GenerateRecipeView: View {
         }
     }
 
+    /// « Peu importe » est ajouté localement et sélectionné tant qu'aucune réponse n'est choisie : rien n'est imposé.
     private func questionSection(_ question: TasteQuestion) -> some View {
         Section(question.question) {
             FlowLayout {
+                ChipToggle(title: "Peu importe", isOn: answers[question.question] == nil) {
+                    select(nil, for: question)
+                }
                 ForEach(question.options, id: \.self) { option in
                     ChipToggle(title: option, isOn: answers[question.question] == option) {
-                        answers[question.question] = answers[question.question] == option ? nil : option
-                        if !ideas.isEmpty { ideas = [] }
+                        select(answers[question.question] == option ? nil : option, for: question)
                     }
                 }
             }
             .padding(.vertical, 4)
         }
+    }
+
+    private func select(_ option: String?, for question: TasteQuestion) {
+        answers[question.question] = option
+        if !ideas.isEmpty { ideas = [] }
     }
 
     private var ideasSection: some View {
@@ -135,22 +144,41 @@ struct GenerateRecipeView: View {
                 Button {
                     Task { await loadDetail(idea) }
                 } label: {
-                    HStack {
+                    HStack(spacing: 12) {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text(idea.title).font(.body.weight(.semibold)).foregroundStyle(.primary)
-                            Text(idea.pitch).font(.subheadline).foregroundStyle(.secondary)
+                            Text(idea.title)
+                                .font(.body.weight(.semibold))
+                                .foregroundStyle(.primary)
+                            Text(idea.pitch)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
                         }
-                        Spacer()
-                        if loading == .detail {
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        if loadingIdea == idea.title {
                             ProgressView()
                         } else {
-                            Image(systemName: "chevron.right").foregroundStyle(.tertiary)
+                            Image(systemName: "chevron.right")
+                                .font(.footnote.weight(.semibold))
+                                .foregroundStyle(.tertiary)
                         }
                     }
+                    .padding(.vertical, 4)
+                    .contentShape(.rect)
                 }
+                .buttonStyle(.plain)
                 .disabled(loading != nil)
+                .opacity(loading != nil && loadingIdea != idea.title ? 0.5 : 1)
             }
-            actionRow("Autres idées", step: .ideas, prominent: false) { await loadIdeas() }
+            Button {
+                Task { await loadIdeas() }
+            } label: {
+                HStack {
+                    Label("Autres idées", systemImage: "arrow.clockwise")
+                    Spacer()
+                    if loading == .ideas { ProgressView() }
+                }
+            }
+            .disabled(loading != nil)
         } header: {
             Text("Idées")
         } footer: {
@@ -205,6 +233,8 @@ struct GenerateRecipeView: View {
     }
 
     private func loadDetail(_ idea: RecipeIdea) async {
+        loadingIdea = idea.title
+        defer { loadingIdea = nil }
         await run(.detail) {
             let draft = try await service.detail(of: idea, ingredients: ingredients, request: request, answers: answers)
             route = DraftRoute(form: RecipeForm(draft: draft, source: .ai, rawInput: request))

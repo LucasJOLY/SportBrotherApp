@@ -31,6 +31,23 @@ nonisolated struct RecipeDraft: Codable, Sendable {
     var carbs: Int
     var fat: Int
 
+    /// Recette en cours d'édition, envoyée telle quelle à l'IA pour une retouche fidèle.
+    init(form: RecipeForm) {
+        title = form.title
+        summary = form.summary
+        category = form.category
+        estimatedMinutes = form.estimatedMinutes
+        ovenTemperature = form.ovenTemperature
+        ingredients = form.ingredients.map {
+            DraftIngredient(name: $0.name, detail: $0.detail, grams: $0.grams, aisle: $0.aisle, isPantry: $0.isPantry, group: $0.group)
+        }
+        steps = form.steps.map {
+            DraftStep(title: $0.title, text: $0.text, durationMinutes: $0.durationMinutes, parallelHint: $0.parallelHint, passive: $0.isPassive)
+        }
+        tip = form.tip
+        (kcal, protein, carbs, fat) = (form.kcal, form.protein, form.carbs, form.fat)
+    }
+
     func makeRecipe(source: RecipeSource, rawInput: String) -> Recipe {
         let recipe = Recipe(
             title: title,
@@ -66,6 +83,21 @@ nonisolated struct RecipeIdea: Codable, Hashable, Sendable {
 
 nonisolated struct QuestionsPayload: Codable, Sendable { var questions: [TasteQuestion] }
 nonisolated struct IdeasPayload: Codable, Sendable { var ideas: [RecipeIdea] }
+nonisolated struct ShoppingPayload: Codable, Sendable {
+    struct Item: Codable, Sendable {
+        struct Part: Codable, Sendable {
+            var ref: Int
+            var amount: Double
+        }
+        var name: String
+        var aisle: Aisle
+        var unit: String
+        var isPantry: Bool
+        var parts: [Part]
+    }
+    var items: [Item]
+}
+
 nonisolated struct PlanPayload: Codable, Sendable {
     struct Assignment: Codable, Sendable {
         var slot: Int
@@ -117,4 +149,11 @@ enum AISchemas {
     static let questions = object(["questions": array(object(["question": string, "options": array(string)]))])
     static let ideas = object(["ideas": array(object(["title": string, "pitch": string]))])
     static let plan = object(["assignments": array(object(["slot": integer, "recipe": integer]))])
+    static let shopping = object(["items": array(object([
+        "name": string,
+        "aisle": enumeration(Aisle.allCases.map(\.rawValue)),
+        "unit": enumeration(["g", "ml", "pièce", ""]),
+        "isPantry": boolean,
+        "parts": array(object(["ref": integer, "amount": number])),
+    ]))])
 }

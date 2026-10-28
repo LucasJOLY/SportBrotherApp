@@ -67,9 +67,19 @@ struct RecipeEditorView: View {
 
     @State private var photoItem: PhotosPickerItem?
     @State private var showCamera = false
+    @State private var revisionRequest = ""
+    @State private var isRevising = false
+    @State private var revisionError: String?
+    /// Versions précédentes, pour annuler une retouche.
+    @State private var history: [RecipeForm] = []
+    @FocusState private var revisionFocused: Bool
 
     var body: some View {
         Form {
+            if ClaudeClient.configured != nil {
+                revisionSection
+            }
+
             Section {
                 TextField("Nom de la recette", text: $form.title, axis: .vertical)
                     .font(.headline)
@@ -129,6 +139,68 @@ struct RecipeEditorView: View {
         }
     }
 
+    /// Retouche en langage libre : « du skyr au lieu de la crème liquide, sans oignon ».
+    private var revisionSection: some View {
+        Section {
+            TextField("Ex. du skyr au lieu de la crème liquide, sans oignon", text: $revisionRequest, axis: .vertical)
+                .focused($revisionFocused)
+                .submitLabel(.go)
+                .onSubmit { Task { await revise() } }
+            HStack {
+                Button {
+                    Task { await revise() }
+                } label: {
+                    HStack(spacing: 8) {
+                        if isRevising {
+                            ProgressView()
+                        } else {
+                            Image(systemName: "sparkles")
+                        }
+                        Text(isRevising ? "Retouche en cours…" : "Appliquer")
+                    }
+                    .font(.headline)
+                }
+                .disabled(isRevising || revisionRequest.trimmingCharacters(in: .whitespaces).isEmpty)
+                Spacer()
+                if !history.isEmpty && !isRevising {
+                    Button("Annuler la retouche", systemImage: "arrow.uturn.backward") {
+                        withAnimation { form = history.removeLast() }
+                    }
+                    .labelStyle(.iconOnly)
+                    .accessibilityLabel("Annuler la retouche")
+                }
+            }
+            .buttonStyle(.borderless)
+        } header: {
+            Text("Retoucher avec l'IA")
+        } footer: {
+            if let revisionError {
+                Text(revisionError).foregroundStyle(.red)
+            } else {
+                Text("Remplace, retire ou ajoute ce que tu veux : ingrédients, étapes et valeurs sont adaptés partout.")
+            }
+        }
+    }
+
+    private func revise() async {
+        let request = revisionRequest.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !request.isEmpty, !isRevising else { return }
+        isRevising = true
+        revisionError = nil
+        revisionFocused = false
+        do {
+            let draft = try await AIService(context: context).revise(RecipeDraft(form: form), request: request)
+            var revised = RecipeForm(draft: draft, source: form.source, rawInput: form.rawInput)
+            revised.photo = form.photo
+            history.append(form)
+            withAnimation { form = revised }
+            revisionRequest = ""
+        } catch {
+            revisionError = error.localizedDescription
+        }
+        isRevising = false
+    }
+
     private var photoSection: some View {
         Section("Photo") {
             if let data = form.photo, let image = UIImage(data: data) {
@@ -167,17 +239,48 @@ struct RecipeEditorView: View {
         }
     }
 
+    /// Une carte par étape : chaque réglage sur sa propre ligne.
+    @ViewBuilder
     private var stepsSection: some View {
-        Section("Étapes") {
-            ForEach($form.steps) { $step in
-                StepEditorRow(step: $step, number: (form.steps.firstIndex { $0.id == step.id } ?? 0) + 1)
+        ForEach($form.steps) { $step in
+            let index = form.steps.firstIndex { $0.id == step.id } ?? 0
+            Section {
+                StepEditor(step: $step)
+            } header: {
+                HStack {
+                    Text("Étape \(index + 1)")
+                    Spacer()
+                    Menu {
+                        Button("Monter", systemImage: "arrow.up") { moveStep(index, by: -1) }
+                            .disabled(index == 0)
+                        Button("Descendre", systemImage: "arrow.down") { moveStep(index, by: 1) }
+                            .disabled(index == form.steps.count - 1)
+                        Button("Supprimer l'étape", systemImage: "trash", role: .destructive) {
+                            let id = step.id
+                            withAnimation { form.steps.removeAll { $0.id == id } }
+                        }
+                    } label: {
+                        Image(systemName: "ellipsis.circle")
+                            .frame(minWidth: 44, minHeight: 32)
+                            .contentShape(.rect)
+                    }
+                    .accessibilityLabel("Actions pour l'étape \(index + 1)")
+                }
             }
-            .onDelete { form.steps.remove(atOffsets: $0) }
-            .onMove { form.steps.move(fromOffsets: $0, toOffset: $1) }
+        }
+        Section {
             Button("Ajouter une étape", systemImage: "plus") {
                 withAnimation { form.steps.append(RecipeStep(text: "")) }
             }
+        } header: {
+            if form.steps.isEmpty { Text("Étapes") }
         }
+    }
+
+    private func moveStep(_ index: Int, by offset: Int) {
+        let target = index + offset
+        guard form.steps.indices.contains(target) else { return }
+        withAnimation { form.steps.swapAt(index, target) }
     }
 
     private func save() {
@@ -234,31 +337,30 @@ private struct IngredientEditorRow: View {
     }
 }
 
-private struct StepEditorRow: View {
+private struct StepEditor: View {
     @Binding var step: RecipeStep
-    let number: Int
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text("\(number)").font(.headline).foregroundStyle(.tint).monospacedDigit()
-                TextField("Titre (facultatif)", text: $step.title)
-                    .font(.headline)
-            }
-            TextField("Décris l'étape", text: $step.text, axis: .vertical)
-            Stepper(value: $step.durationMinutes, in: 0...240) {
-                Label(step.durationMinutes == 0 ? "Sans minuteur" : Format.minutes(step.durationMinutes), systemImage: "timer")
+        TextField("Titre (facultatif)", text: $step.title)
+            .font(.headline)
+        TextField("Décris l'étape", text: $step.text, axis: .vertical)
+            .lineLimit(2...)
+        Stepper(value: $step.durationMinutes, in: 0...240) {
+            LabeledContent {
+                Text(step.durationMinutes == 0 ? "Aucun" : Format.minutes(step.durationMinutes))
                     .monospacedDigit()
+                    .contentTransition(.numericText())
+            } label: {
+                Label("Minuteur", systemImage: "timer")
             }
-            .font(.subheadline)
-            Toggle(isOn: $step.isPassive) {
-                Label("Tourne tout seul", systemImage: "arrow.triangle.branch")
-            }
-            .font(.subheadline)
-            TextField("Pendant ce temps… (facultatif)", text: $step.parallelHint, axis: .vertical)
-                .font(.subheadline)
         }
-        .padding(.vertical, 4)
+        Toggle(isOn: $step.isPassive.animation(.snappy)) {
+            Label("Tourne tout seul", systemImage: "arrow.triangle.branch")
+        }
+        if step.isPassive {
+            TextField("Pendant ce temps… (facultatif)", text: $step.parallelHint, axis: .vertical)
+                .foregroundStyle(.secondary)
+        }
     }
 }
 

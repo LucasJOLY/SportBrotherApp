@@ -7,6 +7,11 @@ enum SampleData {
         let recipes = makeRecipes()
         recipes.forEach(context.insert)
         ["Poulet", "Brocolis", "Riz basmati"].forEach { context.insert(StockItem(name: $0)) }
+        let profile = context.profile()
+        profile.tasteLikes = ["Saumon fumé en fin de cuisson, ajouté hors du feu pour garder le fondant", "Pâtes sèches (type tagliatelle ou penne)",
+                              "Cuisine italienne", "Moins de 30 minutes", "Herbes de Provence et ail"]
+        profile.aiInputTokens = 1_234_567
+        profile.aiOutputTokens = 2_345_678
         recipes[0].rating = 5
         recipes[0].isFavorite = true
         recipes[2].rating = 4

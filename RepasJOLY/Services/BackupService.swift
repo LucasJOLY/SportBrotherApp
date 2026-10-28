@@ -77,7 +77,9 @@ enum BackupService {
         encoder.dateEncodingStrategy = .iso8601
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]
         var full = backup
-        full.stock = try context.fetch(FetchDescriptor<StockItem>()).map(\.name)
+        full.stock = try context.fetch(FetchDescriptor<StockItem>()).map { item in
+            item.amount > 0 ? "\(ShoppingPlanner.format(item.amount, unit: item.unit).replacingOccurrences(of: " ", with: "")) \(item.name)" : item.name
+        }
         return try encoder.encode(full)
     }
 
@@ -94,7 +96,10 @@ enum BackupService {
         try context.delete(model: ShoppingMark.self)
         try context.delete(model: ManualShoppingItem.self)
         try context.delete(model: StockItem.self)
-        for name in backup.stock ?? [] { context.insert(StockItem(name: name)) }
+        for text in backup.stock ?? [] {
+            let entry = StockEntry.parse(text)
+            context.insert(StockItem(name: entry.name, amount: entry.amount, unit: entry.unit))
+        }
 
         var recipes: [UUID: Recipe] = [:]
         for item in backup.recipes {

@@ -13,17 +13,18 @@ struct StockView: View {
         NavigationStack {
             List {
                 Section {
-                    TextField("Ajouter : poulet, courgettes, œufs…", text: $field)
+                    TextField("500 g poulet, 6 œufs, courgettes…", text: $field)
                         .focused($focused)
                         .submitLabel(.done)
                         .onSubmit(add)
                 } footer: {
-                    Text("Ces aliments sont retirés des courses, privilégiés au planning de la semaine et proposés en premier quand tu crées une recette.")
+                    Text("Avec une quantité (« 500 g poulet »), les courses calculent ce qu'il reste à acheter. Sans quantité, l'aliment est considéré comme déjà là. Le frigo est aussi privilégié au planning et à la création de recettes.")
                 }
                 if !items.isEmpty {
                     Section("Au frigo") {
                         ForEach(items) { item in
-                            Text(item.name)
+                            Text(item.label)
+                                .monospacedDigit()
                         }
                         .onDelete { offsets in
                             withAnimation { offsets.map { items[$0] }.forEach(context.delete) }
@@ -52,15 +53,20 @@ struct StockView: View {
         .presentationDetents([.medium, .large])
     }
 
-    /// « 2 escalopes, courgettes » ajoute deux éléments.
+    /// « 500 g poulet, courgettes » ajoute deux éléments ; un aliment déjà présent est mis à jour.
     private func add() {
-        let names = field.split(separator: ",")
-            .map { ShoppingListBuilder.displayName(String($0)) }
-            .filter { !$0.isEmpty }
-        let existing = StockMatcher.keys(items.map(\.name))
+        let entries = field.split(separator: ",")
+            .map { StockEntry.parse(String($0)) }
+            .filter { !$0.name.isEmpty }
         withAnimation(.snappy) {
-            for name in names where !existing.contains(ShoppingListBuilder.normalizedKey(name)) {
-                context.insert(StockItem(name: name))
+            for entry in entries {
+                let key = ShoppingListBuilder.normalizedKey(entry.name)
+                if let existing = items.first(where: { ShoppingListBuilder.normalizedKey($0.name) == key }) {
+                    existing.amount = entry.amount
+                    existing.unit = entry.unit
+                } else {
+                    context.insert(StockItem(name: entry.name, amount: entry.amount, unit: entry.unit))
+                }
             }
         }
         field = ""

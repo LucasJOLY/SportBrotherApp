@@ -5,7 +5,7 @@ import SwiftUI
 enum AppStore {
     static let schema = Schema([
         Recipe.self, WeekPlan.self, MealSlot.self, CookingSession.self,
-        ShoppingMark.self, ManualShoppingItem.self, UserProfile.self, StockItem.self,
+        ShoppingMark.self, ManualShoppingItem.self, UserProfile.self, StockItem.self, ShoppingPlan.self,
     ])
 
     /// `-sampleData` : base en mémoire remplie de données de démonstration.

@@ -14,7 +14,7 @@ struct LiveAITests {
     init() throws {
         let container = try ModelContainer(
             for: Recipe.self, WeekPlan.self, MealSlot.self, CookingSession.self,
-            ShoppingMark.self, ManualShoppingItem.self, UserProfile.self, StockItem.self,
+            ShoppingMark.self, ManualShoppingItem.self, UserProfile.self, StockItem.self, ShoppingPlan.self,
             configurations: ModelConfiguration(isStoredInMemoryOnly: true)
         )
         context = ModelContext(container)
@@ -90,6 +90,43 @@ struct LiveAITests {
         try log("variante", draft)
         try logUsage("variante")
         #expect(draft.title != original.title)
+    }
+
+    @Test func consolidatesShopping() async throws {
+        var sources: [ShoppingSource] = []
+        let extra = [
+            Ingredient(name: "Skyr", grams: 150, aisle: .cremerie),
+            Ingredient(name: "Skyr nature", detail: "3 c. à soupe", aisle: .cremerie),
+            Ingredient(name: "Escalopes de poulet", grams: 300, aisle: .boucherie),
+            Ingredient(name: "Poulet en dés", detail: "2 blancs", aisle: .boucherie),
+            Ingredient(name: "Citron", detail: "1/2 jus", aisle: .fruitsLegumes),
+        ]
+        for (index, recipe) in SampleData.makeRecipes().enumerated() {
+            for (i, ingredient) in recipe.ingredients.enumerated() {
+                sources.append(ShoppingSource(ref: "r\(index)-\(i)", recipeTitle: recipe.title, mealLabel: "Jour \(index)",
+                                              ingredient: ingredient, isRemaining: true))
+            }
+        }
+        for (i, ingredient) in extra.enumerated() {
+            sources.append(ShoppingSource(ref: "x\(i)", recipeTitle: "Bowl skyr", mealLabel: "Samedi midi", ingredient: ingredient, isRemaining: true))
+        }
+        let items = try await AIService(context: context).consolidateShopping(sources)
+        let needs = ShoppingPlanner.needs(items, sources: sources, have: [:])
+        try log("courses regroupées", needs.map { "\($0.item.aisle.label) | \($0.item.name) | \($0.quantityText ?? "-") | \($0.recipes.count) recettes\($0.item.isPantry ? " | placard" : "")" })
+        try logUsage("courses")
+        #expect(needs.filter { $0.item.name.localizedStandardContains("skyr") }.count == 1)
+    }
+
+    @Test func revisesARecipe() async throws {
+        let original = try #require(SampleData.makeRecipes().first)
+        var form = RecipeForm(recipe: original)
+        form.ingredients.append(Ingredient(name: "Crème liquide", detail: "10 cl", aisle: .cremerie, group: "Sauce"))
+        let draft = try await AIService(context: context).revise(RecipeDraft(form: form), request: "du skyr au lieu de la crème liquide, sans noix de cajou")
+        try log("retouche", draft)
+        try logUsage("retouche")
+        let names = draft.ingredients.map { $0.name.lowercased() }
+        #expect(names.contains { $0.contains("skyr") })
+        #expect(!names.contains { $0.contains("crème liquide") || $0.contains("cajou") })
     }
 
     @Test func plansAWeek() async throws {

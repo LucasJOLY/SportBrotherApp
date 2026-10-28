@@ -63,6 +63,20 @@ struct AIService {
         return draft
     }
 
+    /// Retouche libre d'une recette en cours d'édition (« du skyr au lieu de la crème liquide »).
+    func revise(_ recipe: RecipeDraft, request: String) async throws -> RecipeDraft {
+        let encoder = JSONEncoder()
+        encoder.outputFormatting = [.sortedKeys, .withoutEscapingSlashes]
+        let json = String(decoding: try encoder.encode(recipe), as: UTF8.self)
+        let prompt = [context.profile().promptContext, "Recette actuelle :", json, "Demande : \(request)"].joined(separator: "\n")
+        let (draft, usage) = try await client.send(
+            RecipeDraft.self, system: Prompts.revise, prompt: prompt,
+            schema: AISchemas.recipe, maxTokens: 16000, effort: .medium, thinks: true
+        )
+        track(usage)
+        return draft
+    }
+
     /// Variante d'une recette existante (« version airfryer », « avec du bœuf »…).
     func variant(of recipe: Recipe, request: String) async throws -> RecipeDraft {
         let prompt = [context.profile().promptContext, "Recette d'origine :", recipe.promptText, "Variante demandée : \(request)"]
@@ -73,6 +87,30 @@ struct AIService {
         )
         track(usage)
         return draft
+    }
+
+    /// Regroupe les ingrédients de la semaine en une liste de courses propre. Un appel par planning.
+    func consolidateShopping(_ sources: [ShoppingSource]) async throws -> [ConsolidatedItem] {
+        guard !sources.isEmpty else { return [] }
+        let lines = sources.enumerated().map { index, source in
+            let ingredient = source.ingredient
+            return "\(index)|\(ingredient.name)|\(ingredient.grams > 0 ? "\(Int(ingredient.grams)) g" : "-")|\(ingredient.detail.isEmpty ? "-" : ingredient.detail)|\(ingredient.aisle.rawValue)"
+        }
+        let prompt = "Occurrences (ref|ingrédient|grammes|précision|rayon) :\n" + lines.joined(separator: "\n")
+        let (payload, usage) = try await client.send(
+            ShoppingPayload.self, system: Prompts.shopping, prompt: prompt,
+            schema: AISchemas.shopping, maxTokens: 6000
+        )
+        track(usage)
+        let items = payload.items.map { item in
+            ConsolidatedItem(
+                name: ShoppingListBuilder.displayName(item.name), aisle: item.aisle, unit: item.unit, isPantry: item.isPantry,
+                parts: item.parts.compactMap { part in
+                    sources.indices.contains(part.ref) ? .init(ref: sources[part.ref].ref, amount: part.amount) : nil
+                }
+            )
+        }
+        return ShoppingPlanner.repair(items, sources: sources)
     }
 
     /// Planning IA : catalogue compressé en lignes, réponses en indices pour économiser les tokens.

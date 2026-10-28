@@ -64,13 +64,16 @@ struct ChipToggle: View {
             HStack(spacing: 6) {
                 if let symbol { Image(systemName: symbol).imageScale(.small) }
                 Text(title)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.leading)
             }
             .font(.subheadline.weight(.medium))
             .padding(.horizontal, 14)
+            .padding(.vertical, 8)
             .frame(minHeight: 36)
             .foregroundStyle(isOn ? Color.white : Color.primary)
-            .background(isOn ? AnyShapeStyle(.tint) : AnyShapeStyle(.quaternary), in: .capsule)
-            .contentShape(.capsule)
+            .background(isOn ? AnyShapeStyle(.tint) : AnyShapeStyle(.quaternary), in: .rect(cornerRadius: 18, style: .continuous))
+            .contentShape(.rect(cornerRadius: 18, style: .continuous))
         }
         .buttonStyle(.plain)
         .animation(.snappy(duration: 0.2), value: isOn)
@@ -93,11 +96,18 @@ struct FlowLayout: Layout {
         for row in arrange(proposal: ProposedViewSize(width: bounds.width, height: nil), subviews: subviews) {
             var x = bounds.minX
             for index in row.indices {
-                let size = subviews[index].sizeThatFits(.unspecified)
+                let size = fittedSize(subviews[index], maxWidth: bounds.width)
                 subviews[index].place(at: CGPoint(x: x, y: bounds.minY + row.y), proposal: ProposedViewSize(size))
                 x += size.width + spacing
             }
         }
+    }
+
+    /// Taille idéale, mais jamais plus large que la place disponible : un texte long passe à la ligne au lieu de déborder.
+    private func fittedSize(_ subview: LayoutSubview, maxWidth: CGFloat) -> CGSize {
+        let ideal = subview.sizeThatFits(.unspecified)
+        guard maxWidth.isFinite, ideal.width > maxWidth else { return ideal }
+        return subview.sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
     }
 
     private struct Row {
@@ -111,7 +121,7 @@ struct FlowLayout: Layout {
         let maxWidth = proposal.width ?? .infinity
         var rows: [Row] = [Row()]
         for index in subviews.indices {
-            let size = subviews[index].sizeThatFits(.unspecified)
+            let size = fittedSize(subviews[index], maxWidth: maxWidth)
             if !rows[rows.count - 1].indices.isEmpty, rows[rows.count - 1].width + spacing + size.width > maxWidth {
                 let last = rows[rows.count - 1]
                 rows.append(Row(y: last.y + last.height + spacing))
