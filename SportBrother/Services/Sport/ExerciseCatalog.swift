@@ -1,5 +1,4 @@
 import Foundation
-import ImageIO
 import SwiftUI
 import UIKit
 
@@ -9,10 +8,16 @@ struct ExerciseInfo: Identifiable, Hashable {
     var name: String
     var group: MuscleGroup
     var isBodyweight: Bool
+    /// Charge par bras, un côté puis l'autre (curl concentré, rowing un bras…).
+    var isUnilateral: Bool
     var isFavorite: Bool
     var isCustom: Bool
     var isHidden: Bool
     var photoPath: String?
+    /// Démonstrations du catalogue disponibles dans `sport-media` (voir `ExerciseMedia`).
+    var hasAnimation: Bool
+    var photoCount: Int
+    var hasDemo: Bool { hasAnimation || photoCount > 0 }
     var restSeconds: Int
     var repRangeHigh: Int
     /// Ordre « classique d'abord » au sein du groupe.
@@ -28,10 +33,13 @@ nonisolated struct CatalogEntry: Codable, Sendable {
     let group: MuscleGroup
     let equipment: String?
     let isBodyweight: Bool
+    let isUnilateral: Bool?
+    let hasAnimation: Bool?
+    let photoCount: Int?
     let order: Int
 }
 
-/// Catalogue d'exos embarqué (free-exercise-db, domaine public), chargé une fois.
+/// Catalogue d'exos embarqué (free-exercise-db, domaine public) et ses vignettes, chargé une fois.
 enum ExerciseCatalog {
     static let entries: [CatalogEntry] = {
         guard let url = Bundle.main.url(forResource: "catalog", withExtension: "json", subdirectory: "ExerciseCatalog"),
@@ -41,32 +49,6 @@ enum ExerciseCatalog {
 
     private static let byID = Dictionary(uniqueKeysWithValues: entries.map { ($0.id, $0) })
     private static let images = NSCache<NSString, UIImage>()
-    private static let animations: NSCache<NSString, UIImage> = {
-        let cache = NSCache<NSString, UIImage>()
-        cache.countLimit = 12
-        return cache
-    }()
-
-    /// Illustration animée (ExerciseDB), décodée image par image avec ImageIO.
-    static func animation(for id: String) -> UIImage? {
-        if let cached = animations.object(forKey: id as NSString) { return cached }
-        guard let url = Bundle.main.url(forResource: id, withExtension: "gif", subdirectory: "ExerciseCatalog/anim"),
-              let source = CGImageSourceCreateWithURL(url as CFURL, nil) else { return nil }
-        var frames: [UIImage] = []
-        var duration: Double = 0
-        for index in 0..<CGImageSourceGetCount(source) {
-            guard let frame = CGImageSourceCreateImageAtIndex(source, index, nil) else { continue }
-            frames.append(UIImage(cgImage: frame))
-            let properties = CGImageSourceCopyPropertiesAtIndex(source, index, nil) as? [CFString: Any]
-            let gif = properties?[kCGImagePropertyGIFDictionary] as? [CFString: Any]
-            let delay = (gif?[kCGImagePropertyGIFUnclampedDelayTime] as? Double) ?? (gif?[kCGImagePropertyGIFDelayTime] as? Double) ?? 0.1
-            duration += delay > 0.011 ? delay : 0.1
-        }
-        guard frames.count > 1, let image = UIImage.animatedImage(with: frames, duration: duration) else { return nil }
-        animations.setObject(image, forKey: id as NSString)
-        return image
-    }
-
     static func image(for id: String) -> UIImage? {
         if let cached = images.object(forKey: id as NSString) { return cached }
         guard let url = Bundle.main.url(forResource: id, withExtension: "jpg", subdirectory: "ExerciseCatalog/images"),
@@ -88,10 +70,13 @@ enum ExerciseCatalog {
                 name: custom.name ?? "Exo",
                 group: custom.groupRaw.flatMap(MuscleGroup.init(rawValue:)) ?? .dos,
                 isBodyweight: custom.isBodyweight ?? false,
+                isUnilateral: custom.isUnilateral ?? false,
                 isFavorite: custom.isFavorite,
                 isCustom: true,
                 isHidden: custom.isHidden,
                 photoPath: custom.photoPath,
+                hasAnimation: false,
+                photoCount: 0,
                 restSeconds: custom.restSeconds ?? ExerciseInfo.defaultRest,
                 repRangeHigh: custom.repRangeHigh ?? ExerciseInfo.defaultRepRangeHigh,
                 order: -1
@@ -106,10 +91,13 @@ enum ExerciseCatalog {
             name: override?.name ?? entry.name,
             group: entry.group,
             isBodyweight: override?.isBodyweight ?? entry.isBodyweight,
+            isUnilateral: override?.isUnilateral ?? entry.isUnilateral ?? false,
             isFavorite: override?.isFavorite ?? false,
             isCustom: false,
             isHidden: override?.isHidden ?? false,
             photoPath: override?.photoPath,
+            hasAnimation: entry.hasAnimation ?? false,
+            photoCount: entry.photoCount ?? 0,
             restSeconds: override?.restSeconds ?? ExerciseInfo.defaultRest,
             repRangeHigh: override?.repRangeHigh ?? ExerciseInfo.defaultRepRangeHigh,
             order: entry.order

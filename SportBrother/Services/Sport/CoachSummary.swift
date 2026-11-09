@@ -32,6 +32,10 @@ nonisolated enum CoachSummary {
         let sessions: Int
         let first: Double
         let last: Double
+        /// Charges par bras (unilatéral) : le 1RM est celui d'un bras.
+        var perArm = false
+        /// Séries en dégressif sur la période.
+        var dropSets = 0
     }
 
     static func make(
@@ -58,7 +62,9 @@ nonisolated enum CoachSummary {
         if !trends.isEmpty {
             let items = trends.prefix(10).map { trend in
                 let status = abs(trend.last - trend.first) < 1 && trend.sessions >= 3 ? ", plateau" : ""
-                return "\(trend.name) \(Int(trend.first))→\(Int(trend.last)) kg (\(trend.sessions) séances\(status))"
+                let arm = trend.perArm ? " par bras" : ""
+                let drops = trend.dropSets > 0 ? ", \(trend.dropSets) séries en dégressif" : ""
+                return "\(trend.name) \(Int(trend.first))→\(Int(trend.last)) kg\(arm) (\(trend.sessions) séances\(status)\(drops))"
             }
             lines.append("1RM estimé sur 60 jours : \(items.joined(separator: " ; ")).")
         }

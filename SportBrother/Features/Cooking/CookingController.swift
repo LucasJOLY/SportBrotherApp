@@ -46,7 +46,7 @@ final class CookingController {
             rescheduleNotifications()
         } else {
             pausedAt = .now
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            removeStepNotifications()
         }
         updateActivity()
     }
@@ -83,9 +83,14 @@ final class CookingController {
         _ = try? await UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound])
     }
 
+    /// Seulement les minuteurs de la recette : le rappel créatine et le minuteur de repos restent programmés.
+    private func removeStepNotifications() {
+        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: recipe.steps.map(\.id.uuidString))
+    }
+
     private func rescheduleNotifications() {
         let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
+        removeStepNotifications()
         guard !isPaused else { return }
         for step in recipe.steps {
             guard let end = stepTimers[step.id], end > .now else { continue }
@@ -118,7 +123,7 @@ final class CookingController {
 
     private func close() {
         UIApplication.shared.isIdleTimerDisabled = false
-        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        removeStepNotifications()
         let activity = activity
         Task { await activity?.end(nil, dismissalPolicy: .immediate) }
     }

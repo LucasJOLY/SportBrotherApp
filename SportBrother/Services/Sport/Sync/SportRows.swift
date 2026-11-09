@@ -136,6 +136,7 @@ nonisolated struct ExerciseRow: SportRow {
     var restSeconds: Int?
     var repRangeHigh: Int?
     var isBodyweight: Bool?
+    var isUnilateral: Bool?
     var isHidden: Bool
     var modifiedAt: Date
     var deletedAt: Date?
@@ -143,7 +144,7 @@ nonisolated struct ExerciseRow: SportRow {
     enum CodingKeys: String, CodingKey {
         case id, name, muscleGroup = "muscle_group", photoPath = "photo_path", isFavorite = "is_favorite",
              restSeconds = "rest_seconds", repRangeHigh = "rep_range_high", isBodyweight = "is_bodyweight",
-             isHidden = "is_hidden", modifiedAt = "modified_at", deletedAt = "deleted_at"
+             isUnilateral = "is_unilateral", isHidden = "is_hidden", modifiedAt = "modified_at", deletedAt = "deleted_at"
     }
 
     var rowID: String { id }
@@ -160,6 +161,7 @@ nonisolated struct ExerciseRow: SportRow {
         model.restSeconds = restSeconds
         model.repRangeHigh = repRangeHigh
         model.isBodyweight = isBodyweight
+        model.isUnilateral = isUnilateral
         model.isHidden = isHidden
         model.modifiedAt = modifiedAt
         model.deletedAt = deletedAt
@@ -283,13 +285,46 @@ nonisolated struct SetRow: SportRow {
     var setIndex: Int
     var weightKg: Double
     var reps: Int
+    var drops: [DropStep]
+    var isUnilateral: Bool
     var doneAt: Date?
     var modifiedAt: Date
     var deletedAt: Date?
 
     enum CodingKeys: String, CodingKey {
-        case id, reps, entryID = "entry_id", profileID = "profile_id", setIndex = "set_index", weightKg = "weight_kg",
-             doneAt = "done_at", modifiedAt = "modified_at", deletedAt = "deleted_at"
+        case id, reps, drops, entryID = "entry_id", profileID = "profile_id", setIndex = "set_index", weightKg = "weight_kg",
+             isUnilateral = "is_unilateral", doneAt = "done_at", modifiedAt = "modified_at", deletedAt = "deleted_at"
+    }
+
+    init(id: UUID, entryID: UUID, profileID: UUID, setIndex: Int, weightKg: Double, reps: Int, drops: [DropStep] = [],
+         isUnilateral: Bool = false, doneAt: Date?, modifiedAt: Date, deletedAt: Date?) {
+        self.id = id
+        self.entryID = entryID
+        self.profileID = profileID
+        self.setIndex = setIndex
+        self.weightKg = weightKg
+        self.reps = reps
+        self.drops = drops
+        self.isUnilateral = isUnilateral
+        self.doneAt = doneAt
+        self.modifiedAt = modifiedAt
+        self.deletedAt = deletedAt
+    }
+
+    /// Les lignes d'avant le dégressif n'ont ni `drops` ni `is_unilateral` (absents ou null).
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decode(UUID.self, forKey: .id)
+        entryID = try c.decode(UUID.self, forKey: .entryID)
+        profileID = try c.decode(UUID.self, forKey: .profileID)
+        setIndex = try c.decode(Int.self, forKey: .setIndex)
+        weightKg = try c.decode(Double.self, forKey: .weightKg)
+        reps = try c.decode(Int.self, forKey: .reps)
+        drops = try c.decodeIfPresent([DropStep].self, forKey: .drops) ?? []
+        isUnilateral = try c.decodeIfPresent(Bool.self, forKey: .isUnilateral) ?? false
+        doneAt = try c.decodeIfPresent(Date.self, forKey: .doneAt)
+        modifiedAt = try c.decode(Date.self, forKey: .modifiedAt)
+        deletedAt = try c.decodeIfPresent(Date.self, forKey: .deletedAt)
     }
 
     var rowID: String { id.uuidString.lowercased() }
@@ -304,6 +339,8 @@ nonisolated struct SetRow: SportRow {
         model.index = setIndex
         model.weightKg = weightKg
         model.reps = reps
+        model.drops = drops
+        model.isUnilateral = isUnilateral
         model.doneAt = doneAt
         model.modifiedAt = modifiedAt
         model.deletedAt = deletedAt
@@ -395,7 +432,7 @@ extension SportExercise: SportSynced {
     static func matching(rowID: String) -> Predicate<SportExercise> { #Predicate { $0.id == rowID } }
     var row: ExerciseRow {
         .init(id: id, name: name, muscleGroup: groupRaw, photoPath: photoPath, isFavorite: isFavorite, restSeconds: restSeconds,
-              repRangeHigh: repRangeHigh, isBodyweight: isBodyweight, isHidden: isHidden, modifiedAt: modifiedAt, deletedAt: deletedAt)
+              repRangeHigh: repRangeHigh, isBodyweight: isBodyweight, isUnilateral: isUnilateral, isHidden: isHidden, modifiedAt: modifiedAt, deletedAt: deletedAt)
     }
 }
 
@@ -450,7 +487,8 @@ extension SportSet: SportSynced {
         return #Predicate { $0.id == id }
     }
     var row: SetRow {
-        .init(id: id, entryID: entryID, profileID: profileID, setIndex: index, weightKg: weightKg, reps: reps, doneAt: doneAt,
+        .init(id: id, entryID: entryID, profileID: profileID, setIndex: index, weightKg: weightKg, reps: reps, drops: drops,
+              isUnilateral: isUnilateral, doneAt: doneAt,
               modifiedAt: modifiedAt, deletedAt: deletedAt)
     }
 }

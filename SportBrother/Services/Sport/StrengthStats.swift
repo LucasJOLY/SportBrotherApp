@@ -1,8 +1,41 @@
 import Foundation
 
+/// Une série. `weight`/`reps` décrivent le premier palier : c'est lui qui compte pour le 1RM, les records et la progression.
+/// En unilatéral, `weight` est la charge par bras et `reps` les reps de chaque côté.
 nonisolated struct SetValue: Hashable, Sendable {
     var weight: Double
     var reps: Int
+    /// Paliers enchaînés sans repos après le premier (dégressif).
+    var drops: [DropStep] = []
+    var unilateral = false
+
+    var isDropSet: Bool { !drops.isEmpty }
+
+    /// Le premier palier seul, celui qui fait les records.
+    var main: SetValue { SetValue(weight: weight, reps: reps, unilateral: unilateral) }
+
+    /// Tonnage soulevé : tous les paliers, les deux côtés en unilatéral.
+    var volume: Double {
+        let total = weight * Double(reps) + drops.reduce(0) { $0 + $1.kg * Double($1.reps) }
+        return unilateral ? total * 2 : total
+    }
+
+    /// « 60×8 », « 10 reps », « 20 kg/bras × 10 », « 60×8 → 45×6 → 30×6 ».
+    var label: String {
+        let first: String
+        if weight == 0 {
+            first = "\(reps) reps"
+        } else if unilateral {
+            first = "\(Format.number(weight)) kg/bras × \(reps)"
+        } else {
+            first = "\(Format.number(weight))×\(reps)"
+        }
+        return ([first] + drops.map { "\(Format.number($0.kg))×\($0.reps)" }).joined(separator: " → ")
+    }
+}
+
+extension SportSet {
+    var value: SetValue { SetValue(weight: weightKg, reps: reps, drops: drops, unilateral: isUnilateral) }
 }
 
 /// Ce qu'un profil a fait sur un exo lors d'une séance.
@@ -13,7 +46,7 @@ nonisolated struct Performance: Hashable, Sendable {
 
     var best: SetValue? { sets.max { StrengthStats.oneRepMax($0) < StrengthStats.oneRepMax($1) } }
     var topWeight: Double { sets.map(\.weight).max() ?? 0 }
-    var volume: Double { sets.reduce(0) { $0 + $1.weight * Double($1.reps) } }
+    var volume: Double { sets.reduce(0) { $0 + $1.volume } }
 }
 
 nonisolated enum StrengthStats {
@@ -85,13 +118,19 @@ nonisolated enum Progression: Equatable, Sendable {
 
     static let step = 2.5
 
+    /// Palier suivant d'un dégressif : environ −20 %, arrondi au pas, mêmes reps.
+    static func nextDrop(after weight: Double, reps: Int) -> DropStep {
+        let reduced = (weight * 0.8 / step).rounded() * step
+        return DropStep(kg: max(0, min(reduced, weight - step)), reps: reps)
+    }
+
     /// Toutes les séries de la dernière fois ont atteint le haut de la fourchette : on monte.
     static func suggestion(last: Performance?, repRangeHigh: Int, isBodyweight: Bool) -> Progression? {
         guard let last, !last.sets.isEmpty, last.sets.allSatisfy({ $0.reps >= repRangeHigh }) else { return nil }
         return isBodyweight || last.topWeight == 0 ? .addRep : .addWeight(step)
     }
 
-    /// Valeur proposée pour la série `index` : la même série la dernière fois, sinon la série d'avant aujourd'hui.
+    /// Valeur proposée pour la série `index` : la même série la dernière fois (paliers compris), sinon la série d'avant aujourd'hui.
     static func prefill(index: Int, last: Performance?, today: [SetValue]) -> SetValue {
         if let last, !last.sets.isEmpty { return last.sets[min(index, last.sets.count - 1)] }
         return today.last ?? SetValue(weight: 0, reps: 10)
@@ -150,7 +189,7 @@ struct SportHistory {
                 return Performance(
                     sessionID: sessionID,
                     day: session.day,
-                    sets: sets.sorted { $0.index < $1.index }.map { SetValue(weight: $0.weightKg, reps: $0.reps) }
+                    sets: sets.sorted { $0.index < $1.index }.map(\.value)
                 )
             }
             .sorted { ($0.day, $0.sessionID.uuidString) < ($1.day, $1.sessionID.uuidString) }

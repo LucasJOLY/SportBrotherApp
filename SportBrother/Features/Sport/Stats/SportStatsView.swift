@@ -149,9 +149,14 @@ struct SportStatsView: View {
             guard let exercise = exercises[exerciseID] else { continue }
             let all = history.performances(profile: profile.id, exercise: exerciseID)
             for performance in all where performance.day > monthAgo { groupSessions[exercise.group, default: []].insert(performance.sessionID) }
-            let recent = all.filter { $0.day > twoMonthsAgo }.compactMap { p in p.best.map { StrengthStats.oneRepMax($0) } }
+            let window = all.filter { $0.day > twoMonthsAgo }
+            let recent = window.compactMap { p in p.best.map { StrengthStats.oneRepMax($0) } }
             if let first = recent.first, let last = recent.last, recent.count >= 2, last > 0 {
-                trends.append(.init(name: exercise.name, group: exercise.group, sessions: recent.count, first: first, last: last))
+                trends.append(.init(
+                    name: exercise.name, group: exercise.group, sessions: recent.count, first: first, last: last,
+                    perArm: window.contains { $0.sets.contains(where: \.unilateral) },
+                    dropSets: window.reduce(0) { $0 + $1.sets.filter(\.isDropSet).count }
+                ))
             }
         }
         let mine = weights.filter { $0.profileID == profile.id && $0.deletedAt == nil }
@@ -274,7 +279,7 @@ struct GroupExercisesView: View {
                 ExerciseRowLabel(
                     exercise: exercise,
                     detail: "\(performances.count) séance\(performances.count > 1 ? "s" : "")"
-                        + (performances.last?.best.map { " · dernier \($0.label)" } ?? "")
+                        + (performances.last?.best.map { " · dernier \($0.main.label)" } ?? "")
                 )
             }
         }

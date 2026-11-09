@@ -64,14 +64,14 @@ struct EntryView: View {
 
                 Section {
                     ForEach(Array(current.enumerated()), id: \.element.id) { offset, set in
-                        let earlier = current.prefix(offset).filter(\.isDone).map { SetValue(weight: $0.weightKg, reps: $0.reps) }
+                        let earlier = current.prefix(offset).filter(\.isDone).map(\.value)
                         SetEditorRow(
                             number: offset + 1,
                             set: set,
                             isBodyweight: exercise.isBodyweight,
                             reference: last.map { $0.sets[min(offset, $0.sets.count - 1)] },
                             isRecord: set.isDone && StrengthStats.isRecord(
-                                SetValue(weight: set.weightKg, reps: set.reps),
+                                set.value,
                                 previous: previous + [Performance(sessionID: sessionID, day: .now, sets: earlier)]
                             ),
                             onEdit: { editing = $0 },
@@ -81,10 +81,22 @@ struct EntryView: View {
                         .swipeActions {
                             Button("Supprimer", systemImage: "trash", role: .destructive) { sync.delete(set) }
                         }
+                        .swipeActions(edge: .leading) {
+                            Button("Palier", systemImage: "arrow.down.right") { addDrop(to: set) }
+                                .tint(.indigo)
+                        }
+                        .contextMenu {
+                            Button("Ajouter un palier (dégressif)", systemImage: "arrow.down.right") { addDrop(to: set) }
+                            Button("Supprimer la série", systemImage: "trash", role: .destructive) { sync.delete(set) }
+                        }
                     }
-                    Button("Ajouter une série", systemImage: "plus") { addSet(profile: profile.id, last: last, current: current) }
+                    Button("Ajouter une série", systemImage: "plus") { addSet(profile: profile.id, last: last, current: current, unilateral: exercise.isUnilateral) }
                 } header: {
                     Text(present.count > 1 ? "Séries de \(profile.name)" : "Séries")
+                } footer: {
+                    Text(exercise.isUnilateral
+                         ? "Unilatéral : charge par bras, reps faites de chaque côté. Glisse une série vers la droite pour un dégressif."
+                         : "Glisse une série vers la droite pour ajouter un palier de dégressif.")
                 }
 
                 FeedbackSection(entryID: entryID, profileID: profile.id, feedback: feedback)
@@ -94,6 +106,15 @@ struct EntryView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 // Les stats s'empilent dans la séance : retour = saisie intacte, chrono et repos continuent.
+                ToolbarItem(placement: .topBarTrailing) {
+                    Menu {
+                        Toggle(isOn: Binding(get: { exercise.isUnilateral }, set: { setUnilateral($0, exercise: exercise) })) {
+                            Label("Unilatéral (charge par bras)", systemImage: "hand.raised")
+                        }
+                    } label: {
+                        Label("Options de l'exo", systemImage: "ellipsis")
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     NavigationLink {
                         ExerciseProgressView(exerciseID: exercise.id, profileID: profile.id)
@@ -126,16 +147,39 @@ struct EntryView: View {
         let count = planned ?? last?.sets.count ?? 3
         for index in 0..<max(1, count) {
             let value = Progression.prefill(index: index, last: last, today: [])
-            sync.save(SportSet(entryID: entryID, profileID: profile, index: index, weightKg: value.weight, reps: value.reps))
+            save(value, index: index, profile: profile, unilateral: exercise.isUnilateral)
         }
     }
 
-    private func addSet(profile: UUID, last: Performance?, current: [SportSet]) {
-        let today = current.map { SetValue(weight: $0.weightKg, reps: $0.reps) }
-        let value = current.last.map { SetValue(weight: $0.weightKg, reps: $0.reps) }
-            ?? Progression.prefill(index: current.count, last: last, today: today)
+    private func save(_ value: SetValue, index: Int, profile: UUID, unilateral: Bool) {
+        let set = SportSet(entryID: entryID, profileID: profile, index: index, weightKg: value.weight, reps: value.reps)
+        set.drops = value.drops
+        set.isUnilateral = unilateral
+        sync.save(set)
+    }
+
+    private func addDrop(to set: SportSet) {
+        let from = set.drops.last.map { ($0.kg, $0.reps) } ?? (set.weightKg, set.reps)
+        withAnimation(.snappy) { set.drops.append(Progression.nextDrop(after: from.0, reps: from.1)) }
+        sync.save(set)
+    }
+
+    /// Réglage partagé de l'exo ; les séries pas encore validées de la séance suivent, l'historique garde son mode.
+    private func setUnilateral(_ value: Bool, exercise: ExerciseInfo) {
+        let settings = sync.settings(for: exercise.id, in: overrides)
+        settings.isUnilateral = value
+        sync.save(settings)
+        for set in sets where set.entryID == entryID && set.deletedAt == nil && !set.isDone && set.isUnilateral != value {
+            set.isUnilateral = value
+            sync.save(set)
+        }
+    }
+
+    private func addSet(profile: UUID, last: Performance?, current: [SportSet], unilateral: Bool) {
+        let today = current.map(\.value)
+        let value = current.last?.value ?? Progression.prefill(index: current.count, last: last, today: today)
         withAnimation(.snappy) {
-            sync.save(SportSet(entryID: entryID, profileID: profile, index: (current.map(\.index).max() ?? -1) + 1, weightKg: value.weight, reps: value.reps))
+            save(value, index: (current.map(\.index).max() ?? -1) + 1, profile: profile, unilateral: unilateral)
         }
     }
 
@@ -143,21 +187,27 @@ struct EntryView: View {
         withAnimation(.snappy) { set.doneAt = set.isDone ? nil : .now }
         sync.save(set)
         guard set.isDone else { return }
-        let value = SetValue(weight: set.weightKg, reps: set.reps)
-        if StrengthStats.isRecord(value, previous: previous + [Performance(sessionID: sessionID, day: .now, sets: earlier)]) {
+        if StrengthStats.isRecord(set.value, previous: previous + [Performance(sessionID: sessionID, day: .now, sets: earlier)]) {
             recordTrigger += 1
         } else {
             doneTrigger += 1
         }
         let detail = number < total ? "Série \(number + 1)/\(total)" : "Dernière série faite"
-        rest.start(seconds: exercise.restSeconds, exercise: exercise.name, detail: present.count > 1 ? "\(profile.name) · \(detail)" : detail)
+        rest.start(seconds: exercise.restSeconds, profile: profile.id, exercise: exercise.name, detail: present.count > 1 ? "\(profile.name) · \(detail)" : detail)
     }
 
     private func apply(_ edited: EditedValue, value: Double) {
         guard let set = sets.first(where: { $0.id == edited.setID }) else { return }
-        switch edited.field {
-        case .weight: set.weightKg = max(0, value)
-        case .reps: set.reps = max(0, Int(value.rounded()))
+        if let drop = edited.drop, set.drops.indices.contains(drop) {
+            switch edited.field {
+            case .weight: set.drops[drop].kg = max(0, value)
+            case .reps: set.drops[drop].reps = max(0, Int(value.rounded()))
+            }
+        } else {
+            switch edited.field {
+            case .weight: set.weightKg = max(0, value)
+            case .reps: set.reps = max(0, Int(value.rounded()))
+            }
         }
         sync.save(set)
     }
@@ -168,9 +218,17 @@ struct EditedValue: Identifiable {
     let setID: UUID
     let field: Field
     let value: Double
+    /// Palier de dégressif visé, nil pour le premier.
+    var drop: Int? = nil
+    var unilateral = false
 
-    var id: String { "\(setID)-\(field)" }
-    var title: String { field == .weight ? "Charge (kg)" : "Répétitions" }
+    var id: String { "\(setID)-\(field)-\(drop ?? -1)" }
+    var title: String {
+        switch field {
+        case .weight: unilateral ? "Charge par bras (kg)" : "Charge (kg)"
+        case .reps: unilateral ? "Répétitions par côté" : "Répétitions"
+        }
+    }
 }
 
 /// Champ de saisie au clavier dans l'alerte (le texte de départ est déjà sélectionnable).
@@ -233,10 +291,6 @@ struct LastTimeView: View {
     }
 }
 
-extension SetValue {
-    /// « 60×10 », « 10 reps » au poids du corps.
-    var label: String { weight > 0 ? "\(Format.number(weight))×\(reps)" : "\(reps) reps" }
-}
 
 /// Une série : charge, reps, validation. Les flèches indiquent l'écart avec la même série la fois précédente.
 private struct SetEditorRow: View {
@@ -251,62 +305,106 @@ private struct SetEditorRow: View {
 
     private var trend: Double? {
         guard let reference, set.reps > 0 else { return nil }
-        let now = StrengthStats.oneRepMax(SetValue(weight: set.weightKg, reps: set.reps))
+        let now = StrengthStats.oneRepMax(set.value)
         let then = StrengthStats.oneRepMax(reference)
         if set.weightKg == 0 && reference.weight == 0 { return Double(set.reps - reference.reps) }
         return now - then
     }
 
+    private var weightUnit: String { self.set.isUnilateral ? "kg/bras" : "kg" }
+
     var body: some View {
-        HStack(spacing: 10) {
-            Text("\(number)")
-                .font(.headline)
-                .foregroundStyle(.secondary)
-                .frame(width: 18)
-            if !isBodyweight || set.weightKg > 0 {
-                CompactStepper(
-                    text: Format.number(set.weightKg), unit: "kg",
-                    decrement: { set.weightKg = max(0, set.weightKg - Progression.step); onChange() },
-                    increment: { set.weightKg += Progression.step; onChange() },
-                    edit: { onEdit(EditedValue(setID: set.id, field: .weight, value: set.weightKg)) }
-                )
-            }
-            CompactStepper(
-                text: "\(set.reps)", unit: "reps",
-                decrement: { set.reps = max(0, set.reps - 1); onChange() },
-                increment: { set.reps += 1; onChange() },
-                edit: { onEdit(EditedValue(setID: set.id, field: .reps, value: Double(set.reps))) }
-            )
-            Spacer(minLength: 0)
-            ZStack {
-                if isRecord {
-                    Text("PR")
-                        .font(.caption2.weight(.heavy).width(.expanded))
-                        .foregroundStyle(.white)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 2)
-                        .background(.orange, in: .capsule)
-                        .transition(.scale.combined(with: .opacity))
-                } else if let trend, abs(trend) > 0.01 {
-                    Image(systemName: trend > 0 ? "arrow.up" : "arrow.down")
-                        .font(.caption.weight(.bold))
-                        .foregroundStyle(trend > 0 ? .green : .secondary)
-                        .accessibilityLabel(trend > 0 ? "Mieux que la dernière fois" : "Moins que la dernière fois")
+        VStack(alignment: .leading, spacing: 6) {
+            HStack(spacing: 10) {
+                Text("\(number)")
+                    .font(.headline)
+                    .foregroundStyle(.secondary)
+                    .frame(width: 18)
+                if !isBodyweight || set.weightKg > 0 {
+                    CompactStepper(
+                        text: Format.number(set.weightKg), unit: weightUnit,
+                        decrement: { set.weightKg = max(0, set.weightKg - Progression.step); onChange() },
+                        increment: { set.weightKg += Progression.step; onChange() },
+                        edit: { onEdit(EditedValue(setID: set.id, field: .weight, value: set.weightKg, unilateral: set.isUnilateral)) }
+                    )
                 }
+                CompactStepper(
+                    text: "\(set.reps)", unit: set.isUnilateral ? "reps/côté" : "reps",
+                    decrement: { set.reps = max(0, set.reps - 1); onChange() },
+                    increment: { set.reps += 1; onChange() },
+                    edit: { onEdit(EditedValue(setID: set.id, field: .reps, value: Double(set.reps), unilateral: set.isUnilateral)) }
+                )
+                Spacer(minLength: 0)
+                ZStack {
+                    if isRecord {
+                        Text("PR")
+                            .font(.caption2.weight(.heavy).width(.expanded))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 5)
+                            .padding(.vertical, 2)
+                            .background(.orange, in: .capsule)
+                            .transition(.scale.combined(with: .opacity))
+                    } else if let trend, abs(trend) > 0.01 {
+                        Image(systemName: trend > 0 ? "arrow.up" : "arrow.down")
+                            .font(.caption.weight(.bold))
+                            .foregroundStyle(trend > 0 ? .green : .secondary)
+                            .accessibilityLabel(trend > 0 ? "Mieux que la dernière fois" : "Moins que la dernière fois")
+                    }
+                }
+                .frame(width: 28)
+                Button(action: onToggle) {
+                    Image(systemName: set.isDone ? "checkmark.circle.fill" : "circle")
+                        .font(.system(size: 30))
+                        .foregroundStyle(set.isDone ? AnyShapeStyle(.tint) : AnyShapeStyle(.tertiary))
+                        .contentTransition(.symbolEffect(.replace))
+                        .frame(minWidth: 44, minHeight: 44)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel(set.isDone ? "Série \(number) validée" : "Valider la série \(number)")
             }
-            .frame(width: 28)
-            Button(action: onToggle) {
-                Image(systemName: set.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.system(size: 30))
-                    .foregroundStyle(set.isDone ? AnyShapeStyle(.tint) : AnyShapeStyle(.tertiary))
-                    .contentTransition(.symbolEffect(.replace))
-                    .frame(minWidth: 44, minHeight: 44)
+            ForEach(Array(set.drops.enumerated()), id: \.offset) { index, drop in
+                dropRow(index: index, drop: drop)
+                    .transition(.move(edge: .top).combined(with: .opacity))
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel(set.isDone ? "Série \(number) validée" : "Valider la série \(number)")
         }
         .opacity(set.isDone ? 0.75 : 1)
         .animation(.snappy, value: isRecord)
+        .animation(.snappy, value: set.drops.count)
+    }
+
+    /// Palier de dégressif : enchaîné sans repos, validé avec la série.
+    private func dropRow(index: Int, drop: DropStep) -> some View {
+        HStack(spacing: 10) {
+            Image(systemName: "arrow.turn.down.right")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.indigo)
+                .frame(width: 18)
+                .accessibilityLabel("Palier \(index + 2) du dégressif")
+            CompactStepper(
+                text: Format.number(drop.kg), unit: weightUnit,
+                decrement: { set.drops[index].kg = max(0, drop.kg - Progression.step); onChange() },
+                increment: { set.drops[index].kg = drop.kg + Progression.step; onChange() },
+                edit: { onEdit(EditedValue(setID: set.id, field: .weight, value: drop.kg, drop: index, unilateral: set.isUnilateral)) }
+            )
+            CompactStepper(
+                text: "\(drop.reps)", unit: set.isUnilateral ? "reps/côté" : "reps",
+                decrement: { set.drops[index].reps = max(0, drop.reps - 1); onChange() },
+                increment: { set.drops[index].reps = drop.reps + 1; onChange() },
+                edit: { onEdit(EditedValue(setID: set.id, field: .reps, value: Double(drop.reps), drop: index, unilateral: set.isUnilateral)) }
+            )
+            Spacer(minLength: 0)
+            Button {
+                set.drops.remove(at: index)
+                onChange()
+            } label: {
+                Image(systemName: "minus.circle")
+                    .font(.title3)
+                    .foregroundStyle(.secondary)
+                    .frame(minWidth: 44, minHeight: 44)
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Retirer ce palier")
+        }
     }
 }
 

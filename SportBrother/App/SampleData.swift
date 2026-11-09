@@ -117,6 +117,8 @@ enum SampleData {
         ["Barbell_Bench_Press_-_Medium_Grip", "Barbell_Squat", "Wide-Grip_Lat_Pulldown", "Hammer_Curls"].forEach { id in
             let favorite = SportExercise(id: id)
             favorite.isFavorite = true
+            // Curl marteau en unilatéral : charge par bras, un côté puis l'autre.
+            if id == "Hammer_Curls" { favorite.isUnilateral = true }
             context.insert(favorite)
         }
 
@@ -150,6 +152,12 @@ enum SampleData {
                     for index in 0..<3 {
                         let set = SportSet(entryID: entry.id, profileID: profile.id, index: index, weightKg: weight, reps: base[index] - (count + order) % 2)
                         set.doneAt = session.startedAt.addingTimeInterval(TimeInterval(order * 600 + index * 150))
+                        set.isUnilateral = exercise.0 == "Hammer_Curls"
+                        // Dernière série du premier exo en dégressif, une séance sur deux.
+                        if index == 2, order == 0, weight > 0, count % 2 == 0 {
+                            let first = Progression.nextDrop(after: weight, reps: 8)
+                            set.drops = [first, Progression.nextDrop(after: first.kg, reps: 8)]
+                        }
                         context.insert(set)
                     }
                 }

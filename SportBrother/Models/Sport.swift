@@ -119,6 +119,7 @@ final class SportExercise {
     var restSeconds: Int?
     var repRangeHigh: Int?
     var isBodyweight: Bool?
+    var isUnilateral: Bool?
     var isHidden: Bool
     var modifiedAt: Date
     var deletedAt: Date?
@@ -218,6 +219,10 @@ final class SportSet {
     var index: Int
     var weightKg: Double
     var reps: Int
+    /// Paliers enchaînés après le premier (dégressif), encodés en JSON. Nil = série simple.
+    var dropsData: Data?
+    /// Charge par bras, bras gauche puis droit : `reps` vaut pour chaque côté.
+    var isUnilateral: Bool = false
     var doneAt: Date?
     var modifiedAt: Date
     var deletedAt: Date?
@@ -233,6 +238,17 @@ final class SportSet {
     }
 
     var isDone: Bool { doneAt != nil }
+
+    var drops: [DropStep] {
+        get { dropsData.flatMap { try? JSONDecoder().decode([DropStep].self, from: $0) } ?? [] }
+        set { dropsData = newValue.isEmpty ? nil : try? JSONEncoder().encode(newValue) }
+    }
+}
+
+/// Un palier de dégressif : charge réduite enchaînée sans repos dans la même série.
+nonisolated struct DropStep: Codable, Hashable, Sendable {
+    var kg: Double
+    var reps: Int
 }
 
 @Model

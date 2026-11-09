@@ -5,6 +5,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -13,6 +16,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -21,6 +27,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -29,6 +38,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -37,6 +49,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -45,6 +60,9 @@
   "group": "dos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -53,6 +71,9 @@
   "group": "dos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -61,6 +82,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -69,6 +93,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -77,6 +104,9 @@
   "group": "dos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -85,6 +115,9 @@
   "group": "dos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -93,6 +126,9 @@
   "group": "dos",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -101,6 +137,9 @@
   "group": "dos",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -109,6 +148,9 @@
   "group": "dos",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -117,6 +159,9 @@
   "group": "dos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -125,6 +170,9 @@
   "group": "dos",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -133,6 +181,9 @@
   "group": "dos",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -141,6 +192,9 @@
   "group": "dos",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -149,6 +203,9 @@
   "group": "dos",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -157,6 +214,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -165,6 +225,9 @@
   "group": "dos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -173,6 +236,9 @@
   "group": "dos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -181,6 +247,9 @@
   "group": "dos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
  },
  {
@@ -189,6 +258,9 @@
   "group": "dos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 23
  },
  {
@@ -197,6 +269,9 @@
   "group": "dos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 24
  },
  {
@@ -205,6 +280,9 @@
   "group": "dos",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 25
  },
  {
@@ -213,6 +291,9 @@
   "group": "biceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -221,6 +302,9 @@
   "group": "biceps",
   "equipment": "e-z curl bar",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -229,6 +313,9 @@
   "group": "biceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -237,6 +324,9 @@
   "group": "biceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -245,6 +335,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -253,6 +346,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -261,6 +357,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -269,6 +368,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -277,6 +379,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -285,6 +390,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -293,6 +401,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -301,6 +412,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -309,6 +423,9 @@
   "group": "biceps",
   "equipment": "e-z curl bar",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -317,6 +434,9 @@
   "group": "biceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -325,6 +445,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -333,6 +456,9 @@
   "group": "biceps",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -341,6 +467,9 @@
   "group": "biceps",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -349,6 +478,9 @@
   "group": "biceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -357,6 +489,9 @@
   "group": "biceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -365,6 +500,9 @@
   "group": "biceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -373,6 +511,9 @@
   "group": "biceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -381,6 +522,9 @@
   "group": "biceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -389,6 +533,9 @@
   "group": "biceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
  },
  {
@@ -397,6 +544,9 @@
   "group": "biceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 23
  },
  {
@@ -405,6 +555,9 @@
   "group": "biceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 24
  },
  {
@@ -413,6 +566,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -421,6 +577,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -429,6 +588,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -437,6 +599,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -445,6 +610,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -453,6 +621,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -461,6 +632,9 @@
   "group": "triceps",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -469,6 +643,9 @@
   "group": "triceps",
   "equipment": "e-z curl bar",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -477,6 +654,9 @@
   "group": "triceps",
   "equipment": "e-z curl bar",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -485,6 +665,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -493,6 +676,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -501,6 +687,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -509,6 +698,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -517,6 +709,9 @@
   "group": "triceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -525,6 +720,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -533,6 +731,9 @@
   "group": "triceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -541,6 +742,9 @@
   "group": "triceps",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -549,6 +753,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -557,6 +764,9 @@
   "group": "triceps",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -565,6 +775,9 @@
   "group": "triceps",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -573,6 +786,9 @@
   "group": "triceps",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -581,6 +797,9 @@
   "group": "triceps",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -589,6 +808,9 @@
   "group": "triceps",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
  },
  {
@@ -597,6 +819,9 @@
   "group": "triceps",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 23
  },
  {
@@ -605,6 +830,9 @@
   "group": "triceps",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 24
  },
  {
@@ -613,6 +841,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -621,6 +852,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -629,6 +863,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -637,6 +874,9 @@
   "group": "epaules",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -645,6 +885,9 @@
   "group": "epaules",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -653,6 +896,9 @@
   "group": "epaules",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -661,6 +907,9 @@
   "group": "epaules",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -669,6 +918,9 @@
   "group": "epaules",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -677,6 +929,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -685,6 +940,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -693,6 +951,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -701,6 +962,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -709,6 +973,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -717,6 +984,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -725,6 +995,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -733,6 +1006,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -741,6 +1017,9 @@
   "group": "epaules",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -749,6 +1028,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -757,6 +1039,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -765,6 +1050,9 @@
   "group": "epaules",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -773,6 +1061,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -781,6 +1072,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -789,6 +1083,9 @@
   "group": "epaules",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
  },
  {
@@ -797,6 +1094,9 @@
   "group": "epaules",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 23
  },
  {
@@ -805,6 +1105,9 @@
   "group": "epaules",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 24
  },
  {
@@ -813,6 +1116,9 @@
   "group": "pecs",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -821,6 +1127,9 @@
   "group": "pecs",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -829,6 +1138,9 @@
   "group": "pecs",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -837,6 +1149,9 @@
   "group": "pecs",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -845,6 +1160,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -853,6 +1171,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -861,6 +1182,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -869,6 +1193,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -877,6 +1204,9 @@
   "group": "pecs",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -885,6 +1215,9 @@
   "group": "pecs",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -893,6 +1226,9 @@
   "group": "pecs",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -901,6 +1237,9 @@
   "group": "pecs",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -909,6 +1248,9 @@
   "group": "pecs",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -917,6 +1259,9 @@
   "group": "pecs",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -925,6 +1270,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -933,6 +1281,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -941,6 +1292,9 @@
   "group": "pecs",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -949,6 +1303,9 @@
   "group": "pecs",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -957,6 +1314,9 @@
   "group": "pecs",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -965,6 +1325,9 @@
   "group": "pecs",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -973,6 +1336,9 @@
   "group": "pecs",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -981,6 +1347,9 @@
   "group": "pecs",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -989,6 +1358,9 @@
   "group": "pecs",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
  },
  {
@@ -997,6 +1369,9 @@
   "group": "pecs",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 23
  },
  {
@@ -1005,6 +1380,9 @@
   "group": "pecs",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 24
  },
  {
@@ -1013,6 +1391,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -1021,6 +1402,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -1029,6 +1413,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -1037,6 +1424,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -1045,6 +1435,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -1053,6 +1446,9 @@
   "group": "jambes",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -1061,6 +1457,9 @@
   "group": "jambes",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -1069,6 +1468,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -1077,6 +1479,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -1085,6 +1490,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -1093,6 +1501,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -1101,6 +1512,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -1109,6 +1523,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -1117,6 +1534,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -1125,6 +1545,9 @@
   "group": "jambes",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -1133,6 +1556,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -1141,6 +1567,9 @@
   "group": "jambes",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -1149,6 +1578,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -1157,6 +1589,9 @@
   "group": "jambes",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -1165,6 +1600,9 @@
   "group": "jambes",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -1173,6 +1611,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -1181,6 +1622,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -1189,6 +1633,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
  },
  {
@@ -1197,6 +1644,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 23
  },
  {
@@ -1205,6 +1655,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 24
  },
  {
@@ -1213,6 +1666,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 25
  },
  {
@@ -1221,6 +1677,9 @@
   "group": "jambes",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 26
  },
  {
@@ -1229,6 +1688,9 @@
   "group": "jambes",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 27
  },
  {
@@ -1237,6 +1699,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 0
  },
  {
@@ -1245,6 +1710,9 @@
   "group": "abdos",
   "equipment": "machine",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 1
  },
  {
@@ -1253,6 +1721,9 @@
   "group": "abdos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 2
  },
  {
@@ -1261,6 +1732,9 @@
   "group": "abdos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 3
  },
  {
@@ -1269,6 +1743,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 4
  },
  {
@@ -1277,6 +1754,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 5
  },
  {
@@ -1285,6 +1765,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 6
  },
  {
@@ -1293,6 +1776,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 7
  },
  {
@@ -1301,6 +1787,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 8
  },
  {
@@ -1309,6 +1798,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 9
  },
  {
@@ -1317,6 +1809,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 10
  },
  {
@@ -1325,6 +1820,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 11
  },
  {
@@ -1333,6 +1831,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 12
  },
  {
@@ -1341,6 +1842,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 13
  },
  {
@@ -1349,6 +1853,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 14
  },
  {
@@ -1357,6 +1864,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 15
  },
  {
@@ -1365,6 +1875,9 @@
   "group": "abdos",
   "equipment": "barbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 16
  },
  {
@@ -1373,6 +1886,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 17
  },
  {
@@ -1381,6 +1897,9 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 18
  },
  {
@@ -1389,6 +1908,9 @@
   "group": "abdos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 19
  },
  {
@@ -1397,6 +1919,9 @@
   "group": "abdos",
   "equipment": "cable",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 20
  },
  {
@@ -1405,6 +1930,9 @@
   "group": "abdos",
   "equipment": "dumbbell",
   "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 21
  },
  {
@@ -1413,6 +1941,5124 @@
   "group": "abdos",
   "equipment": "body only",
   "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
   "order": 22
+ },
+ {
+  "id": "Cable_Hip_Adduction",
+  "name": "Adduction de hanche poulie",
+  "group": "jambes",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1000
+ },
+ {
+  "id": "Band_Hip_Adductions",
+  "name": "Adduction de hanche élastique",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1001
+ },
+ {
+  "id": "Snatch",
+  "name": "Arraché",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1002
+ },
+ {
+  "id": "Snatch_from_Blocks",
+  "name": "Arraché depuis blocs",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1003
+ },
+ {
+  "id": "Band_Skull_Crusher",
+  "name": "Barre au front élastique",
+  "group": "triceps",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1004
+ },
+ {
+  "id": "Kettlebell_Pirate_Ships",
+  "name": "Bateaux pirates kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1005
+ },
+ {
+  "id": "Flutter_Kicks",
+  "name": "Battements de jambes",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1006
+ },
+ {
+  "id": "Bent_Press",
+  "name": "Bent press",
+  "group": "abdos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1007
+ },
+ {
+  "id": "Board_Press",
+  "name": "Board press",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1008
+ },
+ {
+  "id": "Body-Up",
+  "name": "Body-up",
+  "group": "triceps",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1009
+ },
+ {
+  "id": "Bottoms_Up",
+  "name": "Bottoms up",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1010
+ },
+ {
+  "id": "Box_Squat",
+  "name": "Box squat",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1011
+ },
+ {
+  "id": "Box_Squat_with_Chains",
+  "name": "Box squat chaînes",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1012
+ },
+ {
+  "id": "Speed_Box_Squat",
+  "name": "Box squat rapide",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1013
+ },
+ {
+  "id": "Reverse_Band_Box_Squat",
+  "name": "Box squat élastique inversé",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1014
+ },
+ {
+  "id": "Box_Squat_with_Bands",
+  "name": "Box squat élastiques",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1015
+ },
+ {
+  "id": "Butt-Ups",
+  "name": "Butt-ups",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1016
+ },
+ {
+  "id": "Car_Drivers",
+  "name": "Car drivers",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1017
+ },
+ {
+  "id": "Clean",
+  "name": "Clean",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1018
+ },
+ {
+  "id": "Clean_and_Press",
+  "name": "Clean and press",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1019
+ },
+ {
+  "id": "Bottoms-Up_Clean_From_The_Hang_Position",
+  "name": "Clean bottoms-up depuis la suspension",
+  "group": "biceps",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1020
+ },
+ {
+  "id": "Clean_from_Blocks",
+  "name": "Clean depuis blocs",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1021
+ },
+ {
+  "id": "Dumbbell_Clean",
+  "name": "Clean haltère",
+  "group": "jambes",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1022
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Clean",
+  "name": "Clean kettlebell deux bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1023
+ },
+ {
+  "id": "Open_Palm_Kettlebell_Clean",
+  "name": "Clean kettlebell main ouverte",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1024
+ },
+ {
+  "id": "One-Arm_Open_Palm_Kettlebell_Clean",
+  "name": "Clean kettlebell main ouverte un bras",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1025
+ },
+ {
+  "id": "One-Arm_Kettlebell_Clean",
+  "name": "Clean kettlebell un bras",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1026
+ },
+ {
+  "id": "Cocoons",
+  "name": "Cocoons",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1027
+ },
+ {
+  "id": "Elbow_to_Knee",
+  "name": "Coude au genou",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1028
+ },
+ {
+  "id": "Single-Arm_Cable_Crossover",
+  "name": "Croisé poulie un bras",
+  "group": "pecs",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1029
+ },
+ {
+  "id": "Iron_Cross",
+  "name": "Croix de fer",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1030
+ },
+ {
+  "id": "Cable_Iron_Cross",
+  "name": "Croix de fer poulie",
+  "group": "pecs",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1031
+ },
+ {
+  "id": "Cable_Seated_Crunch",
+  "name": "Crunch assis poulie",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1032
+ },
+ {
+  "id": "Crunch_-_Hands_Overhead",
+  "name": "Crunch bras tendus",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1033
+ },
+ {
+  "id": "Standing_Rope_Crunch",
+  "name": "Crunch corde debout",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1034
+ },
+ {
+  "id": "Tuck_Crunch",
+  "name": "Crunch groupé",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1035
+ },
+ {
+  "id": "Decline_Reverse_Crunch",
+  "name": "Crunch inversé décliné",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1036
+ },
+ {
+  "id": "Cable_Reverse_Crunch",
+  "name": "Crunch inversé poulie",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1037
+ },
+ {
+  "id": "Suspended_Reverse_Crunch",
+  "name": "Crunch inversé suspendu",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1038
+ },
+ {
+  "id": "Crunch_-_Legs_On_Exercise_Ball",
+  "name": "Crunch jambes sur ballon",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1039
+ },
+ {
+  "id": "Weighted_Crunches",
+  "name": "Crunch lesté",
+  "group": "abdos",
+  "equipment": "medicine ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1040
+ },
+ {
+  "id": "Oblique_Crunches",
+  "name": "Crunch oblique",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1041
+ },
+ {
+  "id": "Decline_Oblique_Crunch",
+  "name": "Crunch oblique décliné",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1042
+ },
+ {
+  "id": "Bosu_Ball_Cable_Crunch_With_Side_Bends",
+  "name": "Crunch poulie sur Bosu avec flexion latérale",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1043
+ },
+ {
+  "id": "Kneeling_Cable_Crunch_With_Alternating_Oblique_Twists",
+  "name": "Crunch poulie à genoux avec rotations",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1044
+ },
+ {
+  "id": "Exercise_Ball_Crunch",
+  "name": "Crunch sur ballon",
+  "group": "abdos",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1045
+ },
+ {
+  "id": "Cuban_Press",
+  "name": "Cuban press",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1046
+ },
+ {
+  "id": "Lying_High_Bench_Barbell_Curl",
+  "name": "Curl barre allongé banc haut",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1047
+ },
+ {
+  "id": "Barbell_Curls_Lying_Against_An_Incline",
+  "name": "Curl barre allongé sur banc incliné",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1048
+ },
+ {
+  "id": "Close-Grip_Standing_Barbell_Curl",
+  "name": "Curl barre debout prise serrée",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1049
+ },
+ {
+  "id": "Close-Grip_EZ-Bar_Curl_with_Band",
+  "name": "Curl barre EZ serré élastique",
+  "group": "biceps",
+  "equipment": "e-z curl bar",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1050
+ },
+ {
+  "id": "Lying_Close-Grip_Bar_Curl_On_High_Pulley",
+  "name": "Curl barre poulie haute allongé",
+  "group": "biceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1051
+ },
+ {
+  "id": "Standing_Inner-Biceps_Curl",
+  "name": "Curl biceps intérieur debout",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1052
+ },
+ {
+  "id": "Seated_Dumbbell_Inner_Biceps_Curl",
+  "name": "Curl biceps intérieur haltères assis",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1053
+ },
+ {
+  "id": "Seated_Close-Grip_Concentration_Barbell_Curl",
+  "name": "Curl concentré barre serrée assis",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1054
+ },
+ {
+  "id": "Standing_Concentration_Curl",
+  "name": "Curl concentré debout",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1055
+ },
+ {
+  "id": "Finger_Curls",
+  "name": "Curl des doigts",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1056
+ },
+ {
+  "id": "Reverse_Plate_Curls",
+  "name": "Curl disque prise inversée",
+  "group": "biceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1057
+ },
+ {
+  "id": "Standing_One-Arm_Dumbbell_Curl_Over_Incline_Bench",
+  "name": "Curl haltère un bras sur banc incliné",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1058
+ },
+ {
+  "id": "Lying_Supine_Dumbbell_Curl",
+  "name": "Curl haltères allongé sur le dos",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1059
+ },
+ {
+  "id": "Seated_Dumbbell_Curl",
+  "name": "Curl haltères assis",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1060
+ },
+ {
+  "id": "Dumbbell_Prone_Incline_Curl",
+  "name": "Curl haltères incliné ventre",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1061
+ },
+ {
+  "id": "Incline_Inner_Biceps_Curl",
+  "name": "Curl incliné biceps intérieur",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1062
+ },
+ {
+  "id": "Alternate_Incline_Dumbbell_Curl",
+  "name": "Curl incliné haltères alterné",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1063
+ },
+ {
+  "id": "Flexor_Incline_Dumbbell_Curls",
+  "name": "Curl incliné haltères fléchisseurs",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1064
+ },
+ {
+  "id": "Standing_Dumbbell_Reverse_Curl",
+  "name": "Curl inversé haltères debout",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1065
+ },
+ {
+  "id": "Preacher_Hammer_Dumbbell_Curl",
+  "name": "Curl marteau pupitre haltère",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1066
+ },
+ {
+  "id": "Seated_One-Arm_Dumbbell_Palms-Down_Wrist_Curl",
+  "name": "Curl poignet pronation un bras haltère assis",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1067
+ },
+ {
+  "id": "Seated_One-Arm_Dumbbell_Palms-Up_Wrist_Curl",
+  "name": "Curl poignet supination un bras haltère assis",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1068
+ },
+ {
+  "id": "Standing_Palms-Up_Barbell_Behind_The_Back_Wrist_Curl",
+  "name": "Curl poignets barre dans le dos",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1069
+ },
+ {
+  "id": "Cable_Wrist_Curl",
+  "name": "Curl poignets poulie",
+  "group": "biceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1070
+ },
+ {
+  "id": "Seated_Two-Arm_Palms-Up_Low-Pulley_Wrist_Curl",
+  "name": "Curl poignets poulie basse assis",
+  "group": "biceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1071
+ },
+ {
+  "id": "Seated_Palms-Down_Barbell_Wrist_Curl",
+  "name": "Curl poignets pronation barre assis",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1072
+ },
+ {
+  "id": "Palms-Down_Wrist_Curl_Over_A_Bench",
+  "name": "Curl poignets pronation barre sur banc",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1073
+ },
+ {
+  "id": "Palms-Down_Dumbbell_Wrist_Curl_Over_A_Bench",
+  "name": "Curl poignets pronation haltère sur banc",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1074
+ },
+ {
+  "id": "Seated_Dumbbell_Palms-Down_Wrist_Curl",
+  "name": "Curl poignets pronation haltères assis",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1075
+ },
+ {
+  "id": "Seated_Palm-Up_Barbell_Wrist_Curl",
+  "name": "Curl poignets supination barre assis",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1076
+ },
+ {
+  "id": "Palms-Up_Barbell_Wrist_Curl_Over_A_Bench",
+  "name": "Curl poignets supination barre sur banc",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1077
+ },
+ {
+  "id": "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench",
+  "name": "Curl poignets supination haltère sur banc",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1078
+ },
+ {
+  "id": "Seated_Dumbbell_Palms-Up_Wrist_Curl",
+  "name": "Curl poignets supination haltères assis",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1079
+ },
+ {
+  "id": "Lying_Cable_Curl",
+  "name": "Curl poulie allongé",
+  "group": "biceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1080
+ },
+ {
+  "id": "Reverse_Cable_Curl",
+  "name": "Curl poulie prise inversée",
+  "group": "biceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1081
+ },
+ {
+  "id": "Standing_One-Arm_Cable_Curl",
+  "name": "Curl poulie un bras debout",
+  "group": "biceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1082
+ },
+ {
+  "id": "Reverse_Barbell_Preacher_Curls",
+  "name": "Curl pupitre barre prise inversée",
+  "group": "biceps",
+  "equipment": "e-z curl bar",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1083
+ },
+ {
+  "id": "Two-Arm_Dumbbell_Preacher_Curl",
+  "name": "Curl pupitre haltères deux bras",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1084
+ },
+ {
+  "id": "Zottman_Preacher_Curl",
+  "name": "Curl Zottman pupitre",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1085
+ },
+ {
+  "id": "Kettlebell_Dead_Clean",
+  "name": "Dead clean kettlebell",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1086
+ },
+ {
+  "id": "Ring_Dips",
+  "name": "Dips aux anneaux",
+  "group": "triceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1087
+ },
+ {
+  "id": "Weighted_Bench_Dip",
+  "name": "Dips banc lestés",
+  "group": "triceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1088
+ },
+ {
+  "id": "Parallel_Bar_Dip",
+  "name": "Dips barres parallèles",
+  "group": "triceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1089
+ },
+ {
+  "id": "Dips_-_Chest_Version",
+  "name": "Dips pectoraux",
+  "group": "pecs",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1090
+ },
+ {
+  "id": "See-Saw_Press_Alternating_Side_Press",
+  "name": "Développé alterné de côté",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1091
+ },
+ {
+  "id": "Anti-Gravity_Press",
+  "name": "Développé anti-gravité",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1092
+ },
+ {
+  "id": "Kettlebell_Arnold_Press",
+  "name": "Développé Arnold kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1093
+ },
+ {
+  "id": "Kettlebell_Seated_Press",
+  "name": "Développé assis kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1094
+ },
+ {
+  "id": "Floor_Press",
+  "name": "Développé au sol",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1095
+ },
+ {
+  "id": "Alternating_Floor_Press",
+  "name": "Développé au sol alterné",
+  "group": "pecs",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1096
+ },
+ {
+  "id": "Floor_Press_with_Chains",
+  "name": "Développé au sol chaînes",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1097
+ },
+ {
+  "id": "Dumbbell_Floor_Press",
+  "name": "Développé au sol haltères",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1098
+ },
+ {
+  "id": "Leg-Over_Floor_Press",
+  "name": "Développé au sol jambe par-dessus",
+  "group": "pecs",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1099
+ },
+ {
+  "id": "One-Arm_Kettlebell_Floor_Press",
+  "name": "Développé au sol kettlebell un bras",
+  "group": "pecs",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1100
+ },
+ {
+  "id": "Extended_Range_One-Arm_Kettlebell_Floor_Press",
+  "name": "Développé au sol kettlebell un bras amplitude",
+  "group": "pecs",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1101
+ },
+ {
+  "id": "One_Arm_Floor_Press",
+  "name": "Développé au sol un bras",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1102
+ },
+ {
+  "id": "Kettlebell_Seesaw_Press",
+  "name": "Développé balançoire kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1103
+ },
+ {
+  "id": "Close-Grip_EZ-Bar_Press",
+  "name": "Développé barre EZ prise serrée",
+  "group": "triceps",
+  "equipment": "e-z curl bar",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1104
+ },
+ {
+  "id": "Standing_Barbell_Press_Behind_Neck",
+  "name": "Développé barre nuque debout",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1105
+ },
+ {
+  "id": "Bradford_Rocky_Presses",
+  "name": "Développé Bradford",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1106
+ },
+ {
+  "id": "Standing_Bradford_Press",
+  "name": "Développé Bradford debout",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1107
+ },
+ {
+  "id": "Chain_Press",
+  "name": "Développé chaînes",
+  "group": "pecs",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1108
+ },
+ {
+  "id": "Bench_Press_with_Chains",
+  "name": "Développé couché chaînes",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1109
+ },
+ {
+  "id": "Barbell_Guillotine_Bench_Press",
+  "name": "Développé couché guillotine",
+  "group": "pecs",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1110
+ },
+ {
+  "id": "One_Arm_Dumbbell_Bench_Press",
+  "name": "Développé couché haltère un bras",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1111
+ },
+ {
+  "id": "Dumbbell_Bench_Press_with_Neutral_Grip",
+  "name": "Développé couché haltères prise neutre",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1112
+ },
+ {
+  "id": "Bench_Press_-_Powerlifting",
+  "name": "Développé couché powerlifting",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1113
+ },
+ {
+  "id": "Reverse_Triceps_Bench_Press",
+  "name": "Développé couché prise inversée triceps",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1114
+ },
+ {
+  "id": "Reverse_Band_Bench_Press",
+  "name": "Développé couché élastique inversé",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1115
+ },
+ {
+  "id": "Bench_Press_-_With_Bands",
+  "name": "Développé couché élastiques",
+  "group": "pecs",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1116
+ },
+ {
+  "id": "Wide-Grip_Decline_Barbell_Bench_Press",
+  "name": "Développé décliné barre prise large",
+  "group": "pecs",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1117
+ },
+ {
+  "id": "Leverage_Decline_Chest_Press",
+  "name": "Développé décliné machine",
+  "group": "pecs",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1118
+ },
+ {
+  "id": "Decline_Smith_Press",
+  "name": "Développé décliné Smith",
+  "group": "pecs",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1119
+ },
+ {
+  "id": "Smith_Machine_Decline_Press",
+  "name": "Développé décliné Smith (machine)",
+  "group": "pecs",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1120
+ },
+ {
+  "id": "Standing_Palm-In_One-Arm_Dumbbell_Press",
+  "name": "Développé haltère un bras prise neutre debout",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1121
+ },
+ {
+  "id": "Standing_Dumbbell_Press",
+  "name": "Développé haltères debout",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1122
+ },
+ {
+  "id": "Standing_Alternating_Dumbbell_Press",
+  "name": "Développé haltères debout alterné",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1123
+ },
+ {
+  "id": "Standing_Palms-In_Dumbbell_Press",
+  "name": "Développé haltères prise neutre debout",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1124
+ },
+ {
+  "id": "Incline_Dumbbell_Bench_With_Palms_Facing_In",
+  "name": "Développé incliné haltères paumes face à face",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1125
+ },
+ {
+  "id": "Alternating_Kettlebell_Press",
+  "name": "Développé kettlebell alterné",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1126
+ },
+ {
+  "id": "Seated_Barbell_Military_Press",
+  "name": "Développé militaire assis à la barre",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1127
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Military_Press",
+  "name": "Développé militaire kettlebell deux bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1128
+ },
+ {
+  "id": "One-Arm_Kettlebell_Military_Press_To_The_Side",
+  "name": "Développé militaire kettlebell un bras sur le côté",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1129
+ },
+ {
+  "id": "Standing_Cable_Chest_Press",
+  "name": "Développé poitrine poulie debout",
+  "group": "pecs",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1130
+ },
+ {
+  "id": "Incline_Cable_Chest_Press",
+  "name": "Développé poitrine poulie incliné",
+  "group": "pecs",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1131
+ },
+ {
+  "id": "Decline_Close-Grip_Bench_To_Skull_Crusher",
+  "name": "Développé serré décliné vers barre au front",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1132
+ },
+ {
+  "id": "Neck_Press",
+  "name": "Développé vers le cou",
+  "group": "pecs",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1133
+ },
+ {
+  "id": "Alternating_Cable_Shoulder_Press",
+  "name": "Développé épaules poulie alterné",
+  "group": "epaules",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1134
+ },
+ {
+  "id": "Seated_Cable_Shoulder_Press",
+  "name": "Développé épaules poulie assis",
+  "group": "epaules",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1135
+ },
+ {
+  "id": "Dumbbell_One-Arm_Shoulder_Press",
+  "name": "Développé épaules un bras haltère",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1136
+ },
+ {
+  "id": "Shoulder_Press_-_With_Bands",
+  "name": "Développé épaules élastiques",
+  "group": "epaules",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1137
+ },
+ {
+  "id": "Isometric_Wipers",
+  "name": "Essuie-glaces isométriques",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1138
+ },
+ {
+  "id": "Hip_Extension_with_Bands",
+  "name": "Extension de hanche élastiques",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1139
+ },
+ {
+  "id": "Chain_Handle_Extension",
+  "name": "Extension poignée chaînes",
+  "group": "triceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1140
+ },
+ {
+  "id": "Body_Tricep_Press",
+  "name": "Extension triceps au poids du corps",
+  "group": "triceps",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1141
+ },
+ {
+  "id": "Incline_Barbell_Triceps_Extension",
+  "name": "Extension triceps barre banc incliné",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1142
+ },
+ {
+  "id": "Decline_EZ_Bar_Triceps_Extension",
+  "name": "Extension triceps barre EZ décliné",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1143
+ },
+ {
+  "id": "Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head",
+  "name": "Extension triceps barre serrée derrière la tête",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1144
+ },
+ {
+  "id": "Lying_Close-Grip_Barbell_Triceps_Press_To_Chin",
+  "name": "Extension triceps barre serrée vers le menton",
+  "group": "triceps",
+  "equipment": "e-z curl bar",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1145
+ },
+ {
+  "id": "One_Arm_Pronated_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps haltère un bras pronation",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1146
+ },
+ {
+  "id": "One_Arm_Supinated_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps haltère un bras supination",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1147
+ },
+ {
+  "id": "Decline_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps haltères déclinés",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1148
+ },
+ {
+  "id": "Dumbbell_Tricep_Extension_-Pronated_Grip",
+  "name": "Extension triceps haltères prise pronation",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1149
+ },
+ {
+  "id": "Seated_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps penché deux bras haltères assis",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1151
+ },
+ {
+  "id": "Standing_Bent-Over_Two-Arm_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps penché deux bras haltères debout",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1152
+ },
+ {
+  "id": "Seated_Bent-Over_One-Arm_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps penché un bras haltère assis",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1153
+ },
+ {
+  "id": "Standing_Bent-Over_One-Arm_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps penché un bras haltère debout",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1154
+ },
+ {
+  "id": "Cable_Lying_Triceps_Extension",
+  "name": "Extension triceps poulie allongé",
+  "group": "triceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1155
+ },
+ {
+  "id": "Cable_Incline_Pushdown",
+  "name": "Extension triceps poulie banc incliné",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1156
+ },
+ {
+  "id": "Low_Cable_Triceps_Extension",
+  "name": "Extension triceps poulie basse",
+  "group": "triceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1157
+ },
+ {
+  "id": "Standing_Low-Pulley_One-Arm_Triceps_Extension",
+  "name": "Extension triceps poulie basse un bras debout",
+  "group": "triceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1158
+ },
+ {
+  "id": "Cable_Incline_Triceps_Extension",
+  "name": "Extension triceps poulie inclinée",
+  "group": "triceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1159
+ },
+ {
+  "id": "Kneeling_Cable_Triceps_Extension",
+  "name": "Extension triceps poulie à genoux",
+  "group": "triceps",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1160
+ },
+ {
+  "id": "Standing_Towel_Triceps_Extension",
+  "name": "Extension triceps serviette debout",
+  "group": "triceps",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1161
+ },
+ {
+  "id": "Standing_One-Arm_Dumbbell_Triceps_Extension",
+  "name": "Extension triceps un bras haltère debout",
+  "group": "triceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1162
+ },
+ {
+  "id": "Sled_Overhead_Triceps_Extension",
+  "name": "Extension triceps à la luge",
+  "group": "triceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1163
+ },
+ {
+  "id": "Speed_Band_Overhead_Triceps",
+  "name": "Extension triceps élastique rapide",
+  "group": "triceps",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1164
+ },
+ {
+  "id": "Suspended_Fallout",
+  "name": "Fallout suspendu",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1165
+ },
+ {
+  "id": "Lunge_Pass_Through",
+  "name": "Fente avec passage",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1166
+ },
+ {
+  "id": "Dumbbell_Rear_Lunge",
+  "name": "Fentes arrière haltères",
+  "group": "jambes",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1167
+ },
+ {
+  "id": "Elevated_Back_Lunge",
+  "name": "Fentes arrière surélevées",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1168
+ },
+ {
+  "id": "Barbell_Lunge",
+  "name": "Fentes barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1169
+ },
+ {
+  "id": "Bodyweight_Walking_Lunge",
+  "name": "Fentes marchées au poids du corps",
+  "group": "jambes",
+  "equipment": null,
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1170
+ },
+ {
+  "id": "Hip_Flexion_with_Band",
+  "name": "Flexion de hanche élastique",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1171
+ },
+ {
+  "id": "Barbell_Side_Bend",
+  "name": "Flexion latérale barre",
+  "group": "abdos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1172
+ },
+ {
+  "id": "One-Arm_High-Pulley_Cable_Side_Bends",
+  "name": "Flexion latérale poulie haute un bras",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1173
+ },
+ {
+  "id": "Weighted_Ball_Side_Bend",
+  "name": "Flexion latérale sur ballon lesté",
+  "group": "abdos",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1174
+ },
+ {
+  "id": "Platform_Hamstring_Slides",
+  "name": "Glissés ischios sur plateforme",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1175
+ },
+ {
+  "id": "Natural_Glute_Ham_Raise",
+  "name": "Glute ham naturel",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1176
+ },
+ {
+  "id": "Glute_Ham_Raise",
+  "name": "Glute ham raise",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1177
+ },
+ {
+  "id": "Floor_Glute-Ham_Raise",
+  "name": "Glute-ham au sol",
+  "group": "jambes",
+  "equipment": null,
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1178
+ },
+ {
+  "id": "Goblet_Squat",
+  "name": "Goblet squat",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1179
+ },
+ {
+  "id": "Seated_Good_Mornings",
+  "name": "Good morning assis",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1180
+ },
+ {
+  "id": "Hanging_Bar_Good_Morning",
+  "name": "Good morning barre suspendue",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1181
+ },
+ {
+  "id": "Good_Morning_off_Pins",
+  "name": "Good morning depuis les sécurités",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1182
+ },
+ {
+  "id": "Stiff_Leg_Barbell_Good_Morning",
+  "name": "Good morning jambes tendues",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1183
+ },
+ {
+  "id": "Band_Good_Morning",
+  "name": "Good morning élastique",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1184
+ },
+ {
+  "id": "Band_Good_Morning_Pull_Through",
+  "name": "Good morning élastique (pull through)",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1185
+ },
+ {
+  "id": "Rope_Climb",
+  "name": "Grimper à la corde",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1186
+ },
+ {
+  "id": "Barbell_Hack_Squat",
+  "name": "Hack squat barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1187
+ },
+ {
+  "id": "Narrow_Stance_Hack_Squats",
+  "name": "Hack squat pieds serrés",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1188
+ },
+ {
+  "id": "Hang_Clean",
+  "name": "Hang clean",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1191
+ },
+ {
+  "id": "Alternating_Hang_Clean",
+  "name": "Hang clean alterné",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1192
+ },
+ {
+  "id": "Double_Kettlebell_Alternating_Hang_Clean",
+  "name": "Hang clean alterné double kettlebell",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1193
+ },
+ {
+  "id": "Kettlebell_Hang_Clean",
+  "name": "Hang clean kettlebell",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1194
+ },
+ {
+  "id": "Hang_Clean_-_Below_the_Knees",
+  "name": "Hang clean sous les genoux",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1195
+ },
+ {
+  "id": "Smith_Machine_Hang_Power_Clean",
+  "name": "Hang power clean Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1196
+ },
+ {
+  "id": "Hang_Snatch",
+  "name": "Hang snatch",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1197
+ },
+ {
+  "id": "Hang_Snatch_-_Below_Knees",
+  "name": "Hang snatch sous les genoux",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1198
+ },
+ {
+  "id": "Weighted_Ball_Hyperextension",
+  "name": "Hyperextension ballon lesté",
+  "group": "dos",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1199
+ },
+ {
+  "id": "Reverse_Hyperextension",
+  "name": "Hyperextension inversée",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1200
+ },
+ {
+  "id": "Hyperextensions_Back_Extensions",
+  "name": "Hyperextensions",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1201
+ },
+ {
+  "id": "Side_Jackknife",
+  "name": "Jackknife latéral",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1202
+ },
+ {
+  "id": "Wide_Stance_Stiff_Legs",
+  "name": "Jambes tendues pieds écartés",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1203
+ },
+ {
+  "id": "Jerk_Balance",
+  "name": "Jerk balance",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1204
+ },
+ {
+  "id": "Jerk_Dip_Squat",
+  "name": "Jerk dip squat",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1205
+ },
+ {
+  "id": "Double_Kettlebell_Jerk",
+  "name": "Jerk double kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1206
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Jerk",
+  "name": "Jerk kettlebell deux bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1207
+ },
+ {
+  "id": "One-Arm_Kettlebell_Jerk",
+  "name": "Jerk kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1208
+ },
+ {
+  "id": "Cable_Judo_Flip",
+  "name": "Judo flip poulie",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1209
+ },
+ {
+  "id": "Kettlebell_Figure_8",
+  "name": "Kettlebell en huit",
+  "group": "abdos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1210
+ },
+ {
+  "id": "Glute_Kickback",
+  "name": "Kickback fessier",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1211
+ },
+ {
+  "id": "One-Legged_Cable_Kickback",
+  "name": "Kickback poulie une jambe",
+  "group": "jambes",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1212
+ },
+ {
+  "id": "Landmine_180s",
+  "name": "Landmine 180",
+  "group": "abdos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1213
+ },
+ {
+  "id": "Landmine_Linear_Jammer",
+  "name": "Landmine jammer",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1214
+ },
+ {
+  "id": "Single-Arm_Linear_Jammer",
+  "name": "Landmine jammer un bras",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1215
+ },
+ {
+  "id": "Seated_Band_Hamstring_Curl",
+  "name": "Leg curl assis élastique",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1216
+ },
+ {
+  "id": "Ball_Leg_Curl",
+  "name": "Leg curl sur ballon",
+  "group": "jambes",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1217
+ },
+ {
+  "id": "Single-Leg_Leg_Extension",
+  "name": "Leg extension une jambe",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1218
+ },
+ {
+  "id": "Standing_Cable_Lift",
+  "name": "Lift poulie debout",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1219
+ },
+ {
+  "id": "London_Bridges",
+  "name": "London bridges",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1220
+ },
+ {
+  "id": "Barbell_Seated_Calf_Raise",
+  "name": "Mollets assis barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1221
+ },
+ {
+  "id": "Dumbbell_Seated_One-Leg_Calf_Raise",
+  "name": "Mollets assis une jambe haltère",
+  "group": "jambes",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1222
+ },
+ {
+  "id": "Rocking_Standing_Calf_Raise",
+  "name": "Mollets debout balancés",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1223
+ },
+ {
+  "id": "Standing_Barbell_Calf_Raise",
+  "name": "Mollets debout barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1224
+ },
+ {
+  "id": "Standing_Dumbbell_Calf_Raise",
+  "name": "Mollets debout haltères",
+  "group": "jambes",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1225
+ },
+ {
+  "id": "Donkey_Calf_Raises",
+  "name": "Mollets donkey",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1226
+ },
+ {
+  "id": "Smith_Machine_Reverse_Calf_Raises",
+  "name": "Mollets inversés Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1227
+ },
+ {
+  "id": "Calf_Press",
+  "name": "Mollets machine (presse dédiée)",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1228
+ },
+ {
+  "id": "Smith_Machine_Calf_Raise",
+  "name": "Mollets Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1229
+ },
+ {
+  "id": "Calf_Raise_On_A_Dumbbell",
+  "name": "Mollets sur haltère",
+  "group": "jambes",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1230
+ },
+ {
+  "id": "Calf_Raises_-_With_Bands",
+  "name": "Mollets élastiques",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1231
+ },
+ {
+  "id": "Monster_Walk",
+  "name": "Monster walk",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1232
+ },
+ {
+  "id": "Muscle_Snatch",
+  "name": "Muscle snatch",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1233
+ },
+ {
+  "id": "Muscle_Up",
+  "name": "Muscle-up",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1234
+ },
+ {
+  "id": "Kipping_Muscle_Up",
+  "name": "Muscle-up kippé",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1235
+ },
+ {
+  "id": "Lying_Rear_Delt_Raise",
+  "name": "Oiseau allongé",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1236
+ },
+ {
+  "id": "Dumbbell_Lying_Rear_Lateral_Raise",
+  "name": "Oiseau allongé haltères",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1237
+ },
+ {
+  "id": "Dumbbell_Lying_One-Arm_Rear_Lateral_Raise",
+  "name": "Oiseau allongé un bras haltère",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1238
+ },
+ {
+  "id": "Reverse_Flyes_With_External_Rotation",
+  "name": "Oiseau avec rotation externe",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1239
+ },
+ {
+  "id": "Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench",
+  "name": "Oiseau haltères tête sur banc",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1240
+ },
+ {
+  "id": "Back_Flyes_-_With_Bands",
+  "name": "Oiseau à l'élastique",
+  "group": "epaules",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1241
+ },
+ {
+  "id": "Sled_Reverse_Flye",
+  "name": "Oiseau à la luge",
+  "group": "epaules",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1242
+ },
+ {
+  "id": "Otis-Up",
+  "name": "Otis-up",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1243
+ },
+ {
+  "id": "Pallof_Press_With_Rotation",
+  "name": "Pallof press avec rotation",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1244
+ },
+ {
+  "id": "One-Arm_Kettlebell_Para_Press",
+  "name": "Para press kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1245
+ },
+ {
+  "id": "Power_Partials",
+  "name": "Partiels lourds",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1246
+ },
+ {
+  "id": "Kettlebell_Pass_Between_The_Legs",
+  "name": "Passage kettlebell entre les jambes",
+  "group": "abdos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1247
+ },
+ {
+  "id": "Hanging_Pike",
+  "name": "Pike suspendu",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1248
+ },
+ {
+  "id": "Pin_Presses",
+  "name": "Pin press",
+  "group": "triceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1249
+ },
+ {
+  "id": "Plate_Pinch",
+  "name": "Pince disque",
+  "group": "biceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1250
+ },
+ {
+  "id": "Standing_Olympic_Plate_Hand_Squeeze",
+  "name": "Pince disque olympique",
+  "group": "biceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1251
+ },
+ {
+  "id": "Single-Arm_Push-Up",
+  "name": "Pompe un bras",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1252
+ },
+ {
+  "id": "Push_Up_to_Side_Plank",
+  "name": "Pompe vers planche latérale",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1253
+ },
+ {
+  "id": "Decline_Push-Up",
+  "name": "Pompes déclinées",
+  "group": "pecs",
+  "equipment": null,
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1254
+ },
+ {
+  "id": "Clock_Push-Up",
+  "name": "Pompes en horloge",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1255
+ },
+ {
+  "id": "Handstand_Push-Ups",
+  "name": "Pompes en équilibre",
+  "group": "epaules",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1256
+ },
+ {
+  "id": "Incline_Push-Up",
+  "name": "Pompes inclinées",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1257
+ },
+ {
+  "id": "Incline_Push-Up_Wide",
+  "name": "Pompes inclinées larges",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1258
+ },
+ {
+  "id": "Incline_Push-Up_Medium",
+  "name": "Pompes inclinées moyennes",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1259
+ },
+ {
+  "id": "Incline_Push-Up_Reverse_Grip",
+  "name": "Pompes inclinées prise inversée",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1260
+ },
+ {
+  "id": "Incline_Push-Up_Close-Grip",
+  "name": "Pompes inclinées serrées",
+  "group": "triceps",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1261
+ },
+ {
+  "id": "Plyo_Kettlebell_Pushups",
+  "name": "Pompes kettlebell pliométriques",
+  "group": "pecs",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1262
+ },
+ {
+  "id": "Push-Ups_With_Feet_On_An_Exercise_Ball",
+  "name": "Pompes pieds sur ballon",
+  "group": "pecs",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1263
+ },
+ {
+  "id": "Pushups_Close_and_Wide_Hand_Positions",
+  "name": "Pompes serrées et larges",
+  "group": "pecs",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1264
+ },
+ {
+  "id": "Close-Grip_Push-Up_off_of_a_Dumbbell",
+  "name": "Pompes serrées sur haltère",
+  "group": "triceps",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1265
+ },
+ {
+  "id": "Suspended_Push-Up",
+  "name": "Pompes suspendues",
+  "group": "pecs",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1266
+ },
+ {
+  "id": "Physioball_Hip_Bridge",
+  "name": "Pont de hanche sur ballon",
+  "group": "jambes",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1267
+ },
+ {
+  "id": "Hip_Lift_with_Band",
+  "name": "Pont de hanche élastique",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1268
+ },
+ {
+  "id": "Butt_Lift_Bridge",
+  "name": "Pont fessier",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1269
+ },
+ {
+  "id": "Single_Leg_Glute_Bridge",
+  "name": "Pont fessier une jambe",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1270
+ },
+ {
+  "id": "Power_Clean",
+  "name": "Power clean",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1271
+ },
+ {
+  "id": "Power_Clean_from_Blocks",
+  "name": "Power clean depuis blocs",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1272
+ },
+ {
+  "id": "Power_Jerk",
+  "name": "Power jerk",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1273
+ },
+ {
+  "id": "Power_Snatch",
+  "name": "Power snatch",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1274
+ },
+ {
+  "id": "Power_Snatch_from_Blocks",
+  "name": "Power snatch depuis blocs",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1275
+ },
+ {
+  "id": "Smith_Machine_Leg_Press",
+  "name": "Presse à cuisses Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1276
+ },
+ {
+  "id": "Dumbbell_Lying_Pronation",
+  "name": "Pronation haltère allongé",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1277
+ },
+ {
+  "id": "Pull_Through",
+  "name": "Pull through",
+  "group": "jambes",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1278
+ },
+ {
+  "id": "Seated_Flat_Bench_Leg_Pull-In",
+  "name": "Pull-in jambes assis sur banc",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1279
+ },
+ {
+  "id": "Flat_Bench_Leg_Pull-In",
+  "name": "Pull-in jambes sur banc",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1280
+ },
+ {
+  "id": "Exercise_Ball_Pull-In",
+  "name": "Pull-in sur ballon",
+  "group": "abdos",
+  "equipment": "exercise ball",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1281
+ },
+ {
+  "id": "Bent-Arm_Barbell_Pullover",
+  "name": "Pull-over barre bras fléchis",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1282
+ },
+ {
+  "id": "Wide-Grip_Decline_Barbell_Pullover",
+  "name": "Pull-over décliné barre prise large",
+  "group": "pecs",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1283
+ },
+ {
+  "id": "Bent-Arm_Dumbbell_Pullover",
+  "name": "Pull-over haltère bras fléchis",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1284
+ },
+ {
+  "id": "Push_Press",
+  "name": "Push press",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1285
+ },
+ {
+  "id": "Double_Kettlebell_Push_Press",
+  "name": "Push press double kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1286
+ },
+ {
+  "id": "One-Arm_Kettlebell_Push_Press",
+  "name": "Push press kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1287
+ },
+ {
+  "id": "Push_Press_-_Behind_the_Neck",
+  "name": "Push press nuque",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1288
+ },
+ {
+  "id": "Rack_Delivery",
+  "name": "Rack delivery",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1289
+ },
+ {
+  "id": "Rack_Pull_with_Bands",
+  "name": "Rack pull élastiques",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1290
+ },
+ {
+  "id": "Smith_Machine_Hip_Raise",
+  "name": "Relevé de bassin Smith",
+  "group": "abdos",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1291
+ },
+ {
+  "id": "Knee_Hip_Raise_On_Parallel_Bars",
+  "name": "Relevé de genoux aux barres parallèles",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1292
+ },
+ {
+  "id": "Leg_Lift",
+  "name": "Relevé de jambes",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1293
+ },
+ {
+  "id": "Hanging_Leg_Raise",
+  "name": "Relevé de jambes suspendu",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1294
+ },
+ {
+  "id": "Alternating_Renegade_Row",
+  "name": "Renegade row alterné",
+  "group": "dos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1295
+ },
+ {
+  "id": "Barbell_Rollout_from_Bench",
+  "name": "Rollout barre depuis le banc",
+  "group": "abdos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1296
+ },
+ {
+  "id": "Barbell_Ab_Rollout_-_On_Knees",
+  "name": "Rollout barre à genoux",
+  "group": "abdos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1297
+ },
+ {
+  "id": "Seated_Barbell_Twist",
+  "name": "Rotation barre assis",
+  "group": "abdos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1298
+ },
+ {
+  "id": "Plate_Twist",
+  "name": "Rotation disque",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1299
+ },
+ {
+  "id": "External_Rotation",
+  "name": "Rotation externe",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1300
+ },
+ {
+  "id": "External_Rotation_with_Band",
+  "name": "Rotation externe élastique",
+  "group": "epaules",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1301
+ },
+ {
+  "id": "Cable_Internal_Rotation",
+  "name": "Rotation interne poulie",
+  "group": "epaules",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1302
+ },
+ {
+  "id": "Internal_Rotation_with_Band",
+  "name": "Rotation interne élastique",
+  "group": "epaules",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1303
+ },
+ {
+  "id": "Wrist_Rotations_with_Straight_Bar",
+  "name": "Rotations poignets barre droite",
+  "group": "biceps",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1304
+ },
+ {
+  "id": "Ab_Roller",
+  "name": "Roue abdominale",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1305
+ },
+ {
+  "id": "Wrist_Roller",
+  "name": "Rouleau à poignets",
+  "group": "biceps",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1306
+ },
+ {
+  "id": "Bodyweight_Mid_Row",
+  "name": "Rowing au poids du corps",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1307
+ },
+ {
+  "id": "Lying_Cambered_Barbell_Row",
+  "name": "Rowing barre cambrée allongé",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1308
+ },
+ {
+  "id": "Barbell_Rear_Delt_Row",
+  "name": "Rowing barre deltoïdes arrière",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1309
+ },
+ {
+  "id": "Straight_Bar_Bench_Mid_Rows",
+  "name": "Rowing barre droite sur banc",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1310
+ },
+ {
+  "id": "Cable_Rope_Rear-Delt_Rows",
+  "name": "Rowing deltoïdes arrière corde",
+  "group": "epaules",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1311
+ },
+ {
+  "id": "Bent_Over_Two-Dumbbell_Row_With_Palms_In",
+  "name": "Rowing haltères prise neutre",
+  "group": "dos",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1312
+ },
+ {
+  "id": "Inverted_Row",
+  "name": "Rowing inversé",
+  "group": "dos",
+  "equipment": null,
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1313
+ },
+ {
+  "id": "Inverted_Row_with_Straps",
+  "name": "Rowing inversé sangles",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1314
+ },
+ {
+  "id": "Alternating_Kettlebell_Row",
+  "name": "Rowing kettlebell alterné",
+  "group": "dos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1315
+ },
+ {
+  "id": "Two-Arm_Kettlebell_Row",
+  "name": "Rowing kettlebell deux bras",
+  "group": "dos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1316
+ },
+ {
+  "id": "One-Arm_Kettlebell_Row",
+  "name": "Rowing kettlebell un bras",
+  "group": "dos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1317
+ },
+ {
+  "id": "Standing_Dumbbell_Upright_Row",
+  "name": "Rowing menton haltères debout",
+  "group": "dos",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1318
+ },
+ {
+  "id": "Upright_Cable_Row",
+  "name": "Rowing menton poulie",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1319
+ },
+ {
+  "id": "Smith_Machine_Upright_Row",
+  "name": "Rowing menton Smith",
+  "group": "dos",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1320
+ },
+ {
+  "id": "Smith_Machine_One-Arm_Upright_Row",
+  "name": "Rowing menton un bras Smith",
+  "group": "epaules",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1321
+ },
+ {
+  "id": "Upright_Row_-_With_Bands",
+  "name": "Rowing menton élastiques",
+  "group": "dos",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1322
+ },
+ {
+  "id": "Low_Pulley_Row_To_Neck",
+  "name": "Rowing poulie basse vers le cou",
+  "group": "epaules",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1323
+ },
+ {
+  "id": "Kneeling_Single-Arm_High_Pulley_Row",
+  "name": "Rowing poulie haute un bras à genoux",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1324
+ },
+ {
+  "id": "Kneeling_High_Pulley_Row",
+  "name": "Rowing poulie haute à genoux",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1325
+ },
+ {
+  "id": "Elevated_Cable_Rows",
+  "name": "Rowing poulie surélevé",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1326
+ },
+ {
+  "id": "Suspended_Row",
+  "name": "Rowing suspendu",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1327
+ },
+ {
+  "id": "Bent_Over_Two-Arm_Long_Bar_Row",
+  "name": "Rowing T-bar deux bras",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1328
+ },
+ {
+  "id": "Bent_Over_One-Arm_Long_Bar_Row",
+  "name": "Rowing T-bar un bras",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1329
+ },
+ {
+  "id": "One-Arm_Long_Bar_Row",
+  "name": "Rowing T-bar un bras (barre longue)",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1330
+ },
+ {
+  "id": "Sled_Row",
+  "name": "Rowing à la luge",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1331
+ },
+ {
+  "id": "Cable_Russian_Twists",
+  "name": "Russian twist poulie",
+  "group": "abdos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1332
+ },
+ {
+  "id": "Dumbbell_Scaption",
+  "name": "Scaption haltères",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1333
+ },
+ {
+  "id": "Shotgun_Row",
+  "name": "Shotgun row",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1334
+ },
+ {
+  "id": "Snatch_Shrug",
+  "name": "Shrug arraché",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1335
+ },
+ {
+  "id": "Barbell_Shrug_Behind_The_Back",
+  "name": "Shrug barre dans le dos",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1336
+ },
+ {
+  "id": "Clean_Shrug",
+  "name": "Shrug clean",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1337
+ },
+ {
+  "id": "Middle_Back_Shrug",
+  "name": "Shrug dos milieu",
+  "group": "dos",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1338
+ },
+ {
+  "id": "Leverage_Shrug",
+  "name": "Shrug machine",
+  "group": "dos",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1339
+ },
+ {
+  "id": "Calf-Machine_Shoulder_Shrug",
+  "name": "Shrug machine à mollets",
+  "group": "dos",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1340
+ },
+ {
+  "id": "Cable_Shrugs",
+  "name": "Shrug poulie",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1341
+ },
+ {
+  "id": "Smith_Machine_Behind_the_Back_Shrug",
+  "name": "Shrug Smith dans le dos",
+  "group": "dos",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1342
+ },
+ {
+  "id": "3_4_Sit-Up",
+  "name": "Sit-up 3/4",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1343
+ },
+ {
+  "id": "Press_Sit-Up",
+  "name": "Sit-up avec développé",
+  "group": "abdos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1344
+ },
+ {
+  "id": "Frog_Sit-Ups",
+  "name": "Sit-up grenouille",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1345
+ },
+ {
+  "id": "Janda_Sit-Up",
+  "name": "Sit-up Janda",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1346
+ },
+ {
+  "id": "Weighted_Sit-Ups_-_With_Bands",
+  "name": "Sit-up lesté élastiques",
+  "group": "abdos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1347
+ },
+ {
+  "id": "One-Arm_Medicine_Ball_Slam",
+  "name": "Slam ballon médicinal un bras",
+  "group": "abdos",
+  "equipment": "medicine ball",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1348
+ },
+ {
+  "id": "Snatch_Balance",
+  "name": "Snatch balance",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1349
+ },
+ {
+  "id": "Heaving_Snatch_Balance",
+  "name": "Snatch balance dynamique",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1350
+ },
+ {
+  "id": "Double_Kettlebell_Snatch",
+  "name": "Snatch double kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1351
+ },
+ {
+  "id": "One-Arm_Kettlebell_Snatch",
+  "name": "Snatch kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1352
+ },
+ {
+  "id": "Snatch_Deadlift",
+  "name": "Soulevé de terre arraché",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1353
+ },
+ {
+  "id": "Deadlift_with_Chains",
+  "name": "Soulevé de terre chaînes",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1354
+ },
+ {
+  "id": "Clean_Deadlift",
+  "name": "Soulevé de terre clean",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1355
+ },
+ {
+  "id": "Deficit_Deadlift",
+  "name": "Soulevé de terre en déficit",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1356
+ },
+ {
+  "id": "Stiff-Legged_Barbell_Deadlift",
+  "name": "Soulevé de terre jambes tendues barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1357
+ },
+ {
+  "id": "Smith_Machine_Stiff-Legged_Deadlift",
+  "name": "Soulevé de terre jambes tendues Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1358
+ },
+ {
+  "id": "One-Arm_Side_Deadlift",
+  "name": "Soulevé de terre latéral un bras",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1359
+ },
+ {
+  "id": "Leverage_Deadlift",
+  "name": "Soulevé de terre machine",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1360
+ },
+ {
+  "id": "Cable_Deadlifts",
+  "name": "Soulevé de terre poulie",
+  "group": "jambes",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1361
+ },
+ {
+  "id": "Romanian_Deadlift_from_Deficit",
+  "name": "Soulevé de terre roumain en déficit",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1362
+ },
+ {
+  "id": "Sumo_Deadlift_with_Chains",
+  "name": "Soulevé de terre sumo chaînes",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1363
+ },
+ {
+  "id": "Reverse_Band_Sumo_Deadlift",
+  "name": "Soulevé de terre sumo élastique inversé",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1364
+ },
+ {
+  "id": "Sumo_Deadlift_with_Bands",
+  "name": "Soulevé de terre sumo élastiques",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1365
+ },
+ {
+  "id": "Trap_Bar_Deadlift",
+  "name": "Soulevé de terre trap bar",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1366
+ },
+ {
+  "id": "Kettlebell_One-Legged_Deadlift",
+  "name": "Soulevé de terre une jambe kettlebell",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1367
+ },
+ {
+  "id": "Reverse_Band_Deadlift",
+  "name": "Soulevé de terre élastique inversé",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1368
+ },
+ {
+  "id": "Deadlift_with_Bands",
+  "name": "Soulevé de terre élastiques",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1369
+ },
+ {
+  "id": "Spell_Caster",
+  "name": "Spell caster",
+  "group": "abdos",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1370
+ },
+ {
+  "id": "Spider_Crawl",
+  "name": "Spider crawl",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1371
+ },
+ {
+  "id": "Split_Clean",
+  "name": "Split clean",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1372
+ },
+ {
+  "id": "Split_Jerk",
+  "name": "Split jerk",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1373
+ },
+ {
+  "id": "One-Arm_Kettlebell_Split_Jerk",
+  "name": "Split jerk kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1374
+ },
+ {
+  "id": "Split_Snatch",
+  "name": "Split snatch",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1375
+ },
+ {
+  "id": "One-Arm_Kettlebell_Split_Snatch",
+  "name": "Split snatch kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1376
+ },
+ {
+  "id": "Barbell_Side_Split_Squat",
+  "name": "Split squat latéral barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1377
+ },
+ {
+  "id": "Suspended_Split_Squat",
+  "name": "Split squat suspendu",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1378
+ },
+ {
+  "id": "Smith_Single-Leg_Split_Squat",
+  "name": "Split squat une jambe Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1379
+ },
+ {
+  "id": "Bodyweight_Squat",
+  "name": "Squat au poids du corps",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1380
+ },
+ {
+  "id": "Front_Barbell_Squat",
+  "name": "Squat avant barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1381
+ },
+ {
+  "id": "Front_Barbell_Squat_To_A_Bench",
+  "name": "Squat avant barre jusqu'au banc",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1382
+ },
+ {
+  "id": "Front_Squats_With_Two_Kettlebells",
+  "name": "Squat avant deux kettlebells",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1383
+ },
+ {
+  "id": "Squat_with_Plate_Movers",
+  "name": "Squat avec déplacement de disques",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1384
+ },
+ {
+  "id": "Barbell_Squat_To_A_Bench",
+  "name": "Squat barre jusqu'au banc",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1385
+ },
+ {
+  "id": "Wide_Stance_Barbell_Squat",
+  "name": "Squat barre pieds écartés",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1386
+ },
+ {
+  "id": "One_Leg_Barbell_Squat",
+  "name": "Squat barre une jambe",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1387
+ },
+ {
+  "id": "Overhead_Squat",
+  "name": "Squat bras tendus",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1388
+ },
+ {
+  "id": "Squat_with_Chains",
+  "name": "Squat chaînes",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1389
+ },
+ {
+  "id": "Frankenstein_Squat",
+  "name": "Squat Frankenstein",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1390
+ },
+ {
+  "id": "Dumbbell_Squat_To_A_Bench",
+  "name": "Squat haltères jusqu'au banc",
+  "group": "jambes",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1391
+ },
+ {
+  "id": "Jefferson_Squats",
+  "name": "Squat Jefferson",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1392
+ },
+ {
+  "id": "Squat_Jerk",
+  "name": "Squat jerk",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1393
+ },
+ {
+  "id": "One-Arm_Overhead_Kettlebell_Squats",
+  "name": "Squat kettlebell bras tendu au-dessus",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1394
+ },
+ {
+  "id": "Weighted_Squat",
+  "name": "Squat lesté",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1395
+ },
+ {
+  "id": "Lying_Machine_Squat",
+  "name": "Squat machine allongé",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1396
+ },
+ {
+  "id": "Olympic_Squat",
+  "name": "Squat olympique",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1397
+ },
+ {
+  "id": "Narrow_Stance_Squats",
+  "name": "Squat pieds serrés",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1398
+ },
+ {
+  "id": "Kettlebell_Pistol_Squat",
+  "name": "Squat pistol kettlebell",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1399
+ },
+ {
+  "id": "Smith_Machine_Pistol_Squat",
+  "name": "Squat pistol Smith",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1400
+ },
+ {
+  "id": "Freehand_Jump_Squat",
+  "name": "Squat sauté",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1401
+ },
+ {
+  "id": "Weighted_Jump_Squat",
+  "name": "Squat sauté lesté",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1402
+ },
+ {
+  "id": "Kneeling_Jump_Squat",
+  "name": "Squat sauté à genoux",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1403
+ },
+ {
+  "id": "Weighted_Sissy_Squat",
+  "name": "Squat sissy lesté",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1404
+ },
+ {
+  "id": "Chair_Squat",
+  "name": "Squat sur chaise",
+  "group": "jambes",
+  "equipment": "machine",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1405
+ },
+ {
+  "id": "Single-Leg_High_Box_Squat",
+  "name": "Squat une jambe sur box haute",
+  "group": "jambes",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1406
+ },
+ {
+  "id": "Zercher_Squats",
+  "name": "Squat Zercher",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1407
+ },
+ {
+  "id": "Kneeling_Squat",
+  "name": "Squat à genoux",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1408
+ },
+ {
+  "id": "Reverse_Band_Power_Squat",
+  "name": "Squat élastique inversé",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1409
+ },
+ {
+  "id": "Squat_with_Bands",
+  "name": "Squat élastiques",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1410
+ },
+ {
+  "id": "Speed_Squats",
+  "name": "Squats rapides",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1411
+ },
+ {
+  "id": "Squats_-_With_Bands",
+  "name": "Squats élastiques",
+  "group": "jambes",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1412
+ },
+ {
+  "id": "Step-up_with_Knee_Raise",
+  "name": "Step-up avec montée de genou",
+  "group": "jambes",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1413
+ },
+ {
+  "id": "Barbell_Step_Ups",
+  "name": "Step-up barre",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1414
+ },
+ {
+  "id": "Dumbbell_Lying_Supination",
+  "name": "Supination haltère allongé",
+  "group": "biceps",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1415
+ },
+ {
+  "id": "Svend_Press",
+  "name": "Svend press",
+  "group": "pecs",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1416
+ },
+ {
+  "id": "One-Arm_Kettlebell_Swings",
+  "name": "Swing kettlebell un bras",
+  "group": "jambes",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1417
+ },
+ {
+  "id": "Kettlebell_Thruster",
+  "name": "Thruster kettlebell",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1418
+ },
+ {
+  "id": "Snatch_Pull",
+  "name": "Tirage arraché",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1419
+ },
+ {
+  "id": "Incline_Bench_Pull",
+  "name": "Tirage barre sur banc incliné",
+  "group": "dos",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1420
+ },
+ {
+  "id": "Clean_Pull",
+  "name": "Tirage clean",
+  "group": "jambes",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1421
+ },
+ {
+  "id": "Kettlebell_Sumo_High_Pull",
+  "name": "Tirage haut sumo kettlebell",
+  "group": "dos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1422
+ },
+ {
+  "id": "Wide-Grip_Pulldown_Behind_The_Neck",
+  "name": "Tirage nuque prise large",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1423
+ },
+ {
+  "id": "Full_Range-Of-Motion_Lat_Pulldown",
+  "name": "Tirage vertical amplitude complète",
+  "group": "dos",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1424
+ },
+ {
+  "id": "Alternate_Heel_Touchers",
+  "name": "Touchers de talons alternés",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1425
+ },
+ {
+  "id": "Around_The_Worlds",
+  "name": "Tours du monde haltère",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1426
+ },
+ {
+  "id": "Band_Assisted_Pull-Up",
+  "name": "Traction assistée élastique",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1427
+ },
+ {
+  "id": "V-Bar_Pullup",
+  "name": "Traction barre en V",
+  "group": "dos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1428
+ },
+ {
+  "id": "Side_To_Side_Chins",
+  "name": "Traction d'un côté à l'autre",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1429
+ },
+ {
+  "id": "Weighted_Pull_Ups",
+  "name": "Traction lestée",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1430
+ },
+ {
+  "id": "Wide-Grip_Rear_Pull-Up",
+  "name": "Traction prise large nuque",
+  "group": "dos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1431
+ },
+ {
+  "id": "Mixed_Grip_Chin",
+  "name": "Traction prise mixte",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1432
+ },
+ {
+  "id": "Scapular_Pull-Up",
+  "name": "Traction scapulaire",
+  "group": "dos",
+  "equipment": null,
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1433
+ },
+ {
+  "id": "Gironda_Sternum_Chins",
+  "name": "Traction sternum Gironda",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1434
+ },
+ {
+  "id": "One_Arm_Chin-Up",
+  "name": "Traction un bras",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1435
+ },
+ {
+  "id": "Gorilla_Chin_Crunch",
+  "name": "Traction-crunch gorille",
+  "group": "abdos",
+  "equipment": "body only",
+  "isBodyweight": true,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1436
+ },
+ {
+  "id": "Rocky_Pull-Ups_Pulldowns",
+  "name": "Traction-tirage Rocky",
+  "group": "dos",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1437
+ },
+ {
+  "id": "Kettlebell_Turkish_Get-Up_Lunge_style",
+  "name": "Turkish get-up kettlebell (fente)",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1438
+ },
+ {
+  "id": "Kettlebell_Turkish_Get-Up_Squat_style",
+  "name": "Turkish get-up kettlebell (squat)",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1439
+ },
+ {
+  "id": "Double_Kettlebell_Windmill",
+  "name": "Windmill double kettlebell",
+  "group": "abdos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1440
+ },
+ {
+  "id": "Kettlebell_Windmill",
+  "name": "Windmill kettlebell",
+  "group": "abdos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1441
+ },
+ {
+  "id": "Advanced_Kettlebell_Windmill",
+  "name": "Windmill kettlebell avancé",
+  "group": "abdos",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1442
+ },
+ {
+  "id": "One-Arm_Flat_Bench_Dumbbell_Flye",
+  "name": "Écarté haltère un bras banc plat",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1443
+ },
+ {
+  "id": "Bodyweight_Flyes",
+  "name": "Écartés au poids du corps",
+  "group": "pecs",
+  "equipment": "e-z curl bar",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1444
+ },
+ {
+  "id": "Cross_Over_-_With_Bands",
+  "name": "Écartés croisés élastiques",
+  "group": "pecs",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1445
+ },
+ {
+  "id": "Decline_Dumbbell_Flyes",
+  "name": "Écartés haltères déclinés",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1446
+ },
+ {
+  "id": "Incline_Dumbbell_Flyes_-_With_A_Twist",
+  "name": "Écartés inclinés haltères avec rotation",
+  "group": "pecs",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1447
+ },
+ {
+  "id": "Band_Pull_Apart",
+  "name": "Écartés à l'élastique (pull apart)",
+  "group": "epaules",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1448
+ },
+ {
+  "id": "Front_Two-Dumbbell_Raise",
+  "name": "Élévation frontale deux haltères",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1449
+ },
+ {
+  "id": "Front_Plate_Raise",
+  "name": "Élévation frontale disque",
+  "group": "epaules",
+  "equipment": "other",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1450
+ },
+ {
+  "id": "Front_Raise_And_Pullover",
+  "name": "Élévation frontale et pull-over",
+  "group": "pecs",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1451
+ },
+ {
+  "id": "Front_Incline_Dumbbell_Raise",
+  "name": "Élévation frontale haltère banc incliné",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1452
+ },
+ {
+  "id": "Standing_Dumbbell_Straight-Arm_Front_Delt_Raise_Above_Head",
+  "name": "Élévation frontale haltère bras tendu au-dessus",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1453
+ },
+ {
+  "id": "Dumbbell_Raise",
+  "name": "Élévation haltère",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1454
+ },
+ {
+  "id": "Single_Dumbbell_Raise",
+  "name": "Élévation haltère unique",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1455
+ },
+ {
+  "id": "Lying_One-Arm_Lateral_Raise",
+  "name": "Élévation latérale allongé un bras",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1456
+ },
+ {
+  "id": "Bent_Over_Low-Pulley_Side_Lateral",
+  "name": "Élévation latérale poulie basse penché",
+  "group": "epaules",
+  "equipment": "cable",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1457
+ },
+ {
+  "id": "One-Arm_Incline_Lateral_Raise",
+  "name": "Élévation latérale un bras banc incliné",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1458
+ },
+ {
+  "id": "Side_Laterals_to_Front_Raise",
+  "name": "Élévation latérale vers frontale",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1459
+ },
+ {
+  "id": "Barbell_Incline_Shoulder_Raise",
+  "name": "Élévation épaules barre banc incliné",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1460
+ },
+ {
+  "id": "Dumbbell_Incline_Shoulder_Raise",
+  "name": "Élévation épaules haltères banc incliné",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1461
+ },
+ {
+  "id": "Smith_Incline_Shoulder_Raise",
+  "name": "Élévation épaules Smith banc incliné",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1462
+ },
+ {
+  "id": "Straight_Raises_on_Incline_Bench",
+  "name": "Élévations bras tendus banc incliné",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1463
+ },
+ {
+  "id": "Alternating_Deltoid_Raise",
+  "name": "Élévations deltoïdes alternées",
+  "group": "epaules",
+  "equipment": "dumbbell",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1464
+ },
+ {
+  "id": "Lateral_Raise_-_With_Bands",
+  "name": "Élévations latérales élastiques",
+  "group": "epaules",
+  "equipment": "bands",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1465
+ },
+ {
+  "id": "Clean_and_Jerk",
+  "name": "Épaulé-jeté",
+  "group": "epaules",
+  "equipment": "barbell",
+  "isBodyweight": false,
+  "isUnilateral": false,
+  "hasAnimation": false,
+  "photoCount": 2,
+  "order": 1466
+ },
+ {
+  "id": "One-Arm_Kettlebell_Clean_and_Jerk",
+  "name": "Épaulé-jeté kettlebell un bras",
+  "group": "epaules",
+  "equipment": "kettlebells",
+  "isBodyweight": false,
+  "isUnilateral": true,
+  "hasAnimation": true,
+  "photoCount": 2,
+  "order": 1467
  }
 ]

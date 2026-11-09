@@ -89,7 +89,7 @@ struct SessionRecapView: View {
                     if let exercise = exercises[entry.exerciseRef] {
                         EntryRecapRow(
                             name: exercise.name,
-                            lines: present.map { ($0, doneSets(entry, $0.id).map { SetValue(weight: $0.weightKg, reps: $0.reps) }) }
+                            lines: present.map { ($0, doneSets(entry, $0.id).map(\.value)) }
                         )
                     }
                 }
@@ -147,11 +147,12 @@ struct SessionRecapView: View {
     private func recaps(present: [SportProfile], history: SportHistory, exercises: [String: ExerciseInfo], previous: SportSession?) -> [ProfileRecap] {
         present.map { profile in
             let done = sessionEntries.flatMap { doneSets($0, profile.id) }
-            let total = done.reduce(0) { $0 + $1.weightKg * Double($1.reps) }
+            let total = done.reduce(0) { $0 + $1.value.volume }
             let before = previous.map { volume(of: $0, profile: profile.id) } ?? 0
             return ProfileRecap(
                 profile: profile,
                 setCount: done.count,
+                dropSetCount: done.filter { !$0.drops.isEmpty }.count,
                 volume: total,
                 change: before > 0 ? (total - before) / before * 100 : nil,
                 records: records(for: profile.id, history: history, exercises: exercises)
@@ -168,7 +169,7 @@ struct SessionRecapView: View {
             var earlier: [SetValue] = []
             var best: SetValue?
             for set in doneSets(entry, profile) {
-                let value = SetValue(weight: set.weightKg, reps: set.reps)
+                let value = set.value
                 if StrengthStats.isRecord(value, previous: previous + [Performance(sessionID: sessionID, day: .now, sets: earlier)]),
                    StrengthStats.oneRepMax(value) >= StrengthStats.oneRepMax(best ?? SetValue(weight: 0, reps: 0)) {
                     best = value
@@ -176,14 +177,14 @@ struct SessionRecapView: View {
                 earlier.append(value)
             }
             guard let best, let name = exercises[entry.exerciseRef]?.name else { return nil }
-            return "Record · \(name) · \(best.label)"
+            return "Record · \(name) · \(best.main.label)"
         }
     }
 
     private func volume(of session: SportSession, profile: UUID) -> Double {
         let ids = Set(entries.filter { $0.sessionID == session.id && $0.deletedAt == nil }.map(\.id))
         return sets.filter { ids.contains($0.entryID) && $0.profileID == profile && $0.isDone && $0.deletedAt == nil }
-            .reduce(0) { $0 + $1.weightKg * Double($1.reps) }
+            .reduce(0) { $0 + $1.value.volume }
     }
 
     private func finish(_ session: SportSession) {
@@ -197,7 +198,7 @@ struct SessionRecapView: View {
         for set in mine where !set.isDone { sync.delete(set) }
         session.endedAt = customDuration.map { session.startedAt.addingTimeInterval($0) } ?? .now
         sync.save(session)
-        rest.skip()
+        rest.skipAll()
         close()
     }
 
@@ -212,7 +213,7 @@ struct SessionRecapView: View {
 
     private func remove(_ session: SportSession) {
         sync.delete(session)
-        rest.skip()
+        rest.skipAll()
         close()
     }
 
@@ -276,6 +277,7 @@ private struct DurationEditor: View {
 struct ProfileRecap {
     let profile: SportProfile
     let setCount: Int
+    let dropSetCount: Int
     let volume: Double
     /// Écart de volume en % avec la séance précédente du même modèle.
     let change: Double?
@@ -287,7 +289,7 @@ private struct ProfileRecapSection: View {
 
     var body: some View {
         Section {
-            LabeledContent("Séries validées", value: "\(recap.setCount)")
+            LabeledContent("Séries validées", value: recap.dropSetCount > 0 ? "\(recap.setCount) dont \(recap.dropSetCount) dégressive\(recap.dropSetCount > 1 ? "s" : "")" : "\(recap.setCount)")
             LabeledContent("Volume soulevé", value: Format.kg(recap.volume))
             if let change = recap.change {
                 LabeledContent("Par rapport à la fois d'avant") {
@@ -325,7 +327,7 @@ private struct EntryRecapRow: View {
             ForEach(lines.filter { !$0.1.isEmpty }, id: \.0.id) { profile, sets in
                 HStack(alignment: .firstTextBaseline, spacing: 6) {
                     Circle().fill(profile.color).frame(width: 7, height: 7)
-                    Text(sets.map(\.label).joined(separator: "  "))
+                    Text(sets.map(\.label).joined(separator: " · "))
                         .font(.subheadline)
                         .monospacedDigit()
                         .foregroundStyle(.secondary)

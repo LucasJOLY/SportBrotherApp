@@ -10,6 +10,7 @@ struct SessionHomeView: View {
     @Query private var profiles: [SportProfile]
     @Query private var overrides: [SportExercise]
     @Query private var templates: [SportTemplate]
+    @Query private var templateItems: [SportTemplateItem]
     @AppStorage(myProfileKey) private var myProfileID = ""
     @State private var starting = false
     @State private var templateSource: SportSession?
@@ -93,6 +94,12 @@ struct SessionHomeView: View {
             .navigationSubtitle(sync.statusText)
             .navigationDestination(for: UUID.self) { SessionRecapView(sessionID: $0, isFinishing: false) }
             .refreshable { await sync.refresh() }
+            .task(id: entries.count + templateItems.count) {
+                // Démonstrations des exos qu'on pratique, gardées sur le téléphone pour la salle sans réseau.
+                let used = Set(entries.filter { $0.deletedAt == nil }.map(\.exerciseRef))
+                    .union(templateItems.filter { $0.deletedAt == nil }.map(\.exerciseRef))
+                await ExerciseMedia.prefetch(used.compactMap { exercises[$0] })
+            }
             .sheet(isPresented: $starting) { StartSessionSheet() }
             .alert("Nom du modèle", isPresented: Binding(get: { templateSource != nil }, set: { if !$0 { templateSource = nil } })) {
                 TextField("Push, Dos-Biceps…", text: $templateName)

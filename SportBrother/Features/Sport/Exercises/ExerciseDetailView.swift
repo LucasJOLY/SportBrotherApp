@@ -28,6 +28,15 @@ struct ExerciseDetailView: View {
                     Toggle(isOn: binding(\.isFavorite, exercise.isFavorite)) {
                         Label("Favori", systemImage: "star")
                     }
+                    Toggle(isOn: Binding {
+                        exercise.isUnilateral
+                    } set: { value in
+                        let settings = sync.settings(for: exerciseID, in: overrides)
+                        settings.isUnilateral = value
+                        sync.save(settings)
+                    }) {
+                        Label("Unilatéral (charge par bras)", systemImage: "hand.raised")
+                    }
                     Stepper(value: binding(\.restSeconds, exercise.restSeconds, default: ExerciseInfo.defaultRest), in: 0...600, step: 15) {
                         LabeledContent("Repos", value: exercise.restSeconds == 0 ? "Aucun" : Format.clock(TimeInterval(exercise.restSeconds)))
                             .monospacedDigit()
@@ -124,76 +133,106 @@ struct ExerciseDetailView: View {
     }
 }
 
-/// En-tête d'un exo : la photo de la machine si elle existe (plein cadre),
-/// sinon l'illustration 3D animée du catalogue sur fond blanc, à sa taille d'origine pour rester nette.
+/// En-tête d'un exo : la photo de la machine si elle existe (plein cadre), sinon la démonstration du catalogue
+/// (animation 3D, ou photos départ/arrivée en fondu). Toucher ouvre la démonstration en grand.
 struct ExerciseHero: View {
     let exercise: ExerciseInfo
     var height: CGFloat = 220
     @Environment(SportSync.self) private var sync
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var photo: UIImage?
+    @State private var animation: UIImage?
+    @State private var demoPhotos: [UIImage] = []
+    @State private var showingDemo = false
+
+    private var canExpand: Bool { exercise.hasDemo || photo != nil }
 
     var body: some View {
-        Group {
-            if let photo {
-                Image(uiImage: photo)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(height: height)
-                    .frame(maxWidth: .infinity)
-                    .clipped()
-            } else if let still = ExerciseCatalog.image(for: exercise.id) {
-                Group {
-                    if !reduceMotion, let animation = ExerciseCatalog.animation(for: exercise.id) {
-                        AnimatedImage(image: animation)
-                    } else {
-                        Image(uiImage: still).resizable().interpolation(.high)
+        Button { showingDemo = true } label: {
+            content
+                .overlay(alignment: .bottomLeading) {
+                    Text(exercise.group.label)
+                        .font(.caption.weight(.semibold))
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 5)
+                        .glassEffect()
+                        .padding(12)
+                }
+                .overlay(alignment: .bottomTrailing) {
+                    if canExpand {
+                        Image(systemName: "arrow.up.left.and.arrow.down.right")
+                            .font(.footnote.weight(.semibold))
+                            .padding(8)
+                            .glassEffect()
+                            .padding(12)
                     }
                 }
-                .aspectRatio(1, contentMode: .fit)
-                .frame(height: height - 16)
-                .frame(maxWidth: .infinity)
-                .frame(height: height)
-                .background(Color.white)
-            } else {
-                Image(systemName: exercise.group.symbol)
-                    .font(.system(size: 64, weight: .medium))
-                    .foregroundStyle(exercise.group.color)
-                    .frame(height: height * 0.8)
-                    .frame(maxWidth: .infinity)
-                    .background(exercise.group.color.opacity(0.12))
-            }
+                .contentShape(.rect)
         }
-        .overlay(alignment: .bottomLeading) {
-            Text(exercise.group.label)
-                .font(.caption.weight(.semibold))
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .glassEffect()
-                .padding(12)
+        .buttonStyle(.plain)
+        .disabled(!canExpand)
+        .accessibilityLabel("Démonstration de \(exercise.name)")
+        .accessibilityHint(canExpand ? "Touche pour l'afficher en grand" : "")
+        .sheet(isPresented: $showingDemo) {
+            ExerciseDemoViewer(exercise: exercise, machinePhoto: photo)
         }
-        .accessibilityHidden(true)
         .task(id: exercise.photoPath) {
             guard let path = exercise.photoPath else { photo = nil; return }
             photo = await sync.photo(path)
         }
-    }
-}
-
-/// GIF animé du catalogue (SwiftUI n'anime pas les GIF nativement).
-private struct AnimatedImage: UIViewRepresentable {
-    let image: UIImage
-
-    func makeUIView(context: Context) -> UIImageView {
-        let view = UIImageView()
-        view.contentMode = .scaleAspectFit
-        view.setContentCompressionResistancePriority(.defaultLow, for: .horizontal)
-        view.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
-        return view
+        .task(id: exercise.id) {
+            animation = ExerciseMedia.cachedAnimation(for: exercise.id)
+            demoPhotos = ExerciseMedia.cachedPhotos(for: exercise.id, count: exercise.photoCount)
+            if exercise.hasAnimation, animation == nil {
+                animation = await ExerciseMedia.animation(for: exercise.id)
+            }
+            if !exercise.hasAnimation, demoPhotos.count < exercise.photoCount {
+                demoPhotos = await ExerciseMedia.photos(for: exercise.id, count: exercise.photoCount)
+            }
+        }
     }
 
-    func updateUIView(_ view: UIImageView, context: Context) {
-        if view.image !== image { view.image = image }
+    @ViewBuilder private var content: some View {
+        if let photo {
+            Image(uiImage: photo)
+                .resizable()
+                .scaledToFill()
+                .frame(height: height)
+                .frame(maxWidth: .infinity)
+                .clipped()
+        } else if exercise.hasAnimation, let still = animation ?? ExerciseCatalog.image(for: exercise.id) {
+            Group {
+                if !reduceMotion, let animation {
+                    AnimatedImage(image: animation)
+                } else {
+                    Image(uiImage: still.images?.first ?? still).resizable().interpolation(.high)
+                }
+            }
+            .aspectRatio(1, contentMode: .fit)
+            .frame(height: height - 16)
+            .frame(maxWidth: .infinity)
+            .frame(height: height)
+            .background(Color.white)
+        } else if !demoPhotos.isEmpty {
+            DemoPhotos(images: demoPhotos)
+                .frame(height: height)
+                .frame(maxWidth: .infinity)
+                .clipped()
+        } else if let still = ExerciseCatalog.image(for: exercise.id) {
+            Image(uiImage: still)
+                .resizable()
+                .scaledToFill()
+                .frame(height: height)
+                .frame(maxWidth: .infinity)
+                .clipped()
+        } else {
+            Image(systemName: exercise.group.symbol)
+                .font(.system(size: 64, weight: .medium))
+                .foregroundStyle(exercise.group.color)
+                .frame(height: height * 0.8)
+                .frame(maxWidth: .infinity)
+                .background(exercise.group.color.opacity(0.12))
+        }
     }
 }
 

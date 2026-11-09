@@ -1,15 +1,23 @@
 #!/usr/bin/env python3
-"""Construit le catalogue d'exos embarqué.
+"""Construit le catalogue d'exos et ses démonstrations.
 
-Liste et groupes : free-exercise-db (domaine public, Unlicense), noms traduits ci-dessous.
-Illustrations : animations 3D de l'API gratuite ExerciseDB V1 (AscendAPI), choisies dans exercisedb_media.json.
+Liste et groupes : free-exercise-db (domaine public, Unlicense). Les 177 exos historiques de SELECTION gardent
+leurs identifiants, noms et groupes (les séances y font référence) ; les autres exos de musculation de la base
+viennent de exercise_names_fr.json, groupe déduit du muscle principal.
+Démonstrations :
+- animation 3D de l'API gratuite ExerciseDB V1 (AscendAPI), choisie dans exercisedb_media.json, 180 px ;
+- photos départ/arrivée de free-exercise-db, 850 px.
 
-Usage : python3 -I scripts/build_exercise_catalog.py <dossier_de_travail>
-Écrit SportBrother/Resources/ExerciseCatalog/{catalog.json, images/<id>.jpg, anim/<id>.gif}.
-Exécuté une seule fois pendant le développement : l'app ne fait aucun appel réseau pour le catalogue.
+Usage : python3 -I scripts/build_exercise_catalog.py <dossier_de_travail> [--upload]
+Écrit SportBrother/Resources/ExerciseCatalog/{catalog.json, images/<id>.jpg} (vignettes embarquées, hors ligne).
+Avec --upload, envoie gif/<id>.gif et photo/<id>/<n>.jpg dans le bucket public `sport-media`
+(SUPABASE_URL, SUPABASE_KEY et SUPABASE_TOKEN, un jeton d'utilisateur autorisé à écrire, dans l'environnement).
+L'app télécharge ces médias à la demande et les garde en cache.
 """
 import json
 import os
+import re
+import shutil
 import subprocess
 import sys
 import time
@@ -19,6 +27,27 @@ SOURCE = "https://raw.githubusercontent.com/yuhonas/free-exercise-db/main"
 MEDIA = "https://static.exercisedb.dev/media"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "SportBrother", "Resources", "ExerciseCatalog")
+BUCKET = "sport-media"
+
+# Catégories free-exercise-db gardées : la musculation, pas les étirements ni le cardio.
+CATEGORIES = {"strength", "powerlifting", "olympic weightlifting"}
+
+# Muscle principal free-exercise-db → groupe de l'app (contrainte SQL sport_exercises.muscle_group).
+MUSCLE_GROUPS = {
+    "abdominals": "abdos",
+    "lats": "dos", "middle back": "dos", "lower back": "dos", "traps": "dos",
+    "biceps": "biceps", "forearms": "biceps",
+    "triceps": "triceps",
+    "shoulders": "epaules",
+    "chest": "pecs",
+    "quadriceps": "jambes", "hamstrings": "jambes", "glutes": "jambes", "calves": "jambes",
+    "adductors": "jambes", "abductors": "jambes",
+}
+
+# Un bras puis l'autre : charge par bras, reps de chaque côté. Réglable ensuite dans l'app.
+UNILATERAL = re.compile(r"one[-_ ]?arm|single[-_ ]arm|alternat|concentration", re.IGNORECASE)
+# « Alterné » sans charge par bras : rotations d'abdos, mouvements olympiques à deux kettlebells…
+NOT_UNILATERAL = re.compile(r"crunch|heel|twist|double|renegade|floor_press|hang_clean", re.IGNORECASE)
 
 # id free-exercise-db → nom français. Le groupe vient du muscle principal, sauf mention contraire.
 SELECTION = {
@@ -216,13 +245,19 @@ SELECTION = {
 }
 
 
-def download(url: str, target: str) -> bool:
-    """Faux si l'animation n'existe pas dans la version gratuite."""
+def fetch(url: str, target: str) -> bool:
+    """Faux si le fichier n'existe pas (animation absente de la version gratuite)."""
+    if os.path.exists(target):
+        return True
+    os.makedirs(os.path.dirname(target), exist_ok=True)
     request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     for attempt in range(5):
         try:
-            with urllib.request.urlopen(request, timeout=30) as response, open(target, "wb") as f:
-                f.write(response.read())
+            with urllib.request.urlopen(request, timeout=30) as response:
+                data = response.read()
+            with open(target, "wb") as f:
+                f.write(data)
+            time.sleep(0.2)
             return True
         except urllib.error.HTTPError as error:
             if error.code == 404:
@@ -233,52 +268,111 @@ def download(url: str, target: str) -> bool:
     raise RuntimeError(f"Trop de requêtes : {url}")
 
 
-def main(work: str) -> None:
+def sips(*args: str) -> None:
+    subprocess.run(["sips", *args], check=True, capture_output=True)
+
+
+def upload(path: str, local: str, content_type: str) -> None:
+    url = f"{os.environ['SUPABASE_URL']}/storage/v1/object/{BUCKET}/{path}"
+    with open(local, "rb") as f:
+        body = f.read()
+    request = urllib.request.Request(url, data=body, method="POST", headers={
+        "apikey": os.environ["SUPABASE_KEY"],
+        "Authorization": f"Bearer {os.environ['SUPABASE_TOKEN']}",
+        "Content-Type": content_type,
+        "Cache-Control": "max-age=31536000",
+        "x-upsert": "true",
+    })
+    for attempt in range(5):
+        try:
+            urllib.request.urlopen(request, timeout=60).read()
+            return
+        except urllib.error.HTTPError as error:
+            if error.code not in (429, 500, 502, 503, 504) or attempt == 4:
+                raise RuntimeError(f"{path} : {error.code} {error.read()[:200]!r}")
+            time.sleep(3 * (attempt + 1))
+
+
+def main(work: str, send: bool) -> None:
     os.makedirs(work, exist_ok=True)
     source_path = os.path.join(work, "exercises.json")
-    if not os.path.exists(source_path):
-        urllib.request.urlretrieve(f"{SOURCE}/dist/exercises.json", source_path)
+    fetch(f"{SOURCE}/dist/exercises.json", source_path)
     by_id = {e["id"]: e for e in json.load(open(source_path))}
     media = json.load(open(os.path.join(ROOT, "scripts", "exercisedb_media.json")))
+    extra_names = json.load(open(os.path.join(ROOT, "scripts", "exercise_names_fr.json")))
 
-    stills = os.path.join(OUT, "images")
-    anims = os.path.join(OUT, "anim")
-    os.makedirs(stills, exist_ok=True)
-    os.makedirs(anims, exist_ok=True)
-    catalog = []
-    missing = []
+    rows = []
     for group, names in SELECTION.items():
         for order, (ex_id, name) in enumerate(names.items()):
-            source = by_id[ex_id]
-            catalog.append({
-                "id": ex_id,
-                "name": name,
-                "group": group,
-                "equipment": source["equipment"],
-                "isBodyweight": source["equipment"] == "body only",
-                "order": order,
-            })
-            gif = os.path.join(anims, f"{ex_id}.gif")
-            if not os.path.exists(gif):
-                ok = download(f"{MEDIA}/{media[ex_id]}.gif", gif)
-                time.sleep(0.5)
-                if not ok:
-                    missing.append(ex_id)
-                    continue
-            still = os.path.join(stills, f"{ex_id}.jpg")
-            if not os.path.exists(still):
-                # Première image de l'animation : la position de départ, pour les vignettes.
-                subprocess.run(
-                    ["sips", "-s", "format", "jpeg", "-s", "formatOptions", "85", gif, "--out", still],
-                    check=True, capture_output=True,
-                )
+            rows.append((ex_id, name, group, order))
+    known = {row[0] for row in rows}
+    extras = sorted(
+        (e for e in by_id.values()
+         if e["id"] in extra_names and e["id"] not in known and e["category"] in CATEGORIES
+         and e["primaryMuscles"] and e["primaryMuscles"][0] in MUSCLE_GROUPS),
+        key=lambda e: extra_names[e["id"]].lower(),
+    )
+    # Les exos ajoutés passent après les classiques de leur groupe, par ordre alphabétique.
+    for index, e in enumerate(extras):
+        rows.append((e["id"], extra_names[e["id"]], MUSCLE_GROUPS[e["primaryMuscles"][0]], 1000 + index))
+
+    gifs = os.path.join(work, "gif")
+    photos = os.path.join(work, "photo")
+    thumbs = os.path.join(OUT, "images")
+    shutil.rmtree(os.path.join(OUT, "anim"), ignore_errors=True)
+    os.makedirs(thumbs, exist_ok=True)
+    catalog = []
+    uploads = []
+    for ex_id, name, group, order in rows:
+        source = by_id[ex_id]
+        gif = os.path.join(gifs, f"{ex_id}.gif")
+        has_gif = ex_id in media and fetch(f"{MEDIA}/{media[ex_id]}.gif", gif)
+        photo_count = 0
+        for index, image in enumerate(source["images"][:2]):
+            raw = os.path.join(work, "raw", ex_id, f"{index}.jpg")
+            if not fetch(f"{SOURCE}/exercises/{image}", raw):
+                break
+            target = os.path.join(photos, ex_id, f"{index}.jpg")
+            if not os.path.exists(target):
+                os.makedirs(os.path.dirname(target), exist_ok=True)
+                sips("-s", "format", "jpeg", "-s", "formatOptions", "78", raw, "--out", target)
+            uploads.append((f"photo/{ex_id}/{index}.jpg", target, "image/jpeg"))
+            photo_count += 1
+        if not has_gif and not photo_count and ex_id not in known:
+            continue  # Sans aucune démonstration, un exo ajouté n'apporte rien.
+        if has_gif:
+            uploads.append((f"gif/{ex_id}.gif", gif, "image/gif"))
+        thumb = os.path.join(thumbs, f"{ex_id}.jpg")
+        if not os.path.exists(thumb):
+            if has_gif:
+                # Première image de l'animation : même style 3D que la démonstration.
+                sips("-s", "format", "jpeg", "-s", "formatOptions", "85", gif, "--out", thumb)
+            elif photo_count:
+                sips("-Z", "240", "-s", "format", "jpeg", "-s", "formatOptions", "75",
+                     os.path.join(photos, ex_id, "0.jpg"), "--out", thumb)
+        catalog.append({
+            "id": ex_id,
+            "name": name,
+            "group": group,
+            "equipment": source["equipment"],
+            "isBodyweight": source["equipment"] == "body only",
+            "isUnilateral": bool(UNILATERAL.search(ex_id)) and not NOT_UNILATERAL.search(ex_id),
+            "hasAnimation": has_gif,
+            "photoCount": photo_count,
+            "order": order,
+        })
 
     with open(os.path.join(OUT, "catalog.json"), "w", encoding="utf-8") as f:
         json.dump(catalog, f, ensure_ascii=False, indent=1)
-    print(f"{len(catalog)} exos écrits dans {OUT}")
-    if missing:
-        print("Sans animation (à remplacer dans exercisedb_media.json) :", ", ".join(missing))
+    print(f"{len(catalog)} exos, {sum(c['hasAnimation'] for c in catalog)} animations, "
+          f"{sum(c['photoCount'] > 0 for c in catalog)} avec photos")
+    if send:
+        for done, (path, local, content_type) in enumerate(uploads, 1):
+            upload(path, local, content_type)
+            if done % 100 == 0:
+                print(f"{done}/{len(uploads)} envoyés")
+        print(f"{len(uploads)} fichiers dans {BUCKET}")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1])
+    main(sys.argv[1], "--upload" in sys.argv[2:])

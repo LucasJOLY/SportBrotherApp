@@ -1,5 +1,6 @@
 import SwiftData
 import SwiftUI
+import UserNotifications
 
 /// Base locale unique, partagée par l'app et les raccourcis Siri.
 /// La Nourriture vit uniquement ici ; le Sport y garde son cache, synchronisé avec Supabase.
@@ -30,6 +31,12 @@ enum AppStore {
 @main
 struct SportBrotherApp: App {
     @Environment(\.scenePhase) private var scenePhase
+
+    init() {
+        // Avant la fin du lancement : un « C'est pris » touché app fermée arrive ici.
+        UNUserNotificationCenter.current().delegate = NotificationResponder.shared
+        CreatineReminder.registerCategory()
+    }
 
     var body: some Scene {
         WindowGroup {

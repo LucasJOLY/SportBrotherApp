@@ -37,6 +37,8 @@ struct ExerciseProgressView: View {
         let weights = allWeights.filter { $0.profileID == profileID && $0.deletedAt == nil }.map { Point(day: $0.day, value: $0.kg) }
         let domain = timeDomain(strength.map(\.day))
         let records = StrengthStats.records(performances)
+        let perArm = exercise?.isUnilateral == true || performances.contains { $0.sets.contains(where: \.unilateral) }
+        let hasDrops = performances.contains { $0.sets.contains(where: \.isDropSet) }
 
         ScrollViewReader { proxy in
         List {
@@ -72,7 +74,7 @@ struct ExerciseProgressView: View {
                 } header: {
                     Text("Records")
                 } footer: {
-                    Text("Meilleure charge réussie pour au moins ce nombre de reps. 1RM estimé avec la formule d'Epley.")
+                    Text("Meilleure charge réussie pour au moins ce nombre de reps\(perArm ? ", par bras" : ""). 1RM estimé avec la formule d'Epley.\(hasDrops ? " Seul le premier palier des dégressifs compte." : "")")
                 }
             }
 
@@ -145,7 +147,7 @@ struct ExerciseProgressView: View {
                     Text(isBodyweight ? "Reps au fil du temps" : "Force au fil du temps").id("force")
                 } footer: {
                     if !isBodyweight {
-                        Text("Trait plein : la plus lourde charge réussie sur au moins \(StrengthStats.workingReps) reps à chaque séance. Pointillés : 1RM estimé.")
+                        Text("Trait plein : la plus lourde charge réussie sur au moins \(StrengthStats.workingReps) reps à chaque séance\(perArm ? " (par bras)" : ""). Pointillés : 1RM estimé.")
                     }
                 }
             }
@@ -384,7 +386,7 @@ private struct ExerciseHistorySection: View {
                     }
                     Text(row.performance.day.formatted(.dateTime.day().month(.abbreviated).year(.twoDigits)))
                     Spacer(minLength: 12)
-                    Text(row.performance.sets.map(\.label).joined(separator: "  "))
+                    Text(row.performance.sets.map(\.label).joined(separator: " · "))
                         .foregroundStyle(.secondary)
                         .multilineTextAlignment(.trailing)
                 }
