@@ -11,10 +11,37 @@ struct SessionHomeView: View {
     @Query private var overrides: [SportExercise]
     @Query private var templates: [SportTemplate]
     @Query private var templateItems: [SportTemplateItem]
-    @AppStorage(myProfileKey) private var myProfileID = ""
     @State private var starting = false
     @State private var templateSource: SportSession?
     @State private var templateName = ""
+    /// Filtres de l'historique : séances où tous ces profils étaient là, d'un modèle, d'un groupe musculaire.
+    @State private var filterProfiles: Set<UUID> = []
+    @State private var filterTemplate = TemplateFilter.all
+    @State private var filterGroup: MuscleGroup?
+
+    enum TemplateFilter: Hashable {
+        case all, free
+        case template(UUID)
+    }
+
+    private var isFiltering: Bool { !filterProfiles.isEmpty || filterTemplate != .all || filterGroup != nil }
+
+    private var liveTemplates: [SportTemplate] {
+        templates.filter { $0.deletedAt == nil }.sorted { $0.sortOrder < $1.sortOrder }
+    }
+
+    private func matches(_ session: SportSession, exercises: [String: ExerciseInfo]) -> Bool {
+        guard filterProfiles.isSubset(of: session.profileIDs) else { return false }
+        switch filterTemplate {
+        case .all: break
+        case .free: if session.templateID != nil { return false }
+        case .template(let id): if session.templateID != id { return false }
+        }
+        if let filterGroup {
+            return entries.contains { $0.sessionID == session.id && $0.deletedAt == nil && exercises[$0.exerciseRef]?.group == filterGroup }
+        }
+        return true
+    }
 
     private var liveSessions: [SportSession] { sessions.filter { $0.deletedAt == nil } }
 
@@ -23,14 +50,17 @@ struct SessionHomeView: View {
         liveSessions.filter { $0.endedAt == nil && $0.startedAt > .now.addingTimeInterval(-12 * 3600) }
     }
 
+    /// Une séance faite uniquement par des profils privés n'apparaît pas dans l'historique de ce téléphone.
     private var finished: [SportSession] {
-        liveSessions.filter { !ongoing.contains($0) }
+        let hidden = Set(profiles.live.filter { !$0.isVisible }.map(\.id))
+        return liveSessions.filter { session in
+            !ongoing.contains(session) && !(session.profileIDs.allSatisfy(hidden.contains) && !session.profileIDs.isEmpty)
+        }
     }
 
     var body: some View {
         NavigationStack {
             let exercises = ExerciseCatalog.merged(overrides).byID
-            let history = SportHistory(sessions: sessions, entries: entries, sets: sets)
             List {
                 ForEach(ongoing) { session in
                     Section {
@@ -54,28 +84,19 @@ struct SessionHomeView: View {
                     .listRowInsets(EdgeInsets())
                 }
 
-                if let me = UUID(uuidString: myProfileID) {
-                    let groups = exercises.mapValues(\.group)
-                    let neglected = NeglectedGroups.compute(lastTrained: history.lastTrained(profile: me, groups: groups))
-                    if !neglected.isEmpty {
-                        Section {
-                            ForEach(neglected, id: \.group) { item in
-                                LabeledContent {
-                                    Text("\(item.days) j").monospacedDigit()
-                                } label: {
-                                    Label(item.group.label, systemImage: item.group.symbol)
-                                        .foregroundStyle(.primary)
-                                }
-                            }
-                        } header: {
-                            Text("Pas travaillé depuis un moment")
-                        }
-                    }
-                }
-
+                let shown = isFiltering ? finished.filter { matches($0, exercises: exercises) } : finished
                 if !finished.isEmpty {
-                    Section("Historique") {
-                        ForEach(finished.prefix(60)) { session in
+                    Section {
+                        if shown.isEmpty {
+                            ContentUnavailableView {
+                                Label("Aucune séance", systemImage: "line.3.horizontal.decrease.circle")
+                            } description: {
+                                Text("Aucune séance ne correspond à ces filtres.")
+                            } actions: {
+                                Button("Effacer les filtres") { clearFilters() }
+                            }
+                        }
+                        ForEach(shown.prefix(60)) { session in
                             NavigationLink(value: session.id) {
                                 SessionRowLabel(session: session, entries: entries, sets: sets, profiles: profiles, exercises: exercises)
                             }
@@ -87,11 +108,26 @@ struct SessionHomeView: View {
                                 Button("Enregistrer comme modèle", systemImage: "list.bullet.rectangle") { templateSource = session }
                             }
                         }
+                    } header: {
+                        HStack {
+                            Text(isFiltering ? "Historique · \(shown.count)" : "Historique")
+                            Spacer()
+                            if isFiltering {
+                                Button("Effacer") { clearFilters() }
+                                    .font(.subheadline)
+                                    .textCase(nil)
+                            }
+                        }
                     }
                 }
             }
             .navigationTitle("Séance")
             .navigationSubtitle(sync.statusText)
+            .toolbar {
+                if !finished.isEmpty {
+                    ToolbarItem(placement: .topBarTrailing) { filterMenu }
+                }
+            }
             .navigationDestination(for: UUID.self) { SessionRecapView(sessionID: $0, isFinishing: false) }
             .refreshable { await sync.refresh() }
             .task(id: entries.count + templateItems.count) {
@@ -101,6 +137,9 @@ struct SessionHomeView: View {
                 await ExerciseMedia.prefetch(used.compactMap { exercises[$0] })
             }
             .sheet(isPresented: $starting) { StartSessionSheet() }
+            #if DEBUG
+            .task { if UserDefaults.standard.bool(forKey: "debugStartSheet") { starting = true } }
+            #endif
             .alert("Nom du modèle", isPresented: Binding(get: { templateSource != nil }, set: { if !$0 { templateSource = nil } })) {
                 TextField("Push, Dos-Biceps…", text: $templateName)
                 Button("Annuler", role: .cancel) { templateName = "" }
@@ -113,6 +152,51 @@ struct SessionHomeView: View {
             } message: {
                 Text("Mêmes exos, même ordre, même nombre de séries. À retrouver dans Exos › Modèles.")
             }
+        }
+    }
+}
+
+extension SessionHomeView {
+    private var filterMenu: some View {
+        Menu {
+            let visible = profiles.live.filter(\.isVisible)
+            if visible.count > 1 {
+                Section("Qui était là") {
+                    ForEach(visible) { profile in
+                        Toggle(profile.name, isOn: Binding(
+                            get: { filterProfiles.contains(profile.id) },
+                            set: { if $0 { filterProfiles.insert(profile.id) } else { filterProfiles.remove(profile.id) } }
+                        ))
+                    }
+                }
+            }
+            Section("Type de séance") {
+                Picker("Modèle", systemImage: "list.bullet.rectangle", selection: $filterTemplate) {
+                    Text("Tous les modèles").tag(TemplateFilter.all)
+                    ForEach(liveTemplates) { Text($0.name.isEmpty ? "Sans nom" : $0.name).tag(TemplateFilter.template($0.id)) }
+                    Text("Séance libre").tag(TemplateFilter.free)
+                }
+                .pickerStyle(.menu)
+                Picker("Groupe", systemImage: "figure.strengthtraining.traditional", selection: $filterGroup) {
+                    Text("Tous les groupes").tag(MuscleGroup?.none)
+                    ForEach(MuscleGroup.allCases) { Label($0.label, systemImage: $0.symbol).tag(Optional($0)) }
+                }
+                .pickerStyle(.menu)
+            }
+            if isFiltering {
+                Button("Effacer les filtres", systemImage: "xmark.circle", role: .destructive) { clearFilters() }
+            }
+        } label: {
+            Label("Filtrer", systemImage: isFiltering ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+        }
+        .menuActionDismissBehavior(.disabled)
+    }
+
+    private func clearFilters() {
+        withAnimation {
+            filterProfiles = []
+            filterTemplate = .all
+            filterGroup = nil
         }
     }
 }
@@ -201,6 +285,9 @@ struct StartSessionSheet: View {
     @Query(sort: \SportTemplate.sortOrder) private var templates: [SportTemplate]
     @Query private var templateItems: [SportTemplateItem]
     @Query(sort: \SportSession.startedAt, order: .reverse) private var sessions: [SportSession]
+    @Query private var entries: [SportEntry]
+    @Query private var sets: [SportSet]
+    @Query private var overrides: [SportExercise]
     @AppStorage(myProfileKey) private var myProfileID = ""
     @State private var present: Set<UUID> = []
     @State private var day = Date.now
@@ -220,6 +307,24 @@ struct StartSessionSheet: View {
                         }
                     }
                     .padding(.vertical, 4)
+                }
+
+                let reproaches = reproaches
+                if !reproaches.isEmpty {
+                    Section("Inadmissible") {
+                        ForEach(reproaches) { reproach in
+                            Label {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    if let name = reproach.name {
+                                        Text(name).font(.subheadline.weight(.semibold))
+                                    }
+                                    Text(reproach.message)
+                                }
+                            } icon: {
+                                Image(systemName: reproach.symbol).foregroundStyle(.red)
+                            }
+                        }
+                    }
                 }
 
                 if !liveTemplates.isEmpty {
@@ -251,6 +356,33 @@ struct StartSessionSheet: View {
             .onAppear(perform: preselect)
         }
         .presentationDetents([.medium, .large])
+    }
+
+    struct Reproach: Identifiable {
+        let id: String
+        let name: String?
+        let symbol: String
+        let message: String
+    }
+
+    /// Pour chaque personne présente, les grands groupes pas travaillés depuis une semaine.
+    private var reproaches: [Reproach] {
+        let chosen = profiles.live.filter { present.contains($0.id) && $0.isVisible }
+        guard !chosen.isEmpty else { return [] }
+        let history = SportHistory(sessions: sessions, entries: entries, sets: sets)
+        let groups = ExerciseCatalog.merged(overrides).byID.mapValues(\.group)
+        return chosen.flatMap { profile -> [Reproach] in
+            let skips = SkippedGroups.skipped(profile: profile.id, history: history, groups: groups, today: day)
+            let name = chosen.count > 1 ? profile.name : nil
+            // Tout est à la traîne : un seul savon plutôt que sept.
+            if skips.count == MuscleGroup.allCases.count, let freshest = skips.map(\.days).min() {
+                return [Reproach(id: "\(profile.id)-all", name: name, symbol: "exclamationmark.triangle.fill",
+                                 message: "Pas une seule série depuis \(freshest) jours. T'as tout skip, c'est inadmissible. Bouge-toi.")]
+            }
+            return skips.map {
+                Reproach(id: "\(profile.id)-\($0.group.rawValue)", name: name, symbol: $0.group.symbol, message: SkippedGroups.message($0))
+            }
+        }
     }
 
     /// Mon profil, plus ceux de la dernière séance faite ensemble.

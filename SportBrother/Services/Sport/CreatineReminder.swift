@@ -15,6 +15,9 @@ enum CreatineReminder {
     private static let legacyID = "sport.creatine"
     private static let takenKey = "creatineTakenDays"
     private static let daysAhead = 14
+    /// Réglage de ce téléphone (fiche de son profil) : sans créatine, aucune notification.
+    static let enabledKey = "creatineEnabled"
+    static var isEnabled: Bool { UserDefaults.standard.object(forKey: enabledKey) as? Bool ?? true }
 
     /// Bouton « C'est pris » sous la notification, géré sans ouvrir l'app.
     static func registerCategory() {
@@ -27,9 +30,14 @@ enum CreatineReminder {
     /// Idempotent : remplace tout ce qui était programmé, en sautant les soirs déjà validés.
     static func schedule(now: Date = .now) async {
         let center = UNUserNotificationCenter.current()
-        guard (try? await center.requestAuthorization(options: [.alert, .sound])) == true else { return }
         let pending = await center.pendingNotificationRequests().map(\.identifier).filter { $0.hasPrefix(prefix) || $0 == legacyID }
         center.removePendingNotificationRequests(withIdentifiers: pending)
+        guard isEnabled else {
+            let delivered = await center.deliveredNotifications().map(\.request.identifier).filter { $0.hasPrefix(prefix) || $0 == legacyID }
+            center.removeDeliveredNotifications(withIdentifiers: delivered)
+            return
+        }
+        guard (try? await center.requestAuthorization(options: [.alert, .sound])) == true else { return }
         let taken = takenDays()
         for request in requests(from: now, taken: taken) {
             try? await center.add(request)

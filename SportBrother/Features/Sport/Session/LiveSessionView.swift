@@ -86,7 +86,7 @@ struct LiveSessionView: View {
                                 ExerciseThumbnail(exercise: exercise, size: 48)
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text(exercise.name).lineLimit(2)
-                                    EntryProgress(entry: entry, sets: sets, profiles: present)
+                                    EntryProgress(entry: entry, sets: sets, profiles: present.filter(\.isVisible))
                                 }
                             }
                         }

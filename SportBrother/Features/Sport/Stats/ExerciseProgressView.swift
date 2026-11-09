@@ -152,10 +152,10 @@ struct ExerciseProgressView: View {
                 }
             }
 
-            ProfileComparison(exerciseID: exerciseID, history: history, profiles: profiles.live, weights: allWeights, isBodyweight: isBodyweight)
+            ProfileComparison(exerciseID: exerciseID, history: history, profiles: profiles.live.filter(\.isVisible), weights: allWeights, isBodyweight: isBodyweight)
                 .id("compare")
 
-            ExerciseHistorySection(exerciseID: exerciseID, profileID: profileID, history: history, profiles: profiles.live)
+            ExerciseHistorySection(exerciseID: exerciseID, profileID: profileID, history: history, profiles: profiles.live.filter(\.isVisible))
                 .id("history")
         }
         .navigationTitle(exercise?.name ?? "Exo")

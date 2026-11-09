@@ -44,7 +44,10 @@ struct SessionRecapView: View {
 
     private func content(_ session: SportSession) -> some View {
         let exercises = ExerciseCatalog.merged(overrides).byID
-        let present = profiles.live.filter { session.profileIDs.contains($0.id) }
+        // Profils privés : présents à la séance, mais rien de leurs séries ici.
+        let everyone = profiles.live.filter { session.profileIDs.contains($0.id) }
+        let present = everyone.filter(\.isVisible)
+        let hidden = everyone.filter { !$0.isVisible }
         let history = SportHistory(sessions: sessions, entries: entries, sets: sets)
         let previousSameTemplate = session.templateID.flatMap { templateID in
             sessions.filter { $0.templateID == templateID && $0.id != sessionID && $0.deletedAt == nil && $0.startedAt < session.startedAt }
@@ -82,6 +85,13 @@ struct SessionRecapView: View {
 
             ForEach(recaps(present: present, history: history, exercises: exercises, previous: previousSameTemplate), id: \.profile.id) { recap in
                 ProfileRecapSection(recap: recap)
+            }
+
+            if !hidden.isEmpty {
+                Section {
+                    Label("\(hidden.map(\.name).formatted(.list(type: .and))) : profil privé", systemImage: "lock")
+                        .foregroundStyle(.secondary)
+                }
             }
 
             Section("Détail") {
@@ -195,7 +205,9 @@ struct SessionRecapView: View {
             return
         }
         // Les séries préparées mais jamais faites n'encombrent pas l'historique.
-        for set in mine where !set.isDone { sync.delete(set) }
+        // Celles d'un profil verrouillé appartiennent à son téléphone : on n'y touche pas.
+        let editable = Set(profiles.filter(\.acceptsLogging).map(\.id))
+        for set in mine where !set.isDone && editable.contains(set.profileID) { sync.delete(set) }
         session.endedAt = customDuration.map { session.startedAt.addingTimeInterval($0) } ?? .now
         sync.save(session)
         rest.skipAll()

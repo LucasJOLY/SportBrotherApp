@@ -50,6 +50,10 @@ struct SportTabView: View {
         }
         .environment(SportRuntime.rest)
         .environment(presenter)
+        // Profils d'avant la confidentialité : celui choisi « C'est moi » revient à ce téléphone.
+        .onChange(of: me?.ownerDevice == nil, initial: true) {
+            if let me, me.ownerDevice == nil { sync.claim(me) }
+        }
         #if DEBUG
         .task {
             // Captures d'écran : `-debugSportSession YES` ouvre une séance depuis le premier modèle.

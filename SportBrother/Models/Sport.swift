@@ -76,18 +76,32 @@ final class SportProfile {
     var name: String
     var colorIndex: Int
     var sortOrder: Int
+    /// Téléphone propriétaire (`DeviceIdentity`). Nul : profil d'avant, ou invité sans téléphone.
+    var ownerDevice: String?
+    /// Les autres téléphones voient séances, stats, pesées et coach. Sinon, juste le prénom.
+    var sharesData: Bool = true
+    /// Les autres téléphones peuvent saisir des séries pour ce profil.
+    var allowsOthersLogging: Bool = true
     var modifiedAt: Date
     var deletedAt: Date?
 
-    init(id: UUID = UUID(), name: String, colorIndex: Int, sortOrder: Int) {
+    init(id: UUID = UUID(), name: String, colorIndex: Int, sortOrder: Int, ownerDevice: String? = nil) {
         self.id = id
         self.name = name
         self.colorIndex = colorIndex
         self.sortOrder = sortOrder
+        self.ownerDevice = ownerDevice
         self.modifiedAt = .now
     }
 
     var color: Color { ProfilePalette.color(colorIndex) }
+
+    /// Profil de ce téléphone.
+    var isMine: Bool { ownerDevice == DeviceIdentity.id }
+    /// Ce téléphone peut afficher ses séances, stats, pesées et avis du coach.
+    var isVisible: Bool { isMine || ownerDevice == nil || sharesData }
+    /// Ce téléphone peut saisir ou modifier ses séries.
+    var acceptsLogging: Bool { isMine || ownerDevice == nil || (sharesData && allowsOthersLogging) }
 }
 
 @Model

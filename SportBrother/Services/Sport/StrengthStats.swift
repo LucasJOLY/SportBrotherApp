@@ -147,7 +147,7 @@ nonisolated enum NeglectedGroups {
             .map { group, day in
                 (group, calendar.dateComponents([.day], from: calendar.startOfDay(for: day), to: calendar.startOfDay(for: now)).day ?? 0)
             }
-            .filter { $0.1 > threshold }
+            .filter { $0.1 >= threshold }
             .sorted { $0.1 > $1.1 }
     }
 }

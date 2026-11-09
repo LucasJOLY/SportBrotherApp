@@ -28,7 +28,11 @@ struct EntryView: View {
         return profiles.live.filter { session.profileIDs.contains($0.id) }
     }
 
-    private var selected: SportProfile? { present.first { $0.id == profileID } ?? present.first }
+    /// Profils dont ce téléphone peut noter les séries ; les autres notent sur leur téléphone.
+    private var loggable: [SportProfile] { present.filter(\.acceptsLogging) }
+    private var locked: [SportProfile] { present.filter { !$0.acceptsLogging } }
+
+    private var selected: SportProfile? { loggable.first { $0.id == profileID } ?? loggable.first }
 
     private func mySets(_ profile: UUID) -> [SportSet] {
         sets.filter { $0.entryID == entryID && $0.profileID == profile && $0.deletedAt == nil }.sorted { $0.index < $1.index }
@@ -45,14 +49,18 @@ struct EntryView: View {
                     ExerciseHero(exercise: exercise, height: 140).listRowInsets(EdgeInsets())
                 }
 
-                if present.count > 1 {
+                if loggable.count > 1 || !locked.isEmpty {
                     Section {
-                        Picker("Profil", selection: Binding(get: { profile.id }, set: { profileID = $0 })) {
-                            ForEach(present) { Text($0.name).tag($0.id) }
+                        if loggable.count > 1 {
+                            Picker("Profil", selection: Binding(get: { profile.id }, set: { profileID = $0 })) {
+                                ForEach(loggable) { Text($0.name).tag($0.id) }
+                            }
+                            .pickerStyle(.segmented)
+                            .listRowBackground(Color.clear)
+                            .listRowInsets(EdgeInsets())
                         }
-                        .pickerStyle(.segmented)
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(EdgeInsets())
+                    } footer: {
+                        if !locked.isEmpty { LockedProfilesNote(profiles: locked) }
                     }
                 }
 
@@ -127,11 +135,17 @@ struct EntryView: View {
             .sensoryFeedback(.impact(weight: .medium), trigger: doneTrigger)
             .task(id: profile.id) { prepare(profile: profile.id, exercise: exercise, last: last) }
             .onAppear {
-                if profileID == nil, let me = UUID(uuidString: myProfileID), present.contains(where: { $0.id == me }) { profileID = me }
+                if profileID == nil, let me = UUID(uuidString: myProfileID), loggable.contains(where: { $0.id == me }) { profileID = me }
             }
             .alert(editing?.title ?? "", isPresented: Binding(get: { editing != nil }, set: { if !$0 { editing = nil } })) {
                 if let editing { ValueField(edited: editing) { apply(editing, value: $0) } }
                 Button("Annuler", role: .cancel) {}
+            }
+        } else if entry != nil, loggable.isEmpty, !locked.isEmpty {
+            ContentUnavailableView {
+                Label("Saisie verrouillée", systemImage: "lock")
+            } description: {
+                LockedProfilesNote(profiles: locked)
             }
         } else {
             ContentUnavailableView("Exo retiré de la séance", systemImage: "dumbbell")
@@ -502,5 +516,15 @@ private struct FeedbackSection: View {
         let target = current ?? SportFeedback(entryID: entryID, profileID: profileID)
         target.note = trimmed.isEmpty ? nil : trimmed
         sync.save(target)
+    }
+}
+
+/// Profils dont les séries se notent uniquement sur leur propre téléphone.
+struct LockedProfilesNote: View {
+    let profiles: [SportProfile]
+
+    var body: some View {
+        let names = profiles.map(\.name).formatted(.list(type: .and))
+        Text(profiles.count > 1 ? "\(names) notent leurs séries sur leur téléphone." : "\(names) note ses séries sur son téléphone.")
     }
 }

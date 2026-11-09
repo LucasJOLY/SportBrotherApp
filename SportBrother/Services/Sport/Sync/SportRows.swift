@@ -84,19 +84,57 @@ nonisolated struct ProfileRow: SportRow {
     var name: String
     var colorIndex: Int
     var sortOrder: Int
+    var ownerDevice: String?
+    var sharesData: Bool
+    var allowsOthersLogging: Bool
     var modifiedAt: Date
     var deletedAt: Date?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, colorIndex = "color_index", sortOrder = "sort_order", modifiedAt = "modified_at", deletedAt = "deleted_at"
+        case id, name, colorIndex = "color_index", sortOrder = "sort_order", ownerDevice = "owner_device",
+             sharesData = "shares_data", allowsOthersLogging = "allows_others_logging", modifiedAt = "modified_at", deletedAt = "deleted_at"
+    }
+
+    init(id: UUID, name: String, colorIndex: Int, sortOrder: Int, ownerDevice: String? = nil, sharesData: Bool = true,
+         allowsOthersLogging: Bool = true, modifiedAt: Date, deletedAt: Date?) {
+        self.id = id
+        self.name = name
+        self.colorIndex = colorIndex
+        self.sortOrder = sortOrder
+        self.ownerDevice = ownerDevice
+        self.sharesData = sharesData
+        self.allowsOthersLogging = allowsOthersLogging
+        self.modifiedAt = modifiedAt
+        self.deletedAt = deletedAt
+    }
+
+    /// Lignes d'avant la confidentialité : colonnes nulles = tout partagé.
+    init(from decoder: any Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decode(UUID.self, forKey: .id)
+        name = try c.decode(String.self, forKey: .name)
+        colorIndex = try c.decode(Int.self, forKey: .colorIndex)
+        sortOrder = try c.decode(Int.self, forKey: .sortOrder)
+        ownerDevice = try c.decodeIfPresent(String.self, forKey: .ownerDevice)
+        sharesData = try c.decodeIfPresent(Bool.self, forKey: .sharesData) ?? true
+        allowsOthersLogging = try c.decodeIfPresent(Bool.self, forKey: .allowsOthersLogging) ?? true
+        modifiedAt = try c.decode(Date.self, forKey: .modifiedAt)
+        deletedAt = try c.decodeIfPresent(Date.self, forKey: .deletedAt)
     }
 
     var rowID: String { id.uuidString.lowercased() }
-    @MainActor func makeModel() -> SportProfile { SportProfile(id: id, name: name, colorIndex: colorIndex, sortOrder: sortOrder) }
+    @MainActor func makeModel() -> SportProfile {
+        let model = SportProfile(id: id, name: name, colorIndex: colorIndex, sortOrder: sortOrder)
+        apply(to: model)
+        return model
+    }
     @MainActor func apply(to model: SportProfile) {
         model.name = name
         model.colorIndex = colorIndex
         model.sortOrder = sortOrder
+        model.ownerDevice = ownerDevice
+        model.sharesData = sharesData
+        model.allowsOthersLogging = allowsOthersLogging
         model.modifiedAt = modifiedAt
         model.deletedAt = deletedAt
     }
@@ -413,7 +451,10 @@ extension SportProfile: SportSynced {
         let id = UUID(uuidString: rowID) ?? UUID()
         return #Predicate { $0.id == id }
     }
-    var row: ProfileRow { .init(id: id, name: name, colorIndex: colorIndex, sortOrder: sortOrder, modifiedAt: modifiedAt, deletedAt: deletedAt) }
+    var row: ProfileRow {
+        .init(id: id, name: name, colorIndex: colorIndex, sortOrder: sortOrder, ownerDevice: ownerDevice, sharesData: sharesData,
+              allowsOthersLogging: allowsOthersLogging, modifiedAt: modifiedAt, deletedAt: deletedAt)
+    }
 }
 
 extension SportBodyWeight: SportSynced {

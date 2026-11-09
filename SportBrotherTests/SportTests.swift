@@ -302,6 +302,85 @@ struct SportStoreTests {
     }
 }
 
+@MainActor
+struct SkippedGroupsTests {
+    private let groups: [String: MuscleGroup] = ["Barbell_Squat": .jambes, "Barbell_Curl": .biceps]
+
+    private func history(_ profile: UUID, _ done: [(String, Int)], today: Date) -> SportHistory {
+        var sessions: [SportSession] = [], entries: [SportEntry] = [], sets: [SportSet] = []
+        for (ref, daysAgo) in done {
+            let day = Calendar.current.date(byAdding: .day, value: -daysAgo, to: Calendar.current.startOfDay(for: today))!
+            let session = SportSession(day: day, profileIDs: [profile])
+            let entry = SportEntry(sessionID: session.id, exerciseRef: ref, sortOrder: 0)
+            let set = SportSet(entryID: entry.id, profileID: profile, index: 0, weightKg: 50, reps: 8)
+            set.doneAt = day
+            sessions.append(session); entries.append(entry); sets.append(set)
+        }
+        return SportHistory(sessions: sessions, entries: entries, sets: sets)
+    }
+
+    @Test func flagsGroupsFromSevenDays() {
+        let profile = UUID(), today = Date.now
+        let history = history(profile, [("Barbell_Squat", 7), ("Barbell_Squat", 20), ("Barbell_Curl", 6)], today: today)
+        let skips = SkippedGroups.skipped(profile: profile, history: history, groups: groups, today: today)
+        #expect(skips.first { $0.group == .jambes } == .init(group: .jambes, days: 7, never: false))
+        #expect(!skips.contains { $0.group == .biceps })
+        // Jamais fait : compté depuis la première séance (20 jours).
+        #expect(skips.first { $0.group == .dos } == .init(group: .dos, days: 20, never: true))
+        #expect(skips.first?.days == 20)
+    }
+
+    @Test func newProfileIsLeftAlone() {
+        let profile = UUID()
+        let skips = SkippedGroups.skipped(profile: profile, history: history(profile, [], today: .now), groups: groups)
+        #expect(skips.isEmpty)
+    }
+
+    @Test func messageIsAngry() {
+        let message = SkippedGroups.message(.init(group: .jambes, days: 9, never: false))
+        #expect(message.hasPrefix("9 jours sans série de jambes."))
+        #expect(message.contains("T'as skip les jambes, c'est inadmissible"))
+    }
+}
+
+@MainActor
+struct ProfilePrivacyTests {
+    @Test func oldProfileRowsStayShared() throws {
+        let json = #"{"id":"6f1c2a52-7d0e-4a8e-9a43-1d1f5b4c8e01","name":"Tom","color_index":1,"sort_order":1,"modified_at":"2026-11-01T10:00:00Z","deleted_at":null}"#
+        let row = try SportJSON.decoder.decode(ProfileRow.self, from: Data(json.utf8))
+        #expect(row.ownerDevice == nil && row.sharesData && row.allowsOthersLogging)
+        let profile = row.makeModel()
+        #expect(profile.isVisible && profile.acceptsLogging)
+    }
+
+    @Test func privateProfileOfAnotherPhoneShowsOnlyItsName() {
+        let other = SportProfile(name: "Tom", colorIndex: 1, sortOrder: 1, ownerDevice: "autre-telephone")
+        other.sharesData = false
+        other.allowsOthersLogging = true
+        #expect(!other.isVisible)
+        #expect(!other.acceptsLogging)
+        other.sharesData = true
+        other.allowsOthersLogging = false
+        #expect(other.isVisible && !other.acceptsLogging)
+    }
+
+    @Test func myPrivateProfileStaysFullyMine() {
+        let mine = SportProfile(name: "Lucas", colorIndex: 0, sortOrder: 0, ownerDevice: DeviceIdentity.id)
+        mine.sharesData = false
+        mine.allowsOthersLogging = false
+        #expect(mine.isMine && mine.isVisible && mine.acceptsLogging)
+    }
+
+    @Test func privacyIsPushed() throws {
+        let profile = SportProfile(name: "Lucas", colorIndex: 0, sortOrder: 0, ownerDevice: "abc")
+        profile.sharesData = false
+        let json = String(decoding: try SportJSON.encoder.encode(profile.row), as: UTF8.self)
+        #expect(json.contains(#""owner_device":"abc""#))
+        #expect(json.contains(#""shares_data":false"#))
+        #expect(json.contains(#""allows_others_logging":true"#))
+    }
+}
+
 struct CreatineReminderTests {
     private var calendar: Calendar {
         var calendar = Calendar(identifier: .gregorian)

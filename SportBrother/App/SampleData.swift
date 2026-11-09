@@ -96,8 +96,9 @@ enum SampleData {
 
     /// Deux profils, trois mois de séances Push / Pull / Jambes avec une progression régulière, des pesées.
     static func insertSport(into context: ModelContext) {
-        let lucas = SportProfile(name: "Lucas", colorIndex: 0, sortOrder: 0)
-        let tom = SportProfile(name: "Tom", colorIndex: 1, sortOrder: 1)
+        let lucas = SportProfile(name: "Lucas", colorIndex: 0, sortOrder: 0, ownerDevice: DeviceIdentity.id)
+        let tom = SportProfile(name: "Tom", colorIndex: 1, sortOrder: 1, ownerDevice: "telephone-de-tom")
+        tom.sharesData = !UserDefaults.standard.bool(forKey: "debugPrivateTom")
         [lucas, tom].forEach(context.insert)
         UserDefaults.standard.set(lucas.id.uuidString, forKey: myProfileKey)
 

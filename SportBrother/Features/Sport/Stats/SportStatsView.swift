@@ -18,8 +18,11 @@ struct SportStatsView: View {
     @State private var reviewError: String?
     @State private var path = NavigationPath()
 
+    /// Les profils privés des autres n'apparaissent pas dans les stats.
+    private var visible: [SportProfile] { profiles.live.filter(\.isVisible) }
+
     private var profile: SportProfile? {
-        profiles.live.first { $0.id == profileID } ?? profiles.live.first { $0.id.uuidString == myProfileID } ?? profiles.live.first
+        visible.first { $0.id == profileID } ?? visible.first { $0.id.uuidString == myProfileID } ?? visible.first
     }
 
     var body: some View {
@@ -54,10 +57,10 @@ struct SportStatsView: View {
         let year = days.filter { Calendar.current.isDate($0, equalTo: .now, toGranularity: .year) }
         let done = history.exercises(profile: profile.id)
         return List {
-            if profiles.live.count > 1 {
+            if visible.count > 1 {
                 Section {
                     Picker("Profil", selection: Binding(get: { profile.id }, set: { profileID = $0 })) {
-                        ForEach(profiles.live) { Text($0.name).tag($0.id) }
+                        ForEach(visible) { Text($0.name).tag($0.id) }
                     }
                     .pickerStyle(.segmented)
                     .listRowBackground(Color.clear)
